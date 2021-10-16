@@ -10,6 +10,28 @@
   padding: 6rem 6rem;
 }
 
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .main-content {
+    padding: 2rem 4rem;
+    font-size: 1.1rem;
+  }
+
+  .page-header {
+    padding: 6rem 4rem;
+  }
+}
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 2rem 4rem;
+    font-size: 1.1rem;
+  }
+
+  .page-header {
+    padding: 6rem 2rem;
+  }
+}
+
 .main-content {
   max-width: unset !important;
 }
@@ -23,8 +45,9 @@
 }
 
 .btn:focus, .btn:active, .btn:hover {
-  background-color: #e5f0fe;
+  background-color: #FFF;
   color: rgba(25,122,244,1.0);
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {

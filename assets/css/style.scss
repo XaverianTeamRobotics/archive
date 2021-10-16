@@ -10,8 +10,8 @@
   padding: 6rem 6rem;
 }
 
-.page-header > h1, .page-header > h2, .page-header > a {
-  max-width: 64rem;
+.main-content {
+  max-width: unset !important;
 }
 
 .btn {

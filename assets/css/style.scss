@@ -1,0 +1,47 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.page-header {
+  background-color: #197AF4;
+  background-image: none;
+}
+
+.btn {
+    color: rgba(25,122,244,1.0);
+    background-color: rgba(255,255,255,1.0);
+    border-width: 0px;
+    transition: background-color 0.2s;
+}
+
+.btn:focus, .btn:active, .btn:hover {
+  background-color: #e5f0fe;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    color: #197AF4;
+}
+
+a {
+  color: #197AF4;
+}
+
+.project-name {
+  font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.page-header {
+  text-align: left;
+}
+
+.project-tagline {
+  opacity: 1
+}
+
+body {
+  background-color: #f7f8f9 !important;
+  color: #575c61;
+}
+

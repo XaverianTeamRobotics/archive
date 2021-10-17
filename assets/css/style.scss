@@ -42,15 +42,6 @@
   }
 }
 
-.card-title {
-  font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: block;
-}
-
-.card-desc {
-  color: #575c61;
-}
-
 .cards {
   display: flex;
   flex-direction: row;
@@ -61,6 +52,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  flex-grow: 1;
 }
 
 .main-content {

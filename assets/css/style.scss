@@ -53,6 +53,11 @@
   flex-direction: column;
   text-align: center;
   flex: 1;
+  aspect-ratio: 1;
+}
+
+.card-img {
+    width: 70%;
 }
 
 .main-content {

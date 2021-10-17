@@ -50,6 +50,10 @@
     transition: box-shadow 0.2s;
 }
 
+a.btn::before {
+  display: none !important;
+}
+
 .btn:focus, .btn:active, .btn:hover {
   background-color: #FFF;
   color: rgba(25,122,244,1.0);
@@ -63,6 +67,7 @@
 a {
   color: #197AF4;
   position: relative;
+  text-decoration: none;
 }
 
 a::before {

@@ -39,7 +39,12 @@
   }
 }
 
-a > p {
+.card-title {
+  font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+}
+
+.card-desc {
   color: #5575c61;
 }
 

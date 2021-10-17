@@ -5,7 +5,7 @@ Welcome to the Hawks Robotics FTC documentation! This site includes everything y
         <div class="material-icons-sharp card-img">
         create_new_folder
         </div>
-        Onboarding
+        <h1>Onboarding</h1>
     </a>
     <a class="btn card" href="./reference">
         Onboarding

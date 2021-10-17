@@ -14,7 +14,6 @@
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
     padding: 2rem 4rem;
-    max-width: 1400px;
     font-size: 1.1rem;
   }
 
@@ -39,8 +38,12 @@
   }
 }
 
+.bg-white {
+  background-color: #FFF;
+}
+
 .main-content {
-  max-width: unset !important;
+  max-width: 1300px; !important;
 }
 
 .btn {
@@ -72,7 +75,8 @@ a {
 }
 
 .page-header-content {
-  max-width: 1400px;
+  max-width: 1300px;
+  padding: 0;
 }
 
 a::before {

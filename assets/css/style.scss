@@ -9,6 +9,7 @@
   background-image: none;
   padding-top: 6rem;
   padding-bottom: 6rem;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
@@ -41,10 +42,12 @@
 .cards {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .card {
   display: flex;
+  aspect-ratio: 1;
 }
 
 .main-content {

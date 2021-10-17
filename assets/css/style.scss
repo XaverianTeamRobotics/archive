@@ -67,7 +67,7 @@ a.btn::before {
 a {
   color: #197AF4;
   position: relative;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a::before {

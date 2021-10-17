@@ -3,14 +3,20 @@ Welcome to the Hawks Robotics FTC documentation! This site includes everything y
 <div class="cards">
     <a class="btn card" href="./onboarding">
         <div class="material-icons-sharp card-img">
-        create_new_folder
+            create_new_folder
         </div>
         <h1>Onboarding</h1>
     </a>
     <a class="btn card" href="./reference">
-        Onboarding
+        <div class="material-icons-sharp card-img">
+            notes
+        </div>
+        <h1>Reference</h1>
     </a>
     <a class="btn card" href="./javadocs">
-        Onboarding
+        <div class="material-icons-sharp card-img">
+            dynamic_form
+        </div>
+        <h1>Javadocs</h1>
     </a>
 </div>

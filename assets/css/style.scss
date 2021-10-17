@@ -53,12 +53,12 @@
   flex-direction: column;
   text-align: center;
   flex: 1;
-  aspect-ratio: 1;
   font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .card-img {
-    width: 70%;
+    font-size: 7rem !important;
+    margin: 0 auto;
 }
 
 .main-content {

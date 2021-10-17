@@ -14,6 +14,7 @@
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
     padding: 2rem 4rem;
+    max-width: 1400px;
     font-size: 1.1rem;
   }
 
@@ -68,6 +69,10 @@ a {
   color: #197AF4;
   position: relative;
   text-decoration: none !important;
+}
+
+.page-header-content {
+  max-width: 1400px;
 }
 
 a::before {

@@ -2,7 +2,7 @@
 Welcome to the Hawks Robotics Onboarding Guide. This is a tutorial on how to get set up with the repository, running Android Studio, coding, testing, and uploading your code.
 
 ### Installation
-First, if you don't already have one, make a [GitHub](https://github.com) account. From there, ask Roche or Tassinari to invite you to the GitHub organization, and accept the invite.
+First, if you don't already have one, make a [GitHub](https://github.com) account. From there, ask Roche or Tassinari to invite you to the GitHub organization, and accept the invite. You also need to be added to the organization's team.
 
 Then, head over to [Git Bash](https://git-scm.com/downloads) and install it. Then install [JDK 16](https://www.oracle.com/java/technologies/downloads/) (not 17!) and [Android Studio](https://developer.android.com/studio).
 
@@ -16,17 +16,20 @@ Open Command Prompt as an administrator (Windows) or Terminal (macOS & Linux), t
 ```bash
 # Windows
 
-git config user.name "your github username"
-git config user.email "your github email address"
+git config --global user.name "your github username"
+git config --global user.email "your github email address"
 
 # macOS & Linux
 
-sudo git config user.name "your github username"
-sudo git config user.email "your github email address"
-```
+sudo git config --global user.name "your github username"
+sudo git config --global user.email "your github email address"
+``` 
+> Note:
+> If you've never used a command line before, to run a command simply type the command in and press enter. If you have spaces in your name, for example John Smith, you need to wrap the name with quotes like "John Smith".
+
 From there, log into GitHub and head over to [our repository](https://github.com/xaverianteamrobotics/ftcrobotcontroller). Click on the button named master, type `testing-Your-Name` into the box, and click create branch.
 
-Next, go to [GitHub's PAT ceation page](https://github.com/settings/tokens/new) and make a new token with the following scopes:
+Next, go to [GitHub's PAT creation page](https://github.com/settings/tokens/new) and make a new token with the following scopes:
 * repo
 * workflow
 * admin:org

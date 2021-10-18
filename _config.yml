@@ -3,3 +3,5 @@ title: "Hawks Robotics Documentation"
 description: "Onboarding guides, tutorials, references, and Javadocs for our repository."
 include:
   - "_pages"
+plugins:
+  - "jekyll-octicons"

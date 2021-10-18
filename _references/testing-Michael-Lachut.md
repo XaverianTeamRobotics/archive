@@ -1,3 +1,3 @@
 ---
-permalink: /reference/testing-Michael-Lachut
+permalink: /reference/testing-michael-lachut
 ---

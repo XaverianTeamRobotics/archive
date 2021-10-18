@@ -6,7 +6,6 @@ First, if you don't already have one, make a [GitHub](https://github.com) accoun
 
 Then, head over to [Git Bash](https://git-scm.com/downloads) and install it. Then install [JDK 16](https://www.oracle.com/java/technologies/downloads/) (not 17!) and [Android Studio](https://developer.android.com/studio).
 
->>>
 > Note:
 > If you have apt you can use `sudo apt install git openjdk-16-jdk -y` for Git and JDK, but you still have to download Android Studio from the website.
 
@@ -32,11 +31,12 @@ Next, go to [GitHub's PAT ceation page](https://github.com/settings/tokens/new) 
 * workflow
 * admin:org
 * user
+
 Once this token is generated, copy it and keep it somewhere. **You will lose access to the token once you close the page, so make sure it's copied.** Then, open Android Studio and go to *Customize > All Settings > Version Control > GitHub* and click + to add a new GitHub account. Use the token you just generated to log in.
 
 Now, close Settings and go to the main menu, and click Get From VCS. Click on the GitHub tab and click on the FtcRobotController repository, then press Clone to download it. Keep track of the directory it's cloning to, because you'll need that later. Once you're in the project in Android Studio, head down to the bottom right of the editor and click the branch button (it should be named master). Find the branch titled `origin/testing-Your-Name` and click Checkout.
 
-Once everything loads in, sync your Gradle environment. First, go to File > Project Structure > Project and make sure both versions are 7.0.2. Then close that window and click the Sync project with Gradle Files at the top right of the editor (it's just an icon, so you'll have to hover over it to find the right one). After a few minutes Gradle should be set up and ready to go. To finish, just close and reopen Android Studio.
+Once everything loads in, sync your Gradle environment. First, go to *File > Project Structure > Project* and make sure both versions are 7.0.2. Then close that window and click Sync project with Gradle Files at the top right of the editor (it's just an icon, so you'll have to hover over it to find the right one). After a few minutes Gradle should be set up and ready to go. To finish, just close and reopen Android Studio.
 
 You're now in Android Studio with a working development environment! The next steps go over how to actually do things with the code.
 
@@ -58,4 +58,4 @@ Once you're ready to commit, go to the Commit tab on the left of the screen. Sel
 To push, open GitHub desktop. While Android Studio *can* push code, oftentimes it doesn't like to and will return an error if you try. Inside GitHub desktop, assuming it isn't already tracking your local copy of the repository, import the folder containing the project you were working on in Android Studio. Then you can click Push to push your changes to the public repository.
 
 ### Final Notes
-Congratulations, you've made your first contribution to the codebase! Assuming your code gets merged into the master branch, it will be used in competition. When you go to code again, make sure you update the project before getting started to sync your local copy with the shared GitHub repository. In Android Studio, you can do this in Git > Update Project. When your code gets to the point where it needs documentation, ask me (Thomas Ricci) to make a documentation page and Javadocs for your code, or do it yourself if you know what you're doing.
+Congratulations, you've made your first contribution to the codebase! Assuming your code gets merged into the master branch, it will be used in competition. When you go to code again, make sure you update the project before getting started to sync your local copy with the shared GitHub repository. In Android Studio, you can do this in *Git > Update Project*. When your code gets to the point where it needs documentation, ask me (Thomas Ricci) to make a documentation page and Javadocs for your code, or try it yourself if you know what you're doing.

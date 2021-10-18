@@ -25,6 +25,21 @@
   font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  width: 100%;
+  font-size: 2.2rem;
+  font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
     padding: 2rem 4rem;

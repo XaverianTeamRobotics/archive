@@ -1,3 +1,5 @@
 ---
-permalink: /reference/testing-michael-lachut
+permalink: /reference/testing-Michael-Lachut
 ---
+
+test.md

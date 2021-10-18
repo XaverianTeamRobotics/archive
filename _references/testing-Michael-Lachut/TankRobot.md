@@ -7,7 +7,9 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
 ## About
 
 **Location:**           utils
+
 **Type:**               class
+
 **Extends:**            [GamepadExtended](/reference/testing-Michael-Lachut/backend/GamepadExtended)
 
 
@@ -19,10 +21,14 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
 
 ## Usage
 
-#### Methods
+### Methods
 
-##### main
+#### main
 **Overrides parent:**   yes
+
 **Arguments:**          none
+
 **Return type:**        void
+
 **Public:**             yes
+

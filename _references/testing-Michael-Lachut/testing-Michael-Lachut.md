@@ -9,13 +9,13 @@ permalink: /reference/testing-Michael-Lachut
 
 # Main APIs
 
-  * [TankRobot](/reference/testing-Michael-Lachut/TankRobot)
-  * [RobotWithSpinner](/reference/testing-Michael-Lachut/RobotWithSpinner)
-  * [Drivetrain](/reference/testing-Michael-Lachut/Drivetrain)
+  * [TankRobot](./TankRobot)
+  * [RobotWithSpinner](./RobotWithSpinner)
+  * [Drivetrain](./Drivetrain)
 
 # Advanced Backends
   
-  * [ButtonPriority](/reference/testing-Michael-Lachut/backend/ButtonPriority)
-  * [GamepadExtended](/reference/testing-Michael-Lachut/backend/GamepadExtended)
+  * [ButtonPriority](./backend/ButtonPriority)
+  * [GamepadExtended](./backend/GamepadExtended)
 
 This stuff should **only** be used directly if you are modifying existing code

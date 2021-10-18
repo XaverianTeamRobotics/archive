@@ -1,3 +1,3 @@
 ---
-permalink: /reference/testing-thomas-ricci
+permalink: /reference/testing-Thomas-Ricci
 ---

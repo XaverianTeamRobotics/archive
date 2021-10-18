@@ -6,10 +6,8 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
 
 ## About
 
-**Location:**           utils
-
-**Type:**               class
-
+**Location:**           utils   <br>
+**Type:**               class   <br>
 **Extends:**            [GamepadExtended](/reference/testing-Michael-Lachut/backend/GamepadExtended)
 
 
@@ -19,11 +17,17 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
   *  _HardwareMap_ hardwareMap
   *  _Telemetry_ telemetry
 
-## Usage
+**Description**
+This class is responsible for doing all the driving for a tank-style robot with 4 drive motors. The **main** function can be placed inside another loop, but **isn't a loop itself**.
+This is due to the RobotController's tendency to crash in most loops.
 
-### Methods
+<br>
+<br>
 
-#### main
+## Methods
+
+### main
+
 **Overrides parent:**   yes
 
 **Arguments:**          none
@@ -32,3 +36,6 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
 
 **Public:**             yes
 
+
+**Description:**
+The main function. Checks all gamepads and does the appropriate actions

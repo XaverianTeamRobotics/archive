@@ -13,7 +13,7 @@ Lastly, download [GitHub Desktop](https://desktop.github.com). If you're on Linu
 
 ### Setup
 Open Command Prompt as an administrator (Windows) or Terminal (macOS & Linux), then run:
-```git
+```bash
 # Windows
 
 git config user.name "your github username"

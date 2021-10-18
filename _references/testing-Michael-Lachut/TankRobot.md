@@ -17,7 +17,7 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
   *  _HardwareMap_ hardwareMap
   *  _Telemetry_ telemetry
 
-**Description**
+**Description:**
 This class is responsible for doing all the driving for a tank-style robot with 4 drive motors. The **main** function can be placed inside another loop, but **isn't a loop itself**.
 This is due to the RobotController's tendency to crash in most loops.
 

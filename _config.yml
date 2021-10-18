@@ -3,5 +3,7 @@ title: "Hawks Robotics Documentation"
 description: "Onboarding guides, tutorials, references, and Javadocs for our repository."
 include:
   - "_references"
+  - "_references/testing-Michael-Lachut"
+  - "_references/testing-Michael-Lachut/backend"
 plugins:
   - "jekyll-octicons"

@@ -24,9 +24,9 @@ This is due to the RobotController's tendency to crash in most loops.
 <br>
 <br>
 
-## Methods
+# Methods
 
-### main
+## main
 
 **Overrides parent:**   yes
 

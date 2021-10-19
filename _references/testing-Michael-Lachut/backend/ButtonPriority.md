@@ -34,6 +34,8 @@ if ((gamepad2.left_stick_y >= 0.25 | gamepad2.left_stick_y <= -0.25) && priority
 }
 ```
 
+**NOTE:** by default, `g1HasF2` is `false`
+
 In this scenario, `priority` represents our **ButtonPriority** class.
 The first section of the if statement (`gamepad2.left_stick_y >= 0.25 | gamepad2.left_stick_y <= -0.25`) ensures there is no stick drift.
 Then we tell our **ButtonPriority** that we want to evaluate `f2`, but we are not using Gamepad1.

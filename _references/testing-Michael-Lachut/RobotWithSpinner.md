@@ -1,8 +1,8 @@
 ---
-permalink: /reference/testing-Michael-Lachut/TankRobot
+permalink: /reference/testing-Michael-Lachut/RobotWithSpinner
 ---
 
-# TankRobot
+# RobotWithSpinner
 
 ## About
 
@@ -20,7 +20,7 @@ permalink: /reference/testing-Michael-Lachut/TankRobot
 **Uses parent constructor:**    yes
 
 **Description:**
-This class is responsible for doing all the driving for a tank-style robot with 4 drive motors. The **main** function can be placed inside another loop, but **isn't a loop itself**.
+This class is responsible for doing all the driving for a 4WD robot with a spinner motor attachment. The **main** function can be placed inside another loop, but **isn't a loop itself**.
 This is due to the RobotController's tendency to crash in most loops.
 
 <br>

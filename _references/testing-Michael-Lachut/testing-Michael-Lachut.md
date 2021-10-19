@@ -4,13 +4,15 @@ permalink: /reference/testing-Michael-Lachut
 
 # Docs for testing-Michael-Lachut
 
-# NOTE: THIS ONLY INCLUDES COMMITS MADE BY _ME_
-
 To get started, you can use the [TankRobot](./testing-Michael-Lachut/TankRobot) class to quickly drive a tank-style robot,
 or you could use the [RobotWithSpinner](./testing-Michael-Lachut/RobotWithSpinner) class if you have a basic 4WD robot with a spinner.
 
+They both inherit from [GamepadExtended](./testing-Michael-Lachut/backend/GamepadExtended) and should be enclosed in an external loop.
+
 The other classes shouldn't be used directly, but I will still provide docs for them.
 
+
+# NOTE: THIS ONLY INCLUDES COMMITS MADE BY _ME_
 
 # Main APIs
 

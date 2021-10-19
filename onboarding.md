@@ -41,6 +41,9 @@ Now, close Settings and go to the main menu, and click Get From VCS. Click on th
 
 Once everything loads in, sync your Gradle environment. First, go to *File > Project Structure > Project* and make sure both versions are 7.0.2. Then close that window and click Sync project with Gradle Files at the top right of the editor (it's just an icon, so you'll have to hover over it to find the right one). After a few minutes Gradle should be set up and ready to go. To finish, just close and reopen Android Studio.
 
+> Note:
+> Android Studio is weird and buggy when it comes to using the Android SDK, and as a result syncing the environment might fail. Why? I have no idea. Ask for help if that happens to you.
+
 You're now in Android Studio with a working development environment! The next steps go over how to actually do things with the code.
 
 ### Coding
@@ -61,4 +64,4 @@ Once you're ready to commit, go to the Commit tab on the left of the screen. Sel
 To push, open GitHub desktop. While Android Studio *can* push code, oftentimes it doesn't like to and will return an error if you try. Inside GitHub desktop, assuming it isn't already tracking your local copy of the repository, import the folder containing the project you were working on in Android Studio. Then you can click Push to push your changes to the public repository.
 
 ### Final Notes
-Congratulations, you've made your first contribution to the codebase! Assuming your code gets merged into the master branch, it will be used in competition. When you go to code again, make sure you update the project before getting started to sync your local copy with the shared GitHub repository. In Android Studio, you can do this in *Git > Update Project*. When your code gets to the point where it needs documentation, ask me (Thomas Ricci) to make a documentation page and Javadocs for your code, or try it yourself if you know what you're doing.
+Congratulations, you've made your first contribution to the codebase! Assuming your code gets merged into the master branch, it will be used in competition. When you go to code again, make sure you update the project before getting started to sync your local copy with the shared GitHub repository. In Android Studio, you can do this in *Git > Update Project*. When your code gets to the point where it needs documentation, ask a programmer to make a documentation page and Javadocs for your code, or try it yourself if you know what you're doing.

@@ -12,4 +12,6 @@ The isButtonDown function is a gamepad button check I created so that I can choo
 
 The double servo1power controls the speed of the servo and which direction it is moving in so you can change the value that is already in the forever loop if you want to change the speed
 
+*** The back key on the controller will automatically close the opmode ***
+
 indev

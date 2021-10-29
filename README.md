@@ -13,7 +13,7 @@ Welcome to the Hawks Robotics FTC documentation! This site includes everything y
         </div>
         <h1>Reference</h1>
     </a>
-    <a class="btn card" href="./javadocs">
+    <a class="btn card" href="./javadoc/index.html">
         <div class="material-icons-sharp card-img">
             dynamic_form
         </div>

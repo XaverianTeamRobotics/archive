@@ -1,0 +1,7 @@
+com.qualcomm.ftcrobotcontroller
+org.firstinspires.ftc.robotcontroller.external.samples
+org.firstinspires.ftc.robotcontroller.internal
+org.firstinspires.ftc.teamcode
+org.firstinspires.ftc.teamcode.opmodes.autonomous
+org.firstinspires.ftc.teamcode.opmodes.teleop
+org.firstinspires.ftc.teamcode.utils

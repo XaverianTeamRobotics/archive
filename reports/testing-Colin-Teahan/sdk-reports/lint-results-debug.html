@@ -177,7 +177,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 5 errors and 41 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sun Oct 31 13:32:05 UTC 2021      </nav>
+Check performed at Sun Oct 31 14:06:27 UTC 2021      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -248,7 +248,7 @@ Check performed at Sun Oct 31 13:32:05 UTC 2021      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#RelativeOverlap">RelativeOverlap</a>: Overlapping items in RelativeLayout</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (36)</a>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (37)</a>
 </td></tr></table>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
@@ -655,7 +655,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:25</span>: <span class="message">When using intent filters, please specify <code>android:exported</code> as well</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:25</span>: <span class="message">As of Android 12, <code>android:exported</code> must be set; use <code>true</code> to make the activity available to other apps, and <code>false</code> otherwise. For launcher activities, this should be set to <code>true</code>.</span><br /><pre class="errorlines">
 <span class="lineno"> 22 </span>      <span class="prefix">android:</span><span class="attribute">value</span>=<span class="value">"1"</span> />
 <span class="lineno"> 23 </span>
 <span class="lineno"> 24 </span>  <span class="comment">&lt;!-- The main robot controller activity --></span>
@@ -664,7 +664,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 27 </span>            <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
 <span class="lineno"> 28 </span>            <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
 
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:38</span>: <span class="message">When using intent filters, please specify <code>android:exported</code> as well</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:38</span>: <span class="message">As of Android 12, <code>android:exported</code> must be set; use <code>true</code> to make the activity available to other apps, and <code>false</code> otherwise.</span><br /><pre class="errorlines">
 <span class="lineno"> 35 </span>
 <span class="lineno"> 36 </span>    <span class="tag">&lt;/activity></span>
 <span class="lineno"> 37 </span>
@@ -675,7 +675,7 @@ Dismiss</button>            </div>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationIntentFilterExportedReceiver" style="display: none;">
-Apps targeting Android 12 and higher are required to specify an explicit value for <code>android:exported</code> when the corresponding component has an intent filter defined. Otherwise, installation will fail.<br/>
+Apps targeting Android 12 and higher are required to specify an explicit value for <code>android:exported</code> when the corresponding component has an intent filter defined. Otherwise, installation will fail. Set it to <code>true</code> to make this activity accessible to other apps, and <code>false</code> to limit it to be used only by this app or the OS. For launch activities, this should be set to true; otherwise, the app will fail to launch.<br/>
 <br/>
 Previously, <code>android:exported</code> for components without any intent filters present used to default to <code>false</code>, and when intent filters were present, the default was <code>true</code>. Defaults which change value based on other values are confusing and lead to apps accidentally exporting components as a side-effect of adding intent filters. This is a security risk, and we have made this change to avoid introducing accidental vulnerabilities.<br/>
 <br/>
@@ -1299,6 +1299,15 @@ On Windows, line endings are typically recorded as carriage return plus newline:
 <br/>
 This detector looks for invalid line endings with repeated carriage return characters (without newlines). Previous versions of the ADT plugin could accidentally introduce these into the file, and when editing the file, the editor could produce confusing visual artifacts.<br/><div class="moreinfo">More info: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421">https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421</a>
 </div>To suppress this error, use the issue id "MangledCRLF" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">MediaCapabilities<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+In Android 12 and higher, an app that opens media files should explicitly specify media formats that it doesn't support, so the OS can provide a transcoded file instead.<br/>To suppress this error, use the issue id "MediaCapabilities" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>

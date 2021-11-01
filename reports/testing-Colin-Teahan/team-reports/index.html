@@ -177,7 +177,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 2 errors and 32 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sun Oct 31 17:37:39 UTC 2021      </nav>
+Check performed at Mon Nov 01 12:46:11 UTC 2021      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -313,7 +313,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 31 </span>    implementation <span class="warning"><span class="string">"androidx.core:core-ktx:1.5.0"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
-</pre>
+<span class="lineno"> 34 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
@@ -351,24 +351,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:35</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-core:+)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:34</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-core:+)</span><br /><pre class="errorlines">
+<span class="lineno"> 31 </span>    implementation <span class="string">"androidx.core:core-ktx:1.5.0"</span>
 <span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
-<span class="lineno"> 34 </span>
-<span class="caretline"><span class="lineno"> 35 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 36 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span>
-<span class="lineno"> 37 </span>}
-<span class="lineno"> 38 </span>repositories {
+<span class="caretline"><span class="lineno"> 34 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 35 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span>
+<span class="lineno"> 36 </span>}
+<span class="lineno"> 37 </span>repositories {
 </pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:36</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-android:+)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:35</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-android:+)</span><br /><pre class="errorlines">
+<span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
-<span class="lineno"> 34 </span>
-<span class="lineno"> 35 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span>
-<span class="caretline"><span class="lineno"> 36 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 37 </span>}
-<span class="lineno"> 38 </span>repositories {
-<span class="lineno"> 39 </span>    mavenCentral()
+<span class="lineno"> 34 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span>
+<span class="caretline"><span class="lineno"> 35 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 36 </span>}
+<span class="lineno"> 37 </span>repositories {
+<span class="lineno"> 38 </span>    mavenCentral()
 </pre>
 
 </div>
@@ -442,16 +442,16 @@ Dismiss</button>            </div>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63<span class="warning">JD</span>1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"webcam"</span>>Webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "iGlT!" instead of "iGlT1" ?</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86<span class="warning">iGlT</span>1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"webcam"</span>>Webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
 
 <button class="mdl-button mdl-js-button mdl-button--primary" id="TyposDivLink" onclick="reveal('TyposDiv');" />+ 4 More Occurrences...</button>
 <div id="TyposDiv" style="display: none">
@@ -460,35 +460,35 @@ Dismiss</button>            </div>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0<span class="warning">prrE</span>1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"webcam"</span>>Webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:6</span>: <span class="message">Did you mean "ld!" instead of "ld1" ?</span><br /><pre class="errorlines">
 <span class="lineno">  3 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
 <span class="lineno">  4 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"webcam"</span>>Webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>
-<span class="caretline"><span class="lineno">  6 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>><span class="warning">ld</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  7 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
-<span class="lineno">  8 </span>
-<span class="lineno">  9 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CNTR_DRIVE_1"</span>>cd1<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>  <span class="comment">&lt;!----></span>
+<span class="caretline"><span class="lineno">  6 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>><span class="warning">ld</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  7 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
+<span class="lineno">  8 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CNTR_DRIVE_1"</span>>cd1<span class="tag">&lt;/string></span>
+<span class="lineno">  9 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_1"</span>>rd1<span class="tag">&lt;/string></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:9</span>: <span class="message">Did you mean "cd!" instead of "cd1" ?</span><br /><pre class="errorlines">
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
-<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
-<span class="lineno">  8 </span>
-<span class="caretline"><span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CNTR_DRIVE_1"</span>><span class="warning">cd</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 10 </span>
-<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_1"</span>>rd1<span class="tag">&lt;/string></span>
-<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:8</span>: <span class="message">Did you mean "cd!" instead of "cd1" ?</span><br /><pre class="errorlines">
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CNTR_DRIVE_1"</span>><span class="warning">cd</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_1"</span>>rd1<span class="tag">&lt;/string></span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HW_SPINNER"</span>>spin<span class="tag">&lt;/string></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:11</span>: <span class="message">Did you mean "rd!" instead of "rd1" ?</span><br /><pre class="errorlines">
-<span class="lineno">  8 </span>
-<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CNTR_DRIVE_1"</span>>cd1<span class="tag">&lt;/string></span>
-<span class="lineno"> 10 </span>
-<span class="caretline"><span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_1"</span>><span class="warning">rd</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span>
-<span class="lineno"> 13 </span>
-<span class="lineno"> 14 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HW_SPINNER"</span>>spin<span class="tag">&lt;/string></span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:9</span>: <span class="message">Did you mean "rd!" instead of "rd1" ?</span><br /><pre class="errorlines">
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CNTR_DRIVE_1"</span>>cd1<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_1"</span>><span class="warning">rd</span>1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HW_SPINNER"</span>>spin<span class="tag">&lt;/string></span>
+<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HW_LIFT"</span>>lift<span class="tag">&lt;/string></span></pre>
 
 </div>
 </div>
@@ -748,26 +748,26 @@ Dismiss</button>            </div>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"VUFORIA_KEY"</span></span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"webcam"</span>>Webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:4</span>: <span class="message">The resource <code>R.string.webcam</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"webcam"</span></span>>Webcam<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  5 </span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
-<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:9</span>: <span class="message">The resource <code>R.string.CNTR_DRIVE_1</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
-<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
-<span class="lineno">  8 </span>
-<span class="caretline"><span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"CNTR_DRIVE_1"</span></span>>cd1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 10 </span>
-<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_1"</span>>rd1<span class="tag">&lt;/string></span>
-<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:8</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_CNTR_DRIVE_1</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  5 </span>    <span class="comment">&lt;!----></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ld1<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>ld2<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_CNTR_DRIVE_1"</span></span>>cd1<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_1"</span>>rd1<span class="tag">&lt;/string></span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_2"</span>>rd2<span class="tag">&lt;/string></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HW_SPINNER"</span>>spin<span class="tag">&lt;/string></span></pre>
 
 <span class="location"><a href="../../src/main/res/xml/teamwebcamcalibrations.xml">../../src/main/res/xml/teamwebcamcalibrations.xml</a>:53</span>: <span class="message">The resource <code>R.xml.teamwebcamcalibrations</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  50 </span><span class="comment">  here as examples on how make your own.

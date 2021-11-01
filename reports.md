@@ -1,5 +1,5 @@
 # Build reports
-The build reports are automatically-generated during each CI build. The main part is the
+The build reports are automatically-generated during each CI build. The main part is the lint report.
 <div class="list">
     <a class="btn item" href="./reports/master/team-reports/">
         <div class="item-img">

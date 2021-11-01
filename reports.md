@@ -43,4 +43,10 @@ The build reports are automatically-generated during each CI build. The main par
         </div>
         <h1 class="item-text">testing-Joshua-Miller</h1>
     </a>
+    <a class="btn item" href="./reports/testing-Matthew-Lopez/team-reports/">
+        <div class="item-img">
+            {% octicon git-branch height:1.8rem fill:#197AF4 width:1.8rem %}
+        </div>
+        <h1 class="item-text">testing-Matthew-Lopez</h1>
+    </a>
 </div>

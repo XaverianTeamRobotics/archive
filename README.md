@@ -19,5 +19,6 @@ Welcome to the Hawks Robotics FTC documentation! This site includes everything y
         </div>
         <h1>Javadocs</h1>
     </a>
-    <h4>Internal: See the <a href="./reports">build reports</a>.</h4>
 </div>
+
+#### For developers: see the [build reports](./reports).

@@ -4,6 +4,11 @@ permalink: /reference/Michael-Lachut
 
 # Docs for Michael Lachut
 
+## Image Processing
+[Here](./Michael-Lachut/image-pain)
+
+## Old drivetrain stuff
+
 To get started, you can use the [TankRobot](./Michael-Lachut/TankRobot) class to quickly drive a tank-style robot,
 or you could use the [RobotWithSpinner](./Michael-Lachut/RobotWithSpinner) class if you have a basic 4WD robot with a spinner.
 

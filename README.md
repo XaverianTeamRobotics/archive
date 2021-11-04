@@ -14,7 +14,7 @@ Once you have an understanding of the core FTC mechanics under the hood, [check 
         </div>
         <h1>Game Manual 0</h1>
     </a>
-    <a class="btn card" href="./guide">
+    <a class="btn card" href="./guides">
         <div class="material-icons-sharp card-img">
             notes
         </div>

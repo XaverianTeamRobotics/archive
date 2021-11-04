@@ -1,14 +1,14 @@
 # Docs for Michael Lachut
 
 ## Image Processing
-[Here](./Michael-Lachut/image-pain)
+[Here](./image-pain)
 
 ## Old drivetrain stuff
 
-To get started, you can use the [TankRobot](./Michael-Lachut/TankRobot) class to quickly drive a tank-style robot,
-or you could use the [RobotWithSpinner](./Michael-Lachut/RobotWithSpinner) class if you have a basic 4WD robot with a spinner.
+To get started, you can use the [TankRobot](./TankRobot) class to quickly drive a tank-style robot,
+or you could use the [RobotWithSpinner](./RobotWithSpinner) class if you have a basic 4WD robot with a spinner.
 
-They both inherit from [GamepadExtended](./Michael-Lachut/backend/GamepadExtended) and should be enclosed in an external loop.
+They both inherit from [GamepadExtended](./backend/GamepadExtended) and should be enclosed in an external loop.
 
 The other classes shouldn't be used directly, but I will still provide docs for them.
 
@@ -17,13 +17,13 @@ The other classes shouldn't be used directly, but I will still provide docs for 
 
 # Main APIs
 
-  * [TankRobot](./Michael-Lachut/TankRobot)
-  * [RobotWithSpinner](./Michael-Lachut/RobotWithSpinner)
+  * [TankRobot](./TankRobot)
+  * [RobotWithSpinner](./RobotWithSpinner)
 
 # Advanced Backends
   
-  * [ButtonPriority](./Michael-Lachut/backend/ButtonPriority)
-  * [GamepadExtended](./Michael-Lachut/backend/GamepadExtended)
-  * [Drivetrain](./Michael-Lachut/backend/Drivetrain)
+  * [ButtonPriority](./backend/ButtonPriority)
+  * [GamepadExtended](./backend/GamepadExtended)
+  * [Drivetrain](./backend/Drivetrain)
 
 This stuff should **only** be used directly if you are modifying existing code

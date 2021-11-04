@@ -2,7 +2,7 @@ theme: "jekyll-theme-cayman"
 title: "Hawks Robotics Documentation"
 description: "Onboarding guides, tutorials, references, and Javadocs for our repository."
 include:
-  - "_references"
+  - "_guides"
   - "_references/Michael-Lachut"
   - "_references/Michael-Lachut/backend"
 plugins:

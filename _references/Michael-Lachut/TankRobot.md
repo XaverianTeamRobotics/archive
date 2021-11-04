@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut/TankRobot
+permalink: /guide/Michael-Lachut/TankRobot
 ---
 
 # TankRobot

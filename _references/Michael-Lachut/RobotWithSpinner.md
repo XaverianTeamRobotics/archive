@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut/RobotWithSpinner
+permalink: /guide/Michael-Lachut/RobotWithSpinner
 ---
 
 # RobotWithSpinner

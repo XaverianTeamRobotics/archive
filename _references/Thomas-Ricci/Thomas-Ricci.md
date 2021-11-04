@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Thomas-Ricci
+permalink: /guide/Thomas-Ricci
 ---
 
 # Docs for Thomas Ricci

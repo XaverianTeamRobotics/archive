@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut
+permalink: /guide/Michael-Lachut
 ---
 
 # Docs for Michael Lachut

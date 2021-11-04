@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut/image-pain
+permalink: /guide/Michael-Lachut/image-pain
 ---
 
 So, you would like to process images?

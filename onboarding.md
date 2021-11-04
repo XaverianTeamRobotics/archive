@@ -49,7 +49,7 @@ You're now in Android Studio with a working development environment! The next st
 ### Coding
 In Android Studio, you can find the directory you're working on in the Project tab on the left, and the file you're working on in the middle. This isn't a guide on how to use Android Studio nor is it a guide on how to use Java, so we'll only go over the basics to open a file and edit it. 
 
-In the Project tab, find the TeamCode folder and open it to find our code. From there just use references on this site, the Javadocs, and the examples found in the FtcRobotController folder to learn how to code. Android Studio saves everything for you automatically, so you don't need to worry about that. It does not commit code for you, however, so you'll have to do that yourself. Dont worry though, we'll go over that later on in the guide.
+In the Project tab, find the TeamCode folder and open it to find our code. From there just use guides on this site, the Javadocs, and the examples found in the FtcRobotController folder to learn how to code. Android Studio saves everything for you automatically, so you don't need to worry about that. It does not commit code for you, however, so you'll have to do that yourself. Dont worry though, we'll go over that later on in the guide.
 
 ### Testing
 To test your code, you need to upload it to a robot. Plug a USB-C cable into a robot and, once the robot is connected to your computer, run the Teamcode run configuration at the top middle of the editor. This will build and install the code onto the robot. 

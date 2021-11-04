@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut/backend/GamepadExtended
+permalink: /guide/Michael-Lachut/backend/GamepadExtended
 ---
 
 # GamepadExtended

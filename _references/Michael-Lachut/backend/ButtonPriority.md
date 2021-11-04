@@ -1,5 +1,5 @@
 ---
-permalink: /reference/Michael-Lachut/backend/ButtonPriority
+permalink: /guide/Michael-Lachut/backend/ButtonPriority
 ---
 
 # ButtonPriority

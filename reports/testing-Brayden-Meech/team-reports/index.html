@@ -174,10 +174,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 2 errors and 32 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 2 errors and 31 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Nov 01 19:35:05 UTC 2021      </nav>
+Check performed at Thu Nov 04 23:53:17 UTC 2021      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -185,7 +185,7 @@ Check performed at Mon Nov 01 19:35:05 UTC 2021      </nav>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#MissingClass"><i class="material-icons error-icon">error</i>Missing registered class (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (2)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (1)</a>
       <a class="mdl-navigation__link" href="#GradleDynamicVersion"><i class="material-icons warning-icon">warning</i>Gradle Dynamic Version (2)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (9)</a>
       <a class="mdl-navigation__link" href="#ExtraTranslation"><i class="material-icons error-icon">error</i>Extra translation (1)</a>
@@ -209,7 +209,7 @@ Check performed at Mon Nov 01 19:35:05 UTC 2021      </nav>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
 <a href="#MissingClass">MissingClass</a>: Missing registered class</td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -297,18 +297,9 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:29</span>: <span class="message">A newer version of androidx.constraintlayout:constraintlayout than 2.0.4 is available: 2.1.1</span><br /><pre class="errorlines">
-<span class="lineno"> 26 </span>dependencies {
-<span class="lineno"> 27 </span>    implementation project(<span class="string">':FtcRobotController'</span>)
-<span class="lineno"> 28 </span>    annotationProcessor files(<span class="string">'lib/OpModeAnnotationProcessor.jar'</span>)
-<span class="caretline"><span class="lineno"> 29 </span>    implementation <span class="warning"><span class="string">'androidx.constraintlayout:constraintlayout:2.0.4'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 30 </span>    implementation <span class="string">'org.tensorflow:tensorflow-lite-task-vision:0.2.0'</span>
-<span class="lineno"> 31 </span>    implementation <span class="string">"androidx.core:core-ktx:1.5.0"</span>
-<span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span></pre>
-
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:31</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.7.0</span><br /><pre class="errorlines">
 <span class="lineno"> 28 </span>    annotationProcessor files(<span class="string">'lib/OpModeAnnotationProcessor.jar'</span>)
-<span class="lineno"> 29 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.0.4'</span>
+<span class="lineno"> 29 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.1'</span>
 <span class="lineno"> 30 </span>    implementation <span class="string">'org.tensorflow:tensorflow-lite-task-vision:0.2.0'</span>
 <span class="caretline"><span class="lineno"> 31 </span>    implementation <span class="warning"><span class="string">"androidx.core:core-ktx:1.5.0"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span>

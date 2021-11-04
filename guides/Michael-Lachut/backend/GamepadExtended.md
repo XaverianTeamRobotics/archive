@@ -1,7 +1,3 @@
----
-permalink: /guide/Michael-Lachut/backend/GamepadExtended
----
-
 # GamepadExtended
 
 ## About

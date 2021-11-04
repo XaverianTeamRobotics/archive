@@ -1,7 +1,3 @@
----
-permalink: /guide/Michael-Lachut
----
-
 # Docs for Michael Lachut
 
 ## Image Processing

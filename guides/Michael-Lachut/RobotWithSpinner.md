@@ -1,7 +1,3 @@
----
-permalink: /guide/Michael-Lachut/RobotWithSpinner
----
-
 # RobotWithSpinner
 
 ## About

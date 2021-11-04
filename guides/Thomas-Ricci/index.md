@@ -1,7 +1,3 @@
----
-permalink: /guide/Thomas-Ricci
----
-
 # Docs for Thomas Ricci
 
 > Note:

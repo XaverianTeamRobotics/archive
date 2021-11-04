@@ -1,7 +1,3 @@
----
-permalink: /guide/Michael-Lachut/image-pain
----
-
 So, you would like to process images?
 You don't want to, but I will make the docs anyway.
 All the hard work has already been done.

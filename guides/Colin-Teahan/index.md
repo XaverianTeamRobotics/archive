@@ -1,7 +1,3 @@
----
-permalink: /guide/Colin-Teahan
----
-
 # Docs for Colin Teahan
 
 The forever loop is the function called as long as the robot is running the teleOp

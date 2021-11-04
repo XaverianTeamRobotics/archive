@@ -1,5 +1,5 @@
 # Guides
-Guides are documentation pages for each documented branch.
+Guides are documentation pages written by team members.
 <div class="list">
     <a class="btn item" href="./guides/Thomas-Ricci">
         <div class="item-img">

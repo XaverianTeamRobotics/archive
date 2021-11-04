@@ -1,7 +1,7 @@
 # Welcome!
 This contains the documentation of the source code that is used to build an Android app to control a *FIRST* Tech Challenge competition robot for Hawks Robotics: The Ryken Force.
 
-## Getting Started
+# Getting Started
 If you are new to robotics or new to the *FIRST* Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial) to get familiar with how to use the control system. You can also move to the [OnBot Java Tool](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/OnBot-Java-Tutorial) from there to get some more experience before coding for production, but it's not as necessary.
 
 Once you have an understanding of the core FTC mechanics under the hood, [check out our onboarding guide](https://xaverianteamrobotics.github.io/FtcRobotController/onboarding). It has everything you need to learn how to write competition-ready code for the team.

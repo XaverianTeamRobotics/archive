@@ -1,6 +1,8 @@
----
-permalink: /guide/Thomas-Ricci
----
+[comment]: <> (---)
+
+[comment]: <> (permalink: /guide/Thomas-Ricci)
+
+[comment]: <> (---)
 
 # Docs for Thomas Ricci
 

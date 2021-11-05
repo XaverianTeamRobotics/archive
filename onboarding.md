@@ -44,9 +44,97 @@ Once everything loads in, sync your Gradle environment. First, go to *File > Pro
 You're now in Android Studio with a working development environment! The next steps go over how to actually write code.
 
 ### Coding
-In Android Studio, you can find the directory you're working on in the Project tab on the left, and the file you're working on in the middle. This isn't a guide on how to use Android Studio nor is it a guide on how to use Java, so we'll only go over the basics to open a file and edit it. 
+In Android Studio, you can find the directory you're working on in the Project tab on the left, and the file you're working on in the middle. 
 
-In the Project tab, find the TeamCode folder and open it to find our code. From there just use guides on this site, the Javadocs, and the examples found in the FtcRobotController folder to learn how to code. Android Studio saves everything for you automatically, so you don't need to worry about that. It does not commit code for you, however, so you'll have to do that yourself. Dont worry though, we'll go over that later on in the guide.
+In the Project tab, find the TeamCode folder and open it to find our code. Nativate to *org.firstinspires.ftc.teamcode.competition.opmodes.templates.linear* and open LinearTeleOpTemplate.java. Right click and click Copy to copy this file, or class. Now navigate to *org.firstinspires.ftc.teamcode.competition.opmodes.teleop* and paste the class inside the directory, renaming it to whatever you want. Now, double click to open the class and edit it.
+
+Now we're going to finally start writing our first program, or OpMode. First of all, change:
+```java
+@TeleOp(name="LinearAutonomousTemplate", group="linear")
+```
+To:
+```java
+@TeleOp(name="TutorialYourName", group="tutorial")
+```
+Next, we're going to write the logic to control a tank drivetrain, but first, we should understand how this works. 
+
+Basically, we have four motors on the physical robot. With code, these motors are considered `DcMotor`s. We then have a `Motor` which controls a `DcMotor`, controlling the physical motors themselves. Now, instead of having to control four `Motor`s, to move the tank's treads, we have a `Tank`, which controls the four `Motor`s needed.
+
+Since we're going to be using a physical controller to drive this `Tank`, we're going to use a `TankTeleOpManager` which uses a `Gamepad` to drive a `Tank`. But, before we can manage a `Tank`, we need to tell the `TankTeleOpManager` what it can and cannot do. If the `TankTeleOpManager` tries to control a `Motor` that doesn't exist, for example, the OpMode will crash. So, we need to use a `TeleOpHWDevices` to define which devices the `TankTeleOpManager` can control.
+
+> Note:
+> The existence of a drivetrain is a given with a `TankTeleOpManager`, meaning the rules in `TeleOpHWDevices` only apply to peripherals like a spinner, elevator, etc. Thus, we don't really need to worry much about this but still need it.
+
+We also need to tell the `TankTeleOpManager` which controllers can control which parts of the robot, as multiple controllers can control a robot at once. We're going to use two `GamepadFunctions` for each controller, or `Gampad`. A `GamepadFunctions` defines the functions of a `Gamepad`. For example, if a `GamepadFunctions` says a `Gamepad` is allowed to use function 1, then any `Motor`s inside the `TankTeleOpManager` which are controlled by the `TankTeleOpManager`'s first function can only be controlled by a `Gamepad` allowed to control function 1. This way, we can determine which `Gamepad` can control which part of the robot, so multiple people can't try to control the same part of the robot at once.
+
+Now it's time to code. While that may seem complex, we only actually need to write a few lines. First, find:
+```java
+    @Override
+    public void runOpMode() throws InterruptedException {
+        waitForStart();
+        resetStartTime();
+    }
+```
+Above `waitForStart();`, initalize two `GamepadFunctions` for each `Gamepad`:
+```java
+GamepadFunctions gamepad1Functions = new GamepadFunctions(gamepad1, true, false, false, false, false, false);
+GamepadFunctions gamepad2Functions = new GamepadFunctions(gamepad2, false, false, false, false, false, false);
+```
+This will configure the rules for both `Gamepad`s, setting only function 1 of `Gamepad` 1 to be enabled and all other functions to be disabled. All we need to control a `Tank` with a `Gamepad` is one function, so that's all we need to enable.
+
+Next, we need to initalize a `TeleOpHWDevices` to define the peripheral devices the `TankTeleOpManager` is allowed to manage, which in our case is none:
+```java
+TeleOpHWDevices devices = new TeleOpHWDevices(false, false, false, false, false, false);
+```
+Now, we need to initalize a new `TankTeleOpManager`:
+```java
+TankTeleOpManager manager = new TankTeleOpManager(telemetry, hardwareMap, gamepad1, gamepad2, gamepad1Functions, gamepad2Functions, devices);
+```
+Finally we have all our objects created and our robot ready to go. Move down below `resetStartTime();` and add this:
+```java
+while(opModeIsActive()) {
+    manager.main();
+}
+```
+While the OpMode is active, this will call the `TankTeleOpManager`'s `main()` method which will take in the current status of the `Gamepad` and translate it to voltage to send to each `Motor`. This will stop when the OpMode has been requested to stop, crashes, or the time runs out.
+
+Lastly, we need to add the final line under the while loop:
+```java
+manager.stop();
+```
+This will stop the `TankTeleOpManager` and reset the `Motor`s it controls to their default state.
+
+The entire class should look like this:
+```java
+package org.firstinspires.ftc.teamcode.competition.opmodes.teleop;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.teamcode.competition.utils.teleop.GamepadFunctions;
+import org.firstinspires.ftc.teamcode.competition.utils.teleop.TankTeleOpManager;
+import org.firstinspires.ftc.teamcode.competition.utils.teleop.TeleOpHWDevices;
+
+@TeleOp(name="TutorialYourName", group="tutorial")
+public class NameYouChose extends LinearOpMode {
+
+    @Override
+    public void runOpMode() throws InterruptedException {
+        GamepadFunctions gamepad1Functions = new GamepadFunctions(gamepad1, true, false, false, false, false, false);
+        GamepadFunctions gamepad2Functions = new GamepadFunctions(gamepad2, false, false, false, false, false, false);
+        TeleOpHWDevices devices = new TeleOpHWDevices(false, false, false, false, false, false);
+        TankTeleOpManager manager = new TankTeleOpManager(telemetry, hardwareMap, gamepad1, gamepad2, gamepad1Functions, gamepad2Functions, devices);
+        waitForStart();
+        resetStartTime();
+        while(opModeIsActive()) {
+            manager.main();
+        }
+        manager.stop();
+    }
+
+}
+```
+Congratulations, you've written your first OpMode! Android Studio saves everything for you automatically, so you don't need to worry about that. It does not commit (keep track of the code's version) code for you, however, so you'll have to do that yourself. Dont worry though, we'll go over that later on in the guide. The next step is testing your OpMode on the robot to make sure it works properly.
 
 ### Testing
 To test your code, you need to upload it to a robot. Plug a USB-C cable into a robot and, once the robot is connected to your computer, run the Teamcode run configuration at the top middle of the editor. This will build and install the code onto the robot. 

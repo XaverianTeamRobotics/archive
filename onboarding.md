@@ -137,16 +137,30 @@ public class NameYouChose extends LinearOpMode {
 Congratulations, you've written your first OpMode! Android Studio saves everything for you automatically, so you don't need to worry about that. It does not commit (keep track of the code's version) code for you, however, so you'll have to do that yourself. Dont worry though, we'll go over that later on in the guide. The next step is testing your OpMode on the robot to make sure it works properly.
 
 ### Testing
-To test your code, you need to upload it to a robot. Plug a USB-C cable into a robot and, once the robot is connected to your computer, run the Teamcode run configuration at the top middle of the editor. This will build and install the code onto the robot. 
+To test your code, you need to upload it to a robot. First of all, plug a USB-C cable into a robot's Controller Hub and your computer. 
 
-Once the code is on the robot and it's ready to run, run it the same way you would any other OpMode.
+Once the robot is connected to your computer, focus on the top of Android Studio's window. You should see a button labeled "TEAMCODE" and another button beside it labeled "NO DEVICE" or "DEVICE" or something along the lines of "CONTROLLER HUB". If it says "NO DEVICE" or "DEVICE", wait for it to be similar to "CONTROLLER HUB". Once that happens, click the triangle "Run" button to the right. This will build and install your code onto the robot.
+
+> Note:
+> This will remove the current code on the robot. Make sure it's okay to overwrite the robot's current code before you do this!
+
+Once the code is on the robot and it's ready to run, run it the same way you would any other OpMode. This isn't a detailed guide on how to run an OpMode, but you should do the following:
+* Either make sure the current configuration is correct, or make a new configuration naming the motors by "rd1, rd2, ld1, ld2".
+* Plug in a controller and turn it on.
+* Choose the TeleOp OpMode named `TutorialYourName`.
+* Run and start the OpMode. I would recommend waiting a few seconds before starting just in case.
+
+Now, you can drive the robot! If you move the left and right joysticks, it should drive. Since this is a tank, the left stick controls the left motors, while the right stick controls the right.
 
 ### Publishing
-Once you have code you want to share with the rest of the team, you need to **commit** and **push** the code. Before doing this, make sure you're on the correct branch. You can find this at the bottom right, in the same place as you found the master branch while setting up Android Studio. If you're not on your branch, checkout to the correct one.
+Once you have code you want to share with the rest of the team, you need to **commit** and **push** the code. Before doing this, make sure you're on the correct branch. You can find this at the bottom right of Android Studio, in the same place as you found the "master" button while setting up Android Studio. If you're not on your branch, checkout to the correct one the same way you checked out to your branch from master.
 
-Once you're ready to commit, go to the Commit tab on the left of the screen. Select the files you want to commit from the default changelist and write a commit message, then click commit.
+Once you're ready to commit, go to the Commit tab on the left of the screen. Select the files you want to commit (the entire default changelist, and only the default changelist) and write a commit message, then click commit.
 
-To push, open GitHub desktop. Inside GitHub desktop, assuming it isn't already tracking your local copy of the repository, import the folder containing the project you were working on in Android Studio. Then you can click Push to push your changes to the public repository.
+> Note:
+> If Android Studio tells you there are warnings, TODOS, erorrs, or something else, ignore it. It doesn't matter in this case.
+
+To push, open GitHub desktop. You should load right back into your project's repository. At the top, you should see a button called "Push" or "Fetch". If it's "Fetch", click it and follow the dialogs to merge your changes with origin, if they exist. Once it's "Push", simply click it. Your code will be uploaded, or pushed, to your branch for the whole team to access!
 
 ### Final Notes
 Congratulations, you've made your first contribution to the codebase! Assuming your code gets merged into the master branch, it will be used in competition. When you go to code again, make sure you update the project before getting started to sync your local copy with the shared GitHub repository. In Android Studio, you can do this in *Git > Update Project*. When your code gets to the point where it needs documentation, ask a programmer to make a documentation page and Javadocs for your code, or try it yourself if you know what you're doing.

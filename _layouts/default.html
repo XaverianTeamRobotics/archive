@@ -22,11 +22,8 @@
           <h1 class="project-name">Hawks Robotics Documentation</h1>
           <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
           {% if site.github.is_project_page %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-main">View on GitHub</a>
-          {% endif %}
-          {% if site.show_downloads %}
-          <a href="{{ site.github.zip_url }}" class="btn btn-main">Download .zip</a>
-          <a href="{{ site.github.tar_url }}" class="btn btn-main">Download .tar.gz</a>
+          <a href="{{ site.github.repository_url }}" class="btn btn-main gh-btn">View on GitHub</a>
+          <a href="{{ site.github.repository_url }}" class="btn btn-main home-btn">Go Home</a>
           {% endif %}
       </div>
     </header>
@@ -35,11 +32,18 @@
       {{ content }}
 
       <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">Hawks Robotics: The Ryken Force</a> is an FTC team managed by <a href="https://xbhs.com">Xaverian Brothers High School</a>.</span>
-        {% endif %}
+        <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">Hawks Robotics: The Ryken Force</a> is an FTC team managed by <a href="https://xbhs.com">Xaverian Brothers High School</a>.</span>
         <span class="site-footer-credits">This site was built by <a href="https://thomasricci.dev">Thomas Ricci</a> and <a href="https://github.com/michaell4438">Michael Lachut</a>.</span>
       </footer>
     </main>
+    <script>
+      let loc = document.location.pathname;
+      if(loc.endsWith("/")) {
+        loc = loc.substring(0, loc.length - 1);
+      }
+      if(document.location.pathname !== "/FtcRobotController") {
+        
+      }
+    </script>
   </body>
 </html>

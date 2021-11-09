@@ -23,6 +23,8 @@
 
 .btn-main {
   font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-color: #fff !important;
+  border-width: 1px !important;
 }
 
 .btn-home {
@@ -140,7 +142,7 @@ a.btn::before {
 
 .btn-home:focus, .btn-home:active, .btn-home:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(25,122,244,1.0) !important;
+  color: #FFF !important;
   box-shadow: none !important;
 }
 

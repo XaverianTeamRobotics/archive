@@ -23,7 +23,7 @@
           <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
           {% if site.github.is_project_page %}
           <a href="{{ site.github.repository_url }}" class="btn btn-main gh-btn">View on GitHub</a>
-          <a href="{{ site.github.repository_url }}" class="btn btn-main btn-home">Go Home</a>
+          <a href="https://xaverianteamrobotics.github.io/FtcRobotController/" class="btn btn-main btn-home" style="display: none;" id="homeButton">Go Home</a>
           {% endif %}
       </div>
     </header>
@@ -42,7 +42,7 @@
         loc = loc.substring(0, loc.length - 1);
       }
       if(document.location.pathname !== "/FtcRobotController") {
-        
+        document.getElementById("homeButton").style["display"] = "inline-block";
       }
     </script>
   </body>

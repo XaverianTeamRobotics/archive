@@ -26,11 +26,11 @@
 }
 
 .btn-home {
-    background-color: rgba(255, 255, 255, 0.0);
-    color: #fff;
-    border-color: #fff;
-    border-width: 1px;
-    transition: background-color 0.2s;
+    background-color: rgba(255, 255, 255, 0.0) !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    border-width: 1px !important;
+    transition: background-color 0.2s !important;
 }
 
 .list {
@@ -139,8 +139,9 @@ a.btn::before {
 }
 
 .btn-home:focus, .btn-home:active, .btn-home:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(25,122,244,1.0);
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(25,122,244,1.0) !important;
+  box-shadow: none !important;
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {

@@ -25,6 +25,14 @@
   font-family: "Poppins", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.btn-home {
+    background-color: rgba(255, 255, 255, 0.0);
+    color: #fff;
+    border-color: #fff;
+    border-width: 1px;
+    transition: background-color 0.2s;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -128,6 +136,11 @@ a.btn::before {
   background-color: #FFF;
   color: rgba(25,122,244,1.0);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-home:focus, .btn-home:active, .btn-home:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(25,122,244,1.0);
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {

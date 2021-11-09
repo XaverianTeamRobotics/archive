@@ -41,7 +41,7 @@
       if(loc.endsWith("/")) {
         loc = loc.substring(0, loc.length - 1);
       }
-      if(document.location.pathname !== "/FtcRobotController") {
+      if(loc !== "/FtcRobotController") {
         document.getElementById("homeButton").style["display"] = "inline-block";
       }
     </script>

@@ -3,8 +3,13 @@
 > Note:
 > This only contains code by me.
 
+### Contents
+* Motor API
+* Tank Drivetrain
+* Servo API
+
 ### Motor API
-The motor API is a simpler way to interact with motors than the default one FTC provides. The reason there is only a motor API and no servo API, or sensor API, etc. is because motors are much more complicated than other hardware and often need to be used for simple tasks and by beginners.
+The motor API is a simpler way to interact with motors than the default one FTC provides.
 #### Using the motor API
 To use the motor API, make a new simple `Motor`:
 ```java
@@ -56,3 +61,22 @@ Then you can control the `Tank` just as you would a single `Motor`. Obviously if
 > Note:
 > `Tank`s include shorthand methods to drive both sides of the tank at once rather than independently. This means every method will have two sets of arguments, one for moving all four `Motor`s with the same parameters and one for moving two sets of `Motor`s with different parameters.
 > For example, you can use `Tank#driveWithEncoder` with the arguments `(speedOfRightSide, speedOfLeftSide)` to drive each side at a different speed or `(speedOfAllSides)` to drive both sides at the same speed.
+
+### Servo API
+The servo API is an object-oriented way to interact with servos. The servo API (currently) does not support continous servos, only standard ones.
+### Using the servo API
+To use the servo API, make a new `StandardServo`:
+```java
+StandardServo servo = new StandardServo(opModeHardwareMap, nameOfServo);
+```
+Once you've made a `StandardServo`, you can set its position:
+```java
+servo.setPosition(position);
+```
+> Note:
+> The position must be between -100 and 100!
+And change its direction:
+```java
+servo.setDirection(Servo.Direction.DirectionOfServo);
+```
+There also exists getters for its `ServoController`, specified position, etc.

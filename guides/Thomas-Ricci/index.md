@@ -75,6 +75,7 @@ servo.setPosition(position);
 ```
 > Note:
 > The position must be between -100 and 100!
+
 And change its direction:
 ```java
 servo.setDirection(Servo.Direction.DirectionOfServo);

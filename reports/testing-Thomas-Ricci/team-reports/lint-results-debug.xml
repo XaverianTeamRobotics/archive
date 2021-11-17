@@ -22,7 +22,7 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of androidx.constraintlayout:constraintlayout than 2.0.4 is available: 2.1.1"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.0.4 is available: 2.1.2"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"

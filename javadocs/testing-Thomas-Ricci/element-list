@@ -2,6 +2,7 @@ com.qualcomm.ftcrobotcontroller
 org.firstinspires.ftc.robotcontroller.external.samples
 org.firstinspires.ftc.robotcontroller.internal
 org.firstinspires.ftc.teamcode
+org.firstinspires.ftc.teamcode.competition.opmodes
 org.firstinspires.ftc.teamcode.competition.opmodes.templates
 org.firstinspires.ftc.teamcode.competition.utils.gamepads
 org.firstinspires.ftc.teamcode.competition.utils.interactions

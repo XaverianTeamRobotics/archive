@@ -38,7 +38,7 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of org.tensorflow:tensorflow-lite-task-vision than 0.2.0 is available: 0.3.0"
+        message="A newer version of org.tensorflow:tensorflow-lite-task-vision than 0.2.0 is available: 0.3.1"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"
@@ -193,22 +193,6 @@
             file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
             line="3"
             column="161"/>
-    </issue>
-
-    <issue
-        id="Typos"
-        severity="Warning"
-        message="Did you mean &quot;il!&quot; instead of &quot;il1&quot; ?"
-        category="Correctness:Messages"
-        priority="7"
-        summary="Spelling error"
-        explanation="This check looks through the string definitions, and if it finds any words that look like likely misspellings, they are flagged."
-        errorLine1="    &lt;string name=&quot;HARDWARE_INTAKE_SERVO_LOWER_ONE&quot;>il1S&lt;/string>"
-        errorLine2="                                                   ^">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
-            line="18"
-            column="52"/>
     </issue>
 
     <issue
@@ -484,13 +468,13 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.string.CV_WEBCAM_ONE` appears to be unused"
+        message="The resource `R.string.WEBCAM` appears to be unused"
         category="Performance"
         priority="3"
         summary="Unused resources"
         explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
-        errorLine1="    &lt;string name=&quot;CV_WEBCAM_ONE&quot;>c1V&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="    &lt;string name=&quot;WEBCAM&quot;>webcam&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~">
         <location
             file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
             line="4"
@@ -500,48 +484,16 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.string.CV_WEBCAM_TWO` appears to be unused"
+        message="The resource `R.string.DRIVETRAIN_CENTER_DRIVING_MOTOR` appears to be unused"
         category="Performance"
         priority="3"
         summary="Unused resources"
         explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
-        errorLine1="    &lt;string name=&quot;CV_WEBCAM_TWO&quot;>c2V&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="    &lt;string name=&quot;DRIVETRAIN_CENTER_DRIVING_MOTOR&quot;>cdM&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
-            line="5"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.string.CV_WEBCAM_THREE` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
-        errorLine1="    &lt;string name=&quot;CV_WEBCAM_THREE&quot;>c3V&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
-            line="6"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.string.DRIVETRAIN_CENTER_DRIVE_1` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
-        errorLine1="    &lt;string name=&quot;DRIVETRAIN_CENTER_DRIVE_1&quot;>cdM&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
-            line="10"
+            line="23"
             column="13"/>
     </issue>
 

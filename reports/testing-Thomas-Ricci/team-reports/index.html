@@ -174,10 +174,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 2 errors and 33 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 2 errors and 30 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Nov 22 13:16:59 UTC 2021      </nav>
+Check performed at Fri Dec 10 16:01:20 UTC 2021      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,10 +187,10 @@ Check performed at Mon Nov 22 13:16:59 UTC 2021      </nav>
       <a class="mdl-navigation__link" href="#MissingClass"><i class="material-icons error-icon">error</i>Missing registered class (1)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
       <a class="mdl-navigation__link" href="#GradleDynamicVersion"><i class="material-icons warning-icon">warning</i>Gradle Dynamic Version (2)</a>
-      <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (7)</a>
+      <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (6)</a>
       <a class="mdl-navigation__link" href="#ExtraTranslation"><i class="material-icons error-icon">error</i>Extra translation (1)</a>
       <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (20)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (18)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -217,7 +217,7 @@ Check performed at Mon Nov 22 13:16:59 UTC 2021      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
 </td></tr>
 <tr>
-<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#Typos">Typos</a>: Spelling error</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
@@ -230,7 +230,7 @@ Check performed at Mon Nov 22 13:16:59 UTC 2021      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">20</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (37)</a>
 </td></tr></table>
@@ -306,7 +306,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 31 </span>    implementation <span class="string">"androidx.core:core-ktx:1.5.0"</span>
 <span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:30</span>: <span class="message">A newer version of org.tensorflow:tensorflow-lite-task-vision than 0.2.0 is available: 0.3.0</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:30</span>: <span class="message">A newer version of org.tensorflow:tensorflow-lite-task-vision than 0.2.0 is available: 0.3.1</span><br /><pre class="errorlines">
 <span class="lineno"> 27 </span>    implementation project(<span class="string">':FtcRobotController'</span>)
 <span class="lineno"> 28 </span>    annotationProcessor files(<span class="string">'lib/OpModeAnnotationProcessor.jar'</span>)
 <span class="lineno"> 29 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.0.4'</span>
@@ -450,34 +450,28 @@ Dismiss</button>            </div>
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63<span class="warning">JD</span>1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!--
+</span><span class="lineno">  6 </span><span class="comment">        NAMING CONVENTION:
+</span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "iGlT!" instead of "iGlT1" ?</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86<span class="warning">iGlT</span>1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!--
+</span><span class="lineno">  6 </span><span class="comment">        NAMING CONVENTION:
+</span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "prrE!" instead of "prrE1" ?</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0<span class="warning">prrE</span>1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span></pre>
-
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:18</span>: <span class="message">Did you mean "il!" instead of "il1" ?</span><br /><pre class="errorlines">
-<span class="lineno"> 15 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_LIFT_TWO"</span>>l2M<span class="tag">&lt;/string></span>
-<span class="lineno"> 16 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span>
-<span class="lineno"> 17 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_DUCK_MOTOR"</span>>duM<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_INTAKE_SERVO_LOWER_ONE"</span>><span class="warning">il</span>1S<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 19 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_INTAKE_SERVO_LOWER_TWO"</span>>il2S<span class="tag">&lt;/string></span>
-<span class="lineno"> 20 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_INTAKE_SERVO_UPPER"</span>>iuS<span class="tag">&lt;/string></span>
-<span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_HAND_TURNER_SERVO"</span>>htS<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!--
+</span><span class="lineno">  6 </span><span class="comment">        NAMING CONVENTION:
+</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationTypos" style="display: none;">
@@ -667,7 +661,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 14 </span>    <span class="tag">&lt;dimen</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"inner_frame_layout_padding"</span></span>>5dp<span class="tag">&lt;/dimen></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 15 </span><span class="tag">&lt;/resources></span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 15 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 13 More Occurrences...</button>
 <div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/integers.xml">../../src/main/res/values/integers.xml</a>:3</span>: <span class="message">The resource <code>R.integer.leftDriveID</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
@@ -735,45 +729,29 @@ Dismiss</button>            </div>
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"VUFORIA_KEY"</span></span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span></pre>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!--
+</span><span class="lineno">  6 </span><span class="comment">        NAMING CONVENTION:
+</span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:4</span>: <span class="message">The resource <code>R.string.CV_WEBCAM_ONE</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:4</span>: <span class="message">The resource <code>R.string.WEBCAM</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"CV_WEBCAM_ONE"</span></span>>c1V<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span>
-<span class="lineno">  7 </span>    <span class="comment">&lt;!----></span></pre>
+<span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"WEBCAM"</span></span>>webcam<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  5 </span>    <span class="comment">&lt;!--
+</span><span class="lineno">  6 </span><span class="comment">        NAMING CONVENTION:
+</span><span class="lineno">  7 </span><span class="comment">        String names are standardized as found in the Location abstract class. For the OTHER_INFORMATION section, follow this guide:
+</span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:5</span>: <span class="message">The resource <code>R.string.CV_WEBCAM_TWO</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  2 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="lineno">  3 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
-<span class="lineno">  4 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  5 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"CV_WEBCAM_TWO"</span></span>>c2V<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  6 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_THREE"</span>>c3V<span class="tag">&lt;/string></span>
-<span class="lineno">  7 </span>  <span class="comment">&lt;!----></span>
-<span class="lineno">  8 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ltM<span class="tag">&lt;/string></span></pre>
-
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:6</span>: <span class="message">The resource <code>R.string.CV_WEBCAM_THREE</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  3 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
-<span class="lineno">  4 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_ONE"</span>>c1V<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"CV_WEBCAM_TWO"</span>>c2V<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  6 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"CV_WEBCAM_THREE"</span></span>>c3V<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  7 </span>  <span class="comment">&lt;!----></span>
-<span class="lineno">  8 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ltM<span class="tag">&lt;/string></span>
-<span class="lineno">  9 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>lbM<span class="tag">&lt;/string></span></pre>
-
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:10</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_CENTER_DRIVE_1</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  7 </span>    <span class="comment">&lt;!----></span>
-<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_1"</span>>ltM<span class="tag">&lt;/string></span>
-<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_DRIVE_2"</span>>lbM<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVE_1"</span></span>>cdM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_1"</span>>rtM<span class="tag">&lt;/string></span>
-<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_DRIVE_2"</span>>rbM<span class="tag">&lt;/string></span>
-<span class="lineno"> 13 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HARDWARE_INTAKE"</span>>iM<span class="tag">&lt;/string></span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:23</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_CENTER_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 20 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
+<span class="lineno"> 22 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 23 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span></span>>cdM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 24 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
+<span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 26 </span>    <span class="comment">&lt;!-- INTAKE --></span></pre>
 
 <span class="location"><a href="../../src/main/res/xml/teamwebcamcalibrations.xml">../../src/main/res/xml/teamwebcamcalibrations.xml</a>:53</span>: <span class="message">The resource <code>R.xml.teamwebcamcalibrations</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  50 </span><span class="comment">  here as examples on how make your own.

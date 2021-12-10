@@ -493,7 +493,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml"
-            line="23"
+            line="24"
             column="13"/>
     </issue>
 

@@ -11,7 +11,7 @@ Javadocs are automatically-generated documentation pages based on Javadoc `/***/
         <div class="item-img">
             {% octicon git-branch height:1.8rem fill:#197AF4 width:1.8rem %}
         </div>
-        <h1 class="item-text">Master (Default)</h1>
+        <h1 class="item-text">master</h1>
     </a>
     <a class="btn item" href="./javadocs/testing-Thomas-Ricci/">
         <div class="item-img">

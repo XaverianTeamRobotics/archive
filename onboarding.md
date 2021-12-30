@@ -4,7 +4,7 @@ Welcome to the Hawks Robotics Onboarding Guide. This shows you how to get set up
 ### Installation
 First, if you don't already have one, make a [GitHub](https://github.com) account. From there, ask Roche or Tassinari to invite you to the GitHub organization, and accept the invite. You also need to be added to the organization's team.
 
-Then, head over to [Git Bash](https://git-scm.com/downloads) and install it. Then install [JDK 16](https://www.oracle.com/java/technologies/downloads/) (not 17!) and [Android Studio](https://developer.android.com/studio).
+Then, head over to [Git Bash](https://git-scm.com/downloads) and install it. Then install [JDK 16](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html) (not 17!) and [Android Studio](https://developer.android.com/studio).
 
 > Note:
 > If you have apt you can use `sudo apt install git openjdk-16-jdk -y` for Git and JDK, but you still have to download Android Studio from the website and probably don't need a tutorial anyway. :P

@@ -1,0 +1,5 @@
+theme: "jekyll-theme-cayman"
+title: "Hawks Robotics Documentation"
+description: "Tutorials, guides, reports, and Javadocs for our repository."
+plugins:
+  - "jekyll-octicons"

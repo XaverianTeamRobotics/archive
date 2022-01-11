@@ -174,23 +174,23 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 2 errors and 30 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 1 error and 63 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Fri Dec 10 21:00:30 UTC 2021      </nav>
+Check performed at Tue Jan 11 04:29:09 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#MissingClass"><i class="material-icons error-icon">error</i>Missing registered class (1)</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (10)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
       <a class="mdl-navigation__link" href="#GradleDynamicVersion"><i class="material-icons warning-icon">warning</i>Gradle Dynamic Version (2)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (6)</a>
       <a class="mdl-navigation__link" href="#ExtraTranslation"><i class="material-icons error-icon">error</i>Extra translation (1)</a>
       <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (18)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (41)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -206,8 +206,8 @@ Check performed at Fri Dec 10 21:00:30 UTC 2021      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
-<a href="#MissingClass">MissingClass</a>: Missing registered class</td></tr>
+<td class="countColumn">10</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
@@ -230,7 +230,7 @@ Check performed at Fri Dec 10 21:00:30 UTC 2021      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">41</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (37)</a>
 </td></tr></table>
@@ -241,51 +241,146 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="MissingClass"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingClassCard" style="display: block;">
+<a name="DefaultLocale"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Missing registered class</h2>
+    <h2 class="mdl-card__title-text">Implied default locale in case conversion</h2>
   </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:18</span>: <span class="message">Class referenced in the manifest, <code>org.firstinspires.ftc.teamcode.imgproc.ImgProc</code>, was not found in the project or the libraries</span><br /><pre class="errorlines">
-<span class="lineno"> 15 </span><span class="comment">               app to run.
-</span><span class="lineno"> 16 </span><span class="comment">        --></span>
-<span class="lineno"> 17 </span>        <span class="tag">&lt;activity</span><span class="attribute">
-</span><span class="caretline"><span class="lineno"> 18 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"</span><span class="error"><span class="value">.imgproc.ImgProc</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 19 </span>            <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/title_activity_imgproc"</span>>
-<span class="lineno"> 20 </span>
-<span class="lineno"> 21 </span>            <span class="comment">&lt;!--
-</span></pre>
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java</a>:145</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 142 </span>  <span class="comment">// step through the list of recognitions and display boundary info.</span>
+<span class="lineno"> 143 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 144 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="caretline"><span class="lineno"> 145 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"label (%d)"</span>, i)</span>, recognition.getLabel());&nbsp;&nbsp;</span>
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 148 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java</a>:146</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 143 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 144 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="lineno"> 145 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="caretline"><span class="lineno"> 146 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  left,top (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 148 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 149 </span>            recognition.getRight(), recognition.getBottom());
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java</a>:148</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 145 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="caretline"><span class="lineno"> 148 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  right,bottom (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;</span>
+<span class="lineno"> 149 </span>            recognition.getRight(), recognition.getBottom());
+<span class="lineno"> 150 </span>    i++;
+<span class="lineno"> 151 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java</a>:145</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 142 </span>  <span class="comment">// step through the list of recognitions and display boundary info.</span>
+<span class="lineno"> 143 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 144 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="caretline"><span class="lineno"> 145 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"label (%d)"</span>, i)</span>, recognition.getLabel());&nbsp;&nbsp;</span>
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 148 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java</a>:146</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 143 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 144 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="lineno"> 145 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="caretline"><span class="lineno"> 146 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  left,top (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 148 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 149 </span>            recognition.getRight(), recognition.getBottom());
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="DefaultLocaleDivLink" onclick="reveal('DefaultLocaleDiv');" />+ 5 More Occurrences...</button>
+<div id="DefaultLocaleDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java</a>:148</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 145 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 147 </span>            recognition.getLeft(), recognition.getTop());
+<span class="caretline"><span class="lineno"> 148 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  right,bottom (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;</span>
+<span class="lineno"> 149 </span>            recognition.getRight(), recognition.getBottom());
+<span class="lineno"> 150 </span>    i++;
+<span class="lineno"> 151 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java</a>:143</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 140 </span>  <span class="comment">// step through the list of recognitions and display boundary info.</span>
+<span class="lineno"> 141 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 142 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="caretline"><span class="lineno"> 143 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"label (%d)"</span>, i)</span>, recognition.getLabel());&nbsp;&nbsp;</span>
+<span class="lineno"> 144 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 145 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java</a>:144</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 141 </span>  <span class="keyword">int</span> i = <span class="number">0</span>;
+<span class="lineno"> 142 </span>  <span class="keyword">for</span> (Recognition recognition : updatedRecognitions) {
+<span class="lineno"> 143 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="caretline"><span class="lineno"> 144 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  left,top (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 145 </span>            recognition.getLeft(), recognition.getTop());
+<span class="lineno"> 146 </span>    telemetry.addData(String.format(<span class="string">"  right,bottom (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 147 </span>            recognition.getRight(), recognition.getBottom());
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java</a>:146</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 143 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
+<span class="lineno"> 144 </span>    telemetry.addData(String.format(<span class="string">"  left,top (%d)"</span>, i), <span class="string">"%.03f , %.03f"</span>,
+<span class="lineno"> 145 </span>            recognition.getLeft(), recognition.getTop());
+<span class="caretline"><span class="lineno"> 146 </span>    telemetry.addData(<span class="warning">String.format(<span class="string">"  right,bottom (%d)"</span>, i)</span>, <span class="string">"%.03f , %.03f"</span>,&nbsp;</span>
+<span class="lineno"> 147 </span>            recognition.getRight(), recognition.getBottom());
+<span class="lineno"> 148 </span>    i++;
+<span class="lineno"> 149 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/WebcamExample.java">../../src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/WebcamExample.java</a>:110</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 107 </span><span class="comment">             * Send some stats to the telemetry
+</span><span class="lineno"> 108 </span><span class="comment">             */</span>
+<span class="lineno"> 109 </span>            telemetry.addData(<span class="string">"Frame Count"</span>, webcam.getFrameCount());
+<span class="caretline"><span class="lineno"> 110 </span>            telemetry.addData(<span class="string">"FPS"</span>, <span class="warning">String.format(<span class="string">"%.2f"</span>, webcam.getFps())</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 111 </span>            telemetry.addData(<span class="string">"Total frame time ms"</span>, webcam.getTotalFrameTimeMs());
+<span class="lineno"> 112 </span>            telemetry.addData(<span class="string">"Pipeline time ms"</span>, webcam.getPipelineTimeMs());
+<span class="lineno"> 113 </span>            telemetry.addData(<span class="string">"Overhead time ms"</span>, webcam.getOverheadTimeMs());
+</pre>
 
 </div>
-<div class="metadata"><div class="explanation" id="explanationMissingClass" style="display: none;">
-If a class is referenced in the manifest or in a layout file, it must also exist in the project (or in one of the libraries included by the project. This check helps uncover typos in registration names, or attempts to rename or move classes without updating the XML references<br/>
-properly.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html">https://developer.android.com/guide/topics/manifest/manifest-intro.html</a>
-</div>To suppress this error, use the issue id "MissingClass" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>
+<div class="metadata"><div class="explanation" id="explanationDefaultLocale" style="display: none;">
+Calling <code>String#toLowerCase()</code> or <code>#toUpperCase()</code> <b>without specifying an explicit locale</b> is a common source of bugs. The reason for that is that those methods will use the current locale on the user's device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for <code>i</code> is <b>not</b> <code>I</code>.<br/>
+<br/>
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call <code>String#toUpperCase(Locale.US)</code> instead. If you really want to use the current locale, call <code>String#toUpperCase(Locale.getDefault())</code> instead.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/java/util/Locale.html#default_locale">https://developer.android.com/reference/java/util/Locale.html#default_locale</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "DefaultLocale" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>
 <div class="chips">
 <span class="mdl-chip">
-    <span class="mdl-chip__text">MissingClass</span>
+    <span class="mdl-chip__text">DefaultLocale</span>
 </span>
 <span class="mdl-chip">
     <span class="mdl-chip__text">Correctness</span>
 </span>
 <span class="mdl-chip">
-    <span class="mdl-chip__text">Error</span>
+    <span class="mdl-chip__text">Warning</span>
 </span>
 <span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 8/10</span>
+    <span class="mdl-chip__text">Priority 6/10</span>
 </span>
 </div>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMissingClassLink" onclick="reveal('explanationMissingClass');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingClassCardLink" onclick="hideid('MissingClassCard');">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDefaultLocaleLink" onclick="reveal('explanationDefaultLocale');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DefaultLocaleCardLink" onclick="hideid('DefaultLocaleCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="GradleDependency"></a>
@@ -366,8 +461,8 @@ Dismiss</button>            </div>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
 <span class="caretline"><span class="lineno"> 34 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 35 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span>
-<span class="lineno"> 36 </span>}
-<span class="lineno"> 37 </span>repositories {
+<span class="lineno"> 36 </span>    implementation <span class="string">'org.openftc:easyopencv:1.5.0'</span>
+<span class="lineno"> 37 </span>}
 </pre>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:35</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-android:+)</span><br /><pre class="errorlines">
@@ -375,9 +470,9 @@ Dismiss</button>            </div>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
 <span class="lineno"> 34 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span>
 <span class="caretline"><span class="lineno"> 35 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 36 </span>}
-<span class="lineno"> 37 </span>repositories {
-<span class="lineno"> 38 </span>    mavenCentral()
+<span class="lineno"> 36 </span>    implementation <span class="string">'org.openftc:easyopencv:1.5.0'</span>
+<span class="lineno"> 37 </span>}
+<span class="lineno"> 38 </span>repositories {
 </pre>
 
 </div>
@@ -446,29 +541,32 @@ Dismiss</button>            </div>
 <span class="lineno"> 13 </span>    <span class="tag">&lt;/string-array></span>
 <span class="lineno"> 14 </span><span class="tag">&lt;/resources></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "JD!" instead of "JD1" ?</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63<span class="warning">JD</span>1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="comment">&lt;!--
-</span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">Did you mean "JD!" instead of "JD1" ?</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span><span class="comment">
+</span><span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63<span class="warning">JD</span>1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "iGlT!" instead of "iGlT1" ?</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86<span class="warning">iGlT</span>1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="comment">&lt;!--
-</span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">Did you mean "iGlT!" instead of "iGlT1" ?</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span><span class="comment">
+</span><span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86<span class="warning">iGlT</span>1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">Did you mean "prrE!" instead of "prrE1" ?</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0<span class="warning">prrE</span>1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="comment">&lt;!--
-</span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">Did you mean "prrE!" instead of "prrE1" ?</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span><span class="comment">
+</span><span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0<span class="warning">prrE</span>1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationTypos" style="display: none;">
@@ -658,7 +756,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 14 </span>    <span class="tag">&lt;dimen</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"inner_frame_layout_padding"</span></span>>5dp<span class="tag">&lt;/dimen></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 15 </span><span class="tag">&lt;/resources></span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 13 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 36 More Occurrences...</button>
 <div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/integers.xml">../../src/main/res/values/integers.xml</a>:3</span>: <span class="message">The resource <code>R.integer.leftDriveID</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
@@ -722,32 +820,228 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 2 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"hello_world"</span></span>>Hello Round World!<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 3 </span><span class="tag">&lt;/resources></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">The resource <code>R.string.VUFORIA_KEY</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"VUFORIA_KEY"</span></span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
-<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
-<span class="lineno">  5 </span>    <span class="comment">&lt;!--
-</span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:20</span>: <span class="message">The resource <code>R.string.title_activity_imgproc</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 17 </span><span class="comment">      SPINNING_DEVICE_RIGHT_TOP_MOVING_MOTOR
+</span><span class="lineno"> 18 </span><span class="comment">
+</span><span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="caretline"><span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"title_activity_imgproc"</span></span>>imgproc<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:4</span>: <span class="message">The resource <code>R.string.WEBCAM</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
-<span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"WEBCAM"</span></span>>webcam<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  5 </span>    <span class="comment">&lt;!--
-</span><span class="lineno">  6 </span><span class="comment">
-</span><span class="lineno">  7 </span><span class="comment">        NAMING CONVENTION:
-</span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">The resource <code>R.string.VUFORIA_KEY</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span><span class="comment">
+</span><span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"VUFORIA_KEY"</span></span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span></pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:24</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_CENTER_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 21 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
-<span class="lineno"> 22 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
-<span class="lineno"> 23 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 24 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span></span>>cdM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
-<span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
-<span class="lineno"> 27 </span>    <span class="comment">&lt;!-- INTAKE --></span></pre>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:22</span>: <span class="message">The resource <code>R.string.WEBCAM</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 19 </span><span class="comment">  --></span>
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"WEBCAM"</span></span>>webcam<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span>
+<span class="lineno"> 25 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_NORTH_DISTANCE_SENSOR"</span>>distN<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:23</span>: <span class="message">The resource <code>R.string.Webcam1</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 20 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_imgproc"</span>>imgproc<span class="tag">&lt;/string></span>
+<span class="lineno"> 21 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"VUFORIA_KEY"</span>>AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS<span class="tag">&lt;/string></span>
+<span class="lineno"> 22 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 23 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"Webcam1"</span></span>>webcam<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 24 </span>  <span class="comment">&lt;!-- NAVIGATION SENSORS--></span>
+<span class="lineno"> 25 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_NORTH_DISTANCE_SENSOR"</span>>distN<span class="tag">&lt;/string></span>
+<span class="lineno"> 26 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_EAST_DISTANCE_SENSOR"</span>>distE<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:25</span>: <span class="message">The resource <code>R.string.NAVIGATION_NORTH_DISTANCE_SENSOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"WEBCAM"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>    <span class="comment">&lt;!-- NAVIGATION SENSORS--></span>
+<span class="caretline"><span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"NAVIGATION_NORTH_DISTANCE_SENSOR"</span></span>>distN<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_EAST_DISTANCE_SENSOR"</span>>distE<span class="tag">&lt;/string></span>
+<span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_WEST_DISTANCE_SENSOR"</span>>distW<span class="tag">&lt;/string></span>
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:26</span>: <span class="message">The resource <code>R.string.NAVIGATION_EAST_DISTANCE_SENSOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 23 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"Webcam1"</span>>webcam<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>    <span class="comment">&lt;!-- NAVIGATION SENSORS--></span>
+<span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_NORTH_DISTANCE_SENSOR"</span>>distN<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"NAVIGATION_EAST_DISTANCE_SENSOR"</span></span>>distE<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_WEST_DISTANCE_SENSOR"</span>>distW<span class="tag">&lt;/string></span>
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:27</span>: <span class="message">The resource <code>R.string.NAVIGATION_WEST_DISTANCE_SENSOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 24 </span>    <span class="comment">&lt;!-- NAVIGATION SENSORS--></span>
+<span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_NORTH_DISTANCE_SENSOR"</span>>distN<span class="tag">&lt;/string></span>
+<span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_EAST_DISTANCE_SENSOR"</span>>distE<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"NAVIGATION_WEST_DISTANCE_SENSOR"</span></span>>distW<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:29</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_EAST_DISTANCE_SENSOR"</span>>distE<span class="tag">&lt;/string></span>
+<span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_WEST_DISTANCE_SENSOR"</span>>distW<span class="tag">&lt;/string></span>
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="caretline"><span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span></span>>ltM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span>>cdM<span class="tag">&lt;/string></span>
+<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:30</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"NAVIGATION_WEST_DISTANCE_SENSOR"</span>>distW<span class="tag">&lt;/string></span>
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span></span>>lbM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span>>cdM<span class="tag">&lt;/string></span>
+<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
+<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:31</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_CENTER_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 28 </span>    <span class="comment">&lt;!-- DRIVETRAIN --></span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span></span>>cdM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
+<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:32</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR"</span>>ltM<span class="tag">&lt;/string></span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span>>cdM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span></span>>rtM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span>
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span>>iM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:33</span>: <span class="message">The resource <code>R.string.DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR"</span>>lbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_CENTER_DRIVING_MOTOR"</span>>cdM<span class="tag">&lt;/string></span>
+<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span></span>>rbM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span>
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span>>iM<span class="tag">&lt;/string></span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_SERVO"</span>>iuS<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:35</span>: <span class="message">The resource <code>R.string.INTAKE_SPINNING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR"</span>>rtM<span class="tag">&lt;/string></span>
+<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span>
+<span class="caretline"><span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span></span>>iM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_SERVO"</span>>iuS<span class="tag">&lt;/string></span>
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_LIMIT_SWITCH"</span>>iT<span class="tag">&lt;/string></span>
+<span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span>>iS<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:36</span>: <span class="message">The resource <code>R.string.INTAKE_LIFTING_SERVO</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR"</span>>rbM<span class="tag">&lt;/string></span>
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span>
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span>>iM<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"INTAKE_LIFTING_SERVO"</span></span>>iuS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_LIMIT_SWITCH"</span>>iT<span class="tag">&lt;/string></span>
+<span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span>>iS<span class="tag">&lt;/string></span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:37</span>: <span class="message">The resource <code>R.string.INTAKE_LIFTING_LIMIT_SWITCH</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 34 </span>    <span class="comment">&lt;!-- INTAKE --></span>
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span>>iM<span class="tag">&lt;/string></span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_SERVO"</span>>iuS<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"INTAKE_LIFTING_LIMIT_SWITCH"</span></span>>iT<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span>>iS<span class="tag">&lt;/string></span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_RIGHT_ELEVATOR_MOTOR"</span>>l1M<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:38</span>: <span class="message">The resource <code>R.string.INTAKE_LIFTING_DISTANCE_SENSOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_SPINNING_MOTOR"</span>>iM<span class="tag">&lt;/string></span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_SERVO"</span>>iuS<span class="tag">&lt;/string></span>
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_LIMIT_SWITCH"</span>>iT<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span></span>>iS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_RIGHT_ELEVATOR_MOTOR"</span>>l1M<span class="tag">&lt;/string></span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_LEFT_ELEVATOR_MOTOR"</span>>l2M<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:40</span>: <span class="message">The resource <code>R.string.LIFT_RIGHT_ELEVATOR_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_LIMIT_SWITCH"</span>>iT<span class="tag">&lt;/string></span>
+<span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span>>iS<span class="tag">&lt;/string></span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span>
+<span class="caretline"><span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"LIFT_RIGHT_ELEVATOR_MOTOR"</span></span>>l1M<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_LEFT_ELEVATOR_MOTOR"</span>>l2M<span class="tag">&lt;/string></span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_BOTTOM_LIFTING_LIMIT_SWITCH"</span>>lT<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:41</span>: <span class="message">The resource <code>R.string.LIFT_LEFT_ELEVATOR_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 38 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"INTAKE_LIFTING_DISTANCE_SENSOR"</span>>iS<span class="tag">&lt;/string></span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_RIGHT_ELEVATOR_MOTOR"</span>>l1M<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"LIFT_LEFT_ELEVATOR_MOTOR"</span></span>>l2M<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_BOTTOM_LIFTING_LIMIT_SWITCH"</span>>lT<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:42</span>: <span class="message">The resource <code>R.string.LIFT_BOTTOM_LIFTING_LIMIT_SWITCH</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- ELEVATOR --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_RIGHT_ELEVATOR_MOTOR"</span>>l1M<span class="tag">&lt;/string></span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_LEFT_ELEVATOR_MOTOR"</span>>l2M<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"LIFT_BOTTOM_LIFTING_LIMIT_SWITCH"</span></span>>lT<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span>>htS<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:44</span>: <span class="message">The resource <code>R.string.HAND_DISTANCE_SENSOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_LEFT_ELEVATOR_MOTOR"</span>>l2M<span class="tag">&lt;/string></span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_BOTTOM_LIFTING_LIMIT_SWITCH"</span>>lT<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span>
+<span class="caretline"><span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span></span>>diD<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span>>htS<span class="tag">&lt;/string></span>
+<span class="lineno"> 46 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_Y"</span>>hfS<span class="tag">&lt;/string></span>
+<span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span>>hgrS<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:45</span>: <span class="message">The resource <code>R.string.HAND_SPINNING_SERVO_X</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"LIFT_BOTTOM_LIFTING_LIMIT_SWITCH"</span>>lT<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span></span>>htS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 46 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_Y"</span>>hfS<span class="tag">&lt;/string></span>
+<span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span>>hgrS<span class="tag">&lt;/string></span>
+<span class="lineno"> 48 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_LEFT_GRABBING_SERVO"</span>>hglS<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:46</span>: <span class="message">The resource <code>R.string.HAND_SPINNING_SERVO_Y</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 43 </span>    <span class="comment">&lt;!-- HAND --></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span>>htS<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 46 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"HAND_SPINNING_SERVO_Y"</span></span>>hfS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span>>hgrS<span class="tag">&lt;/string></span>
+<span class="lineno"> 48 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_LEFT_GRABBING_SERVO"</span>>hglS<span class="tag">&lt;/string></span>
+<span class="lineno"> 49 </span>    <span class="comment">&lt;!-- DUCK --></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:47</span>: <span class="message">The resource <code>R.string.HAND_RIGHT_GRABBING_SERVO</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_DISTANCE_SENSOR"</span>>diD<span class="tag">&lt;/string></span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span>>htS<span class="tag">&lt;/string></span>
+<span class="lineno"> 46 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_Y"</span>>hfS<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span></span>>hgrS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 48 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_LEFT_GRABBING_SERVO"</span>>hglS<span class="tag">&lt;/string></span>
+<span class="lineno"> 49 </span>    <span class="comment">&lt;!-- DUCK --></span>
+<span class="lineno"> 50 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DUCK_SPINNING_MOTOR"</span>>duM<span class="tag">&lt;/string></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:48</span>: <span class="message">The resource <code>R.string.HAND_LEFT_GRABBING_SERVO</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_X"</span>>htS<span class="tag">&lt;/string></span>
+<span class="lineno"> 46 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_SPINNING_SERVO_Y"</span>>hfS<span class="tag">&lt;/string></span>
+<span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span>>hgrS<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 48 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"HAND_LEFT_GRABBING_SERVO"</span></span>>hglS<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 49 </span>    <span class="comment">&lt;!-- DUCK --></span>
+<span class="lineno"> 50 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"DUCK_SPINNING_MOTOR"</span>>duM<span class="tag">&lt;/string></span>
+<span class="lineno"> 51 </span><span class="tag">&lt;/resources></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:50</span>: <span class="message">The resource <code>R.string.DUCK_SPINNING_MOTOR</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 47 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_RIGHT_GRABBING_SERVO"</span>>hgrS<span class="tag">&lt;/string></span>
+<span class="lineno"> 48 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"HAND_LEFT_GRABBING_SERVO"</span>>hglS<span class="tag">&lt;/string></span>
+<span class="lineno"> 49 </span>    <span class="comment">&lt;!-- DUCK --></span>
+<span class="caretline"><span class="lineno"> 50 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"DUCK_SPINNING_MOTOR"</span></span>>duM<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 51 </span><span class="tag">&lt;/resources></span></pre>
 
 <span class="location"><a href="../../src/main/res/xml/teamwebcamcalibrations.xml">../../src/main/res/xml/teamwebcamcalibrations.xml</a>:53</span>: <span class="message">The resource <code>R.xml.teamwebcamcalibrations</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  50 </span><span class="comment">  here as examples on how make your own.
@@ -757,6 +1051,12 @@ Dismiss</button>            </div>
 <span class="lineno">  54 </span>
 <span class="lineno">  55 </span>    <span class="comment">&lt;!-- ======================================================================================= --></span>
 </pre>
+
+<span class="location"><a href="../../src/main/res/xml/test.xml">../../src/main/res/xml/test.xml</a>:2</span>: <span class="message">The resource <code>R.xml.test</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;PreferenceScreen</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>
+<span class="lineno"> 4 </span><span class="tag">&lt;/PreferenceScreen></span></pre>
 
 </div>
 </div>

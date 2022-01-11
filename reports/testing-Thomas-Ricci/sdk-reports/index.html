@@ -174,17 +174,17 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 5 errors and 41 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 5 errors and 37 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Fri Dec 10 21:00:11 UTC 2021      </nav>
+Check performed at Tue Jan 11 04:28:49 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (21)</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (17)</a>
       <a class="mdl-navigation__link" href="#SdCardPath"><i class="material-icons warning-icon">warning</i>Hardcoded reference to <code>/sdcard</code> (2)</a>
       <a class="mdl-navigation__link" href="#AppCompatResource"><i class="material-icons error-icon">error</i>Menu namespace (5)</a>
       <a class="mdl-navigation__link" href="#IntentFilterExportedReceiver"><i class="material-icons warning-icon">warning</i>Unspecified <code>android:exported</code> in manifest (2)</a>
@@ -209,7 +209,7 @@ Check performed at Fri Dec 10 21:00:11 UTC 2021      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">21</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">17</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -315,7 +315,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 145 </span>            recognition.getRight(), recognition.getBottom());
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="DefaultLocaleDivLink" onclick="reveal('DefaultLocaleDiv');" />+ 16 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="DefaultLocaleDivLink" onclick="reveal('DefaultLocaleDiv');" />+ 12 More Occurrences...</button>
 <div id="DefaultLocaleDiv" style="display: none">
 <span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptTensorFlowObjectDetection.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptTensorFlowObjectDetection.java</a>:144</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
 <span class="lineno"> 141 </span>    telemetry.addData(String.format(<span class="string">"label (%d)"</span>, i), recognition.getLabel());
@@ -434,44 +434,6 @@ Dismiss</button>            </div>
 <span class="lineno"> 160 </span>  }
 <span class="lineno"> 161 </span>
 <span class="lineno"> 162 </span>}
-</pre>
-
-<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:76</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 73 </span>  <span class="keyword">while</span>(opModeIsActive()) {
-<span class="lineno"> 74 </span>      <span class="comment">// generic DistanceSensor methods.</span>
-<span class="lineno"> 75 </span>      telemetry.addData(<span class="string">"deviceName"</span>,sensorRange.getDeviceName() );
-<span class="caretline"><span class="lineno"> 76 </span>      telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f mm"</span>, sensorRange.getDistance(DistanceUnit.MM))</span>);</span>
-<span class="lineno"> 77 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorRange.getDistance(DistanceUnit.CM)));
-<span class="lineno"> 78 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorRange.getDistance(DistanceUnit.METER)));
-<span class="lineno"> 79 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorRange.getDistance(DistanceUnit.INCH)));
-</pre>
-
-<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:77</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 74 </span>  <span class="comment">// generic DistanceSensor methods.</span>
-<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"deviceName"</span>,sensorRange.getDeviceName() );
-<span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorRange.getDistance(DistanceUnit.MM)));
-<span class="caretline"><span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f cm"</span>, sensorRange.getDistance(DistanceUnit.CM))</span>);</span>
-<span class="lineno"> 78 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorRange.getDistance(DistanceUnit.METER)));
-<span class="lineno"> 79 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorRange.getDistance(DistanceUnit.INCH)));
-</pre>
-
-<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:78</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"deviceName"</span>,sensorRange.getDeviceName() );
-<span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorRange.getDistance(DistanceUnit.MM)));
-<span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorRange.getDistance(DistanceUnit.CM)));
-<span class="caretline"><span class="lineno"> 78 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f m"</span>, sensorRange.getDistance(DistanceUnit.METER))</span>);</span>
-<span class="lineno"> 79 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorRange.getDistance(DistanceUnit.INCH)));
-<span class="lineno"> 80 </span>
-<span class="lineno"> 81 </span>  <span class="comment">// Rev2mDistanceSensor specific methods.</span></pre>
-
-<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:79</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorRange.getDistance(DistanceUnit.MM)));
-<span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorRange.getDistance(DistanceUnit.CM)));
-<span class="lineno"> 78 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorRange.getDistance(DistanceUnit.METER)));
-<span class="caretline"><span class="lineno"> 79 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f in"</span>, sensorRange.getDistance(DistanceUnit.INCH))</span>);</span>
-<span class="lineno"> 80 </span>
-<span class="lineno"> 81 </span>  <span class="comment">// Rev2mDistanceSensor specific methods.</span>
-<span class="lineno"> 82 </span>  telemetry.addData(<span class="string">"ID"</span>, String.format(<span class="string">"%x"</span>, sensorTimeOfFlight.getModelID()));
 </pre>
 
 </div>

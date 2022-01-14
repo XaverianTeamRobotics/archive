@@ -20,6 +20,7 @@ org.firstinspires.ftc.teamcode.main.utils.interactions.groups
 org.firstinspires.ftc.teamcode.main.utils.interactions.items
 org.firstinspires.ftc.teamcode.main.utils.io
 org.firstinspires.ftc.teamcode.main.utils.locations
+org.firstinspires.ftc.teamcode.main.utils.queuing
 org.firstinspires.ftc.teamcode.main.utils.resources
 org.firstinspires.ftc.teamcode.main.utils.scripting
 org.firstinspires.ftc.teamcode.main.utils.tests

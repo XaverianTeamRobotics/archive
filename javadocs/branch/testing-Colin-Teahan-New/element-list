@@ -12,6 +12,7 @@ org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors
 org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.distance
 org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.distance.wrappers
 org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.other
+org.firstinspires.ftc.teamcode.main.utils.autonomous.starting
 org.firstinspires.ftc.teamcode.main.utils.devices
 org.firstinspires.ftc.teamcode.main.utils.gamepads
 org.firstinspires.ftc.teamcode.main.utils.geometry
@@ -20,6 +21,7 @@ org.firstinspires.ftc.teamcode.main.utils.interactions.groups
 org.firstinspires.ftc.teamcode.main.utils.interactions.items
 org.firstinspires.ftc.teamcode.main.utils.io
 org.firstinspires.ftc.teamcode.main.utils.locations
+org.firstinspires.ftc.teamcode.main.utils.queuing
 org.firstinspires.ftc.teamcode.main.utils.resources
 org.firstinspires.ftc.teamcode.main.utils.scripting
 org.firstinspires.ftc.teamcode.main.utils.tests

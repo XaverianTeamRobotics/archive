@@ -174,10 +174,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 5 errors and 37 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 37 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Wed Jan 26 21:59:22 UTC 2022      </nav>
+Check performed at Thu Jan 27 19:46:58 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -186,7 +186,6 @@ Check performed at Wed Jan 26 21:59:22 UTC 2022      </nav>
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (17)</a>
       <a class="mdl-navigation__link" href="#SdCardPath"><i class="material-icons warning-icon">warning</i>Hardcoded reference to <code>/sdcard</code> (2)</a>
-      <a class="mdl-navigation__link" href="#AppCompatResource"><i class="material-icons error-icon">error</i>Menu namespace (5)</a>
       <a class="mdl-navigation__link" href="#IntentFilterExportedReceiver"><i class="material-icons warning-icon">warning</i>Unspecified <code>android:exported</code> in manifest (2)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (9)</a>
@@ -214,9 +213,6 @@ Check performed at Wed Jan 26 21:59:22 UTC 2022      </nav>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SdCardPath">SdCardPath</a>: Hardcoded reference to <code>/sdcard</code></td></tr>
-<tr>
-<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
-<a href="#AppCompatResource">AppCompatResource</a>: Menu namespace</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
 <tr>
@@ -521,89 +517,6 @@ Similarly, do not reference the <code>/data/data/</code> path directly; it can v
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSdCardPathLink" onclick="reveal('explanationSdCardPath');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SdCardPathCardLink" onclick="hideid('SdCardPathCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="AppCompatResource"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AppCompatResourceCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Menu namespace</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/res/menu/ftc_robot_controller.xml">../../src/main/res/menu/ftc_robot_controller.xml</a>:39</span>: <span class="message">Should use <code>app:showAsAction</code> with the appcompat library with <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code></span><br /><pre class="errorlines">
-<span class="lineno"> 36 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 37 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_settings"</span>
-<span class="lineno"> 38 </span>    <span class="prefix">android:</span><span class="attribute">orderInCategory</span>=<span class="value">"100"</span>
-<span class="caretline"><span class="lineno"> 39 </span>    <span class="error"><span class="prefix">android:</span><span class="attribute">showAsAction</span>=<span class="value">"never"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 40 </span>    <span class="prefix">android:</span><span class="attribute">title</span>=<span class="value">"@string/settings_menu_item"</span>/>
-<span class="lineno"> 41 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 42 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_restart_robot"</span></pre>
-
-<span class="location"><a href="../../src/main/res/menu/ftc_robot_controller.xml">../../src/main/res/menu/ftc_robot_controller.xml</a>:44</span>: <span class="message">Should use <code>app:showAsAction</code> with the appcompat library with <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code></span><br /><pre class="errorlines">
-<span class="lineno"> 41 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 42 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_restart_robot"</span>
-<span class="lineno"> 43 </span>    <span class="prefix">android:</span><span class="attribute">orderInCategory</span>=<span class="value">"200"</span>
-<span class="caretline"><span class="lineno"> 44 </span>    <span class="error"><span class="prefix">android:</span><span class="attribute">showAsAction</span>=<span class="value">"never"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 45 </span>    <span class="prefix">android:</span><span class="attribute">title</span>=<span class="value">"@string/restart_robot_menu_item"</span>/>
-<span class="lineno"> 46 </span>
-<span class="lineno"> 47 </span>  <span class="tag">&lt;item</span></pre>
-
-<span class="location"><a href="../../src/main/res/menu/ftc_robot_controller.xml">../../src/main/res/menu/ftc_robot_controller.xml</a>:50</span>: <span class="message">Should use <code>app:showAsAction</code> with the appcompat library with <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code></span><br /><pre class="errorlines">
-<span class="lineno"> 47 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 48 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_configure_robot"</span>
-<span class="lineno"> 49 </span>    <span class="prefix">android:</span><span class="attribute">orderInCategory</span>=<span class="value">"300"</span>
-<span class="caretline"><span class="lineno"> 50 </span>    <span class="error"><span class="prefix">android:</span><span class="attribute">showAsAction</span>=<span class="value">"never"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 51 </span>    <span class="prefix">android:</span><span class="attribute">title</span>=<span class="value">"@string/configure_robot_menu_item"</span>/>
-<span class="lineno"> 52 </span>
-<span class="lineno"> 53 </span>  <span class="tag">&lt;item</span></pre>
-
-<span class="location"><a href="../../src/main/res/menu/ftc_robot_controller.xml">../../src/main/res/menu/ftc_robot_controller.xml</a>:56</span>: <span class="message">Should use <code>app:showAsAction</code> with the appcompat library with <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code></span><br /><pre class="errorlines">
-<span class="lineno"> 53 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 54 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_program_and_manage"</span>
-<span class="lineno"> 55 </span>    <span class="prefix">android:</span><span class="attribute">orderInCategory</span>=<span class="value">"550"</span>
-<span class="caretline"><span class="lineno"> 56 </span>    <span class="error"><span class="prefix">android:</span><span class="attribute">showAsAction</span>=<span class="value">"never"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 57 </span>    <span class="prefix">android:</span><span class="attribute">title</span>=<span class="value">"@string/program_and_manage_menu_item"</span>/>
-<span class="lineno"> 58 </span>
-<span class="lineno"> 59 </span>  <span class="tag">&lt;item</span></pre>
-
-<span class="location"><a href="../../src/main/res/menu/ftc_robot_controller.xml">../../src/main/res/menu/ftc_robot_controller.xml</a>:62</span>: <span class="message">Should use <code>app:showAsAction</code> with the appcompat library with <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code></span><br /><pre class="errorlines">
-<span class="lineno"> 59 </span>  <span class="tag">&lt;item</span><span class="attribute">
-</span><span class="lineno"> 60 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_inspection_mode"</span>
-<span class="lineno"> 61 </span>      <span class="prefix">android:</span><span class="attribute">orderInCategory</span>=<span class="value">"600"</span>
-<span class="caretline"><span class="lineno"> 62 </span>      <span class="error"><span class="prefix">android:</span><span class="attribute">showAsAction</span>=<span class="value">"never"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 63 </span>      <span class="prefix">android:</span><span class="attribute">title</span>=<span class="value">"@string/inspection_mode_menu_item"</span>/>
-<span class="lineno"> 64 </span>
-<span class="lineno"> 65 </span>  <span class="tag">&lt;item</span></pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationAppCompatResource" style="display: none;">
-When using the appcompat library, menu resources should refer to the <code>showAsAction</code> (or <code>actionViewClass</code>, or <code>actionProviderClass</code>) in the <code>app:</code> namespace, not the <code>android:</code> namespace.<br/>
-<br/>
-Similarly, when <b>not</b> using the appcompat library, you should be using the <code>android:showAsAction</code> (or <code>actionViewClass</code>, or <code>actionProviderClass</code>) attribute.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "AppCompatResource" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">AppCompatResource</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Error</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 5/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAppCompatResourceLink" onclick="reveal('explanationAppCompatResource');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AppCompatResourceCardLink" onclick="hideid('AppCompatResourceCard');">
 Dismiss</button>            </div>
             </div>
           </section>

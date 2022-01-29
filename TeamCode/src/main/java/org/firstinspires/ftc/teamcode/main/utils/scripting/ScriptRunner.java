@@ -32,12 +32,6 @@ public class ScriptRunner {
 
     private void loop() {
         SCRIPT.main();
-        // TODO: exception handling so robot doesn't need to be manually restarted on exception
-//        try {
-//            SCRIPT.main();
-//        } catch(Exception e) {
-//            LOOP_MANAGER.requestStop();
-//        }
     }
 
 }

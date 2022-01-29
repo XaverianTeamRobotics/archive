@@ -68,8 +68,6 @@ public class StartingPositionTestOld extends LinearOpMode {
             positionSystem.turnNoCorrection(new Angle(-50, Angle.AngleUnit.DEGREE));
             motorHold();
 
-            //TODO: Check if spot is busy
-
             positionSystem.turnNoCorrection(new Angle(-45, Angle.AngleUnit.DEGREE));
             motorHold();
 

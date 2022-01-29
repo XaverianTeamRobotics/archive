@@ -49,15 +49,17 @@ public class FullTeleOpScript extends TeleOpScript {
         inputSpace = new InputSpace(getOpMode().hardwareMap);
         outputSpace = new OutputSpace(getOpMode().hardwareMap);
         // these are the upper values
+        inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 27);
         inputSpace.sendInputToLeftHandGrabber(LeftHandGrabbingServoLocation.Action.SET_POSITION, 30);
         inputSpace.sendInputToRightHandGrabber(RightHandGrabbingServoLocation.Action.SET_POSITION, 60);
-        getOpMode().sleep(1000);
+        getOpMode().sleep(500);
         // these are the lower values
         inputSpace.sendInputToLeftHandGrabber(LeftHandGrabbingServoLocation.Action.SET_POSITION, 55);
         inputSpace.sendInputToRightHandGrabber(RightHandGrabbingServoLocation.Action.SET_POSITION, 30);
-        inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 27);
+        getOpMode().sleep(4000);
         calibrateElevator();
-        inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 70);
+        inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 60);
+        getOpMode().sleep(5000);
         // alert drivers robot is ready
         gamepadManager.functionOneGamepad().rumble(1000);
         gamepadManager.functionTwoGamepad().rumble(1000);
@@ -137,12 +139,12 @@ public class FullTeleOpScript extends TeleOpScript {
         if(intakeShouldBeDown) {
             inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 27);
         }else{
-            inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 70);
+            inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 60);
         }
     }
 
     public void updateLiftControlPermissions() {
-        isAllowedToControl = ((StandardServo) inputSpace.getIntakeLifter().getInternalInteractionSurface()).getPosition() != 70;
+        isAllowedToControl = ((StandardServo) inputSpace.getIntakeLifter().getInternalInteractionSurface()).getPosition() != 60;
         if(isMovingToBasePos || isMovingToLBall || isMovingToMBall || isMovingToTBall || isMovingToLBlock || isMovingToMBlock || isMovingToTBlock || isMovingToIntakePos) {
             noControlIntakeLifter = true;
             intakeShouldBeDown = true;
@@ -366,7 +368,7 @@ public class FullTeleOpScript extends TeleOpScript {
                 step++;
             }
             // after ball is dispensed, reset hand because its in a safe position
-            if(step == 2 && timeAsOfLastFullLiftMovement + 3 <= getOpMode().time) {
+            if(step == 2 && timeAsOfLastFullLiftMovement + 4 <= getOpMode().time) {
                 step = 0;
                 isMovingToTBall = false;
                 isMovingToBasePos = true;
@@ -440,7 +442,7 @@ public class FullTeleOpScript extends TeleOpScript {
             }
             // turn hand to down position once elevator reaches its position
             if(step == 1 && ((StandardMotor) inputSpace.getElevatorLeftLift().getInternalInteractionSurface()).getDcMotor().getCurrentPosition() <= -575) {
-                inputSpace.sendInputToHandSpinner(HandSpinningServoLocation.Action.SET_POSITION, 38);
+                inputSpace.sendInputToHandSpinner(HandSpinningServoLocation.Action.SET_POSITION, 40);
                 timeAsOfLastFullLiftMovement = getOpMode().time;
                 step++;
             }
@@ -470,7 +472,7 @@ public class FullTeleOpScript extends TeleOpScript {
             }
             // turn hand to down position once elevator reaches its position
             if(step == 1 && ((StandardMotor) inputSpace.getElevatorLeftLift().getInternalInteractionSurface()).getDcMotor().getCurrentPosition() <= -1000) {
-                inputSpace.sendInputToHandSpinner(HandSpinningServoLocation.Action.SET_POSITION, 38);
+                inputSpace.sendInputToHandSpinner(HandSpinningServoLocation.Action.SET_POSITION, 40);
                 timeAsOfLastFullLiftMovement = getOpMode().time;
                 step++;
             }

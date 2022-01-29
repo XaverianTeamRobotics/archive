@@ -17,9 +17,6 @@ import java.util.zip.DataFormatException;
 /**
  * A Tester finds all Tests and tests them unless they have an @Skippable annotation. If a Test throws an Exception or Test.then() returns false, the Test fails. If Test.then() return true, the Test passes. Results are logged via the console and the Telemetry screen on a Driver Station. Run the AutomatedTester Autonomous OpMode to create and run a Tester.
  */
-
-// TODO: virtualize robot - in the sense of being able to run an opmode in an android emulator
-
 public class Tester {
 
     private final TestConsoleLogger LOGGER;

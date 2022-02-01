@@ -26,6 +26,5 @@ org.firstinspires.ftc.teamcode.main.utils.queuing
 org.firstinspires.ftc.teamcode.main.utils.resources
 org.firstinspires.ftc.teamcode.main.utils.scripting
 org.firstinspires.ftc.teamcode.main.utils.tests
-org.firstinspires.ftc.teamcode.other
 org.firstinspires.ftc.teamcode.test.integration
 org.firstinspires.ftc.teamcode.test.unit

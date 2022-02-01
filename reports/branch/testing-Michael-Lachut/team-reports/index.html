@@ -177,7 +177,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 1 error and 62 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Thu Jan 27 19:49:04 UTC 2022      </nav>
+Check performed at Tue Feb 01 20:57:39 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -392,23 +392,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:29</span>: <span class="message">A newer version of androidx.constraintlayout:constraintlayout than 2.1.2 is available: 2.1.3</span><br /><pre class="errorlines">
-<span class="lineno"> 26 </span>dependencies {
-<span class="lineno"> 27 </span>    implementation project(<span class="string">':FtcRobotController'</span>)
-<span class="lineno"> 28 </span>    annotationProcessor files(<span class="string">'lib/OpModeAnnotationProcessor.jar'</span>)
-<span class="caretline"><span class="lineno"> 29 </span>    implementation <span class="warning"><span class="string">'androidx.constraintlayout:constraintlayout:2.1.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 30 </span>    implementation <span class="string">'org.tensorflow:tensorflow-lite-task-vision:0.3.1'</span>
-<span class="lineno"> 31 </span>    implementation <span class="string">"androidx.core:core-ktx:1.5.0"</span>
-<span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span></pre>
-
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:31</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.7.0</span><br /><pre class="errorlines">
 <span class="lineno"> 28 </span>    annotationProcessor files(<span class="string">'lib/OpModeAnnotationProcessor.jar'</span>)
-<span class="lineno"> 29 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.2'</span>
+<span class="lineno"> 29 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.3'</span>
 <span class="lineno"> 30 </span>    implementation <span class="string">'org.tensorflow:tensorflow-lite-task-vision:0.3.1'</span>
 <span class="caretline"><span class="lineno"> 31 </span>    implementation <span class="warning"><span class="string">"androidx.core:core-ktx:1.5.0"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 32 </span>    implementation <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"</span>
 <span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
 <span class="lineno"> 34 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span></pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:36</span>: <span class="message">A newer version of org.openftc:easyopencv than 1.5.0 is available: 1.5.1</span><br /><pre class="errorlines">
+<span class="lineno"> 33 </span>    compileOnly <span class="string">'com.google.android.wearable:wearable:2.8.1'</span>
+<span class="lineno"> 34 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'</span>
+<span class="lineno"> 35 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'</span>
+<span class="caretline"><span class="lineno"> 36 </span>    implementation <span class="warning"><span class="string">'org.openftc:easyopencv:1.5.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 37 </span>}
+<span class="lineno"> 38 </span>repositories {
+<span class="lineno"> 39 </span>    mavenCentral()
+</pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">

@@ -37,11 +37,18 @@
       </footer>
     </main>
     <script>
-      let loc = document.location.pathname;
-      if(loc.endsWith("/")) {
-        loc = loc.substring(0, loc.length - 1);
+      let url = document.location.hostname;
+      let path = document.location.pathname;
+      if(url.endsWith("/") {
+        url = url.substring(0, url.length - 1);
       }
-      if(loc !== "/FtcRobotController") {
+      if(path.endsWith("/")) {
+        path = path.substring(0, path.length - 1);
+      }
+      if(path.startsWith("/")) {
+        path = path.substring(1);
+      }
+      if(url !== "robotics.xbhs.net" || url + "/" + path + "/" !== "https://xaverianteamrobotics.github.io/FtcRobotController/") {
         document.getElementById("homeButton").style["display"] = "inline-block";
       }
     </script>

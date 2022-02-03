@@ -16,7 +16,6 @@ jobs:
           echo $(jq -r .[].name b.txt) > b.txt
           echo $(cat b.txt | tr " " "\n") > b.txt
           echo "Branches found! - $(cat b.txt)"
-          unset GITHUB_TOKEN;
           for i in `cat b.txt`;
           do
             if [[ $i == testing-* ]]
@@ -31,15 +30,14 @@ jobs:
               sha256sum ../cb.txt > cbh.txt
               GEN=$(cat cbh.txt)
               VAL=$(cat ../cb.txt)
-              echo ${{ secrets.MASS_MERGE_TOKEN }} > tkn.txt
-              gh auth login --with-token < tkn.txt
               gh workflow run --repo XaverianTeamRobotics/FtcRobotController merger.yml -f into=$i -f gen=$GEN -f val=$VAL
               echo "Merge queued!"
-              echo -e "----\nDebug Logs\n---"
+              echo -e "----\nDebug Logs\n"
               echo "Branch: $i"
               echo "Key: $(cat ../cb.txt)"
               echo "Token: $(cat cbh.txt)"
+              echo -e "\n----"
             fi
           done
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.MASS_MERGE_TOKEN }}

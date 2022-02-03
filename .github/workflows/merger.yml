@@ -1,0 +1,60 @@
+name: Programatically Merge
+
+on:
+  workflow_dispatch:
+    inputs:
+      into:
+        description: 'Into'
+        type: text
+        required: true
+      # This weird form of authentication isn't actually secure or anything, it's just here to make it harder for someone to accidentely run this workflow.
+      #
+      # If you're reading this, don't run this workflow unless you know what you're doing. It's meant to be ran by another workflow \
+      # but does not use workflow_call due to the nature of how it is executed. As such, it has this form of authentication where a \
+      # hash is required based on the epoch of the call to defend against accidental runs. If you do wish to run this manually, pas \
+      # s a value to "Of" and pass a sha256 hash of that value into "Using", and pass the base branch into "Into". For example:
+      #
+      #    Use workflow from
+      #      master
+      #    
+      #    Into
+      #      testing-Thomas-Ricci
+      #   
+      #    Using
+      #      fe30030e102ecf8fab72edd523758d54b314224d81ef9f50265efeac824fb56e
+      #
+      #    Of
+      #      tutorial
+      gen:
+        description: 'Using'
+        type: text
+        required: true
+      val:
+        description: 'Of'
+        type: text
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sanatize
+        run: |
+          rm -rf wksp
+          mkdir -p wksp
+          cd wksp
+          touch b.txt
+          echo $(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/XaverianTeamRobotics/FtcRobotController/branches | jq '[.[] | {name: .name}]') > b.txt
+          echo $(jq -r .[].name b.txt) > b.txt
+          echo $(cat b.txt | tr " " "\n") > b.txt
+          branches=()
+          mapfile -t branches < b.txt
+          value=${{ github.event.inputs.into }}
+          if [[ ! " ${branches[*]} " =~ " ${value} " ]]; then
+            exit 1
+          fi
+      - name: Branch Merge
+        uses: everlytic/branch-merge@1.1.2
+        with:
+          target_branch: ${{ github.event.inputs.into }}
+          commit_message_template: Fetched Local Upstream
+      

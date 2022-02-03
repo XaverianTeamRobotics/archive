@@ -1,0 +1,45 @@
+name: Fetch local upstream
+on:
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find branches to fetch upstream from
+        run: |
+          echo "Finding branches..."
+          rm -rf wksp
+          mkdir -p wksp
+          cd wksp
+          touch b.txt
+          echo $(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/XaverianTeamRobotics/FtcRobotController/branches | jq '[.[] | {name: .name}]') > b.txt
+          echo $(jq -r .[].name b.txt) > b.txt
+          echo $(cat b.txt | tr " " "\n") > b.txt
+          echo "Branches found! - $(cat b.txt)"
+          unset GITHUB_TOKEN;
+          for i in `cat b.txt`;
+          do
+            if [[ $i == testing-* ]]
+            then
+              echo "Queueing merge into $i"
+              rm -rf cb.txt
+              touch cb.txt
+              echo $(date +%s%N) > cb.txt
+              rm -rf r
+              mkdir -p r
+              cd r
+              sha256sum ../cb.txt > cbh.txt
+              GEN=$(cat cbh.txt)
+              VAL=$(cat ../cb.txt)
+              echo ${{ secrets.MASS_MERGE_TOKEN }} > tkn.txt
+              gh auth login --with-token < tkn.txt
+              gh workflow run --repo XaverianTeamRobotics/FtcRobotController merger.yml -f into=$i -f gen=$GEN -f val=$VAL
+              echo "Merge queued!"
+              echo -e "----\nDebug Logs\n---"
+              echo "Branch: $i"
+              echo "Key: $(cat ../cb.txt)"
+              echo "Token: $(cat cbh.txt)"
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

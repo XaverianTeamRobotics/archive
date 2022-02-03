@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<issues format="6" by="lint 7.0.3">
+<issues format="6" by="lint 7.1.0">
 
     <issue
         id="DefaultLocale"
@@ -344,82 +344,34 @@
     </issue>
 
     <issue
-        id="AppCompatResource"
-        severity="Error"
-        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`"
+        id="RedundantLabel"
+        severity="Warning"
+        message="Redundant label can be removed"
         category="Correctness"
         priority="5"
-        summary="Menu namespace"
-        explanation="When using the appcompat library, menu resources should refer to the `showAsAction` (or `actionViewClass`, or `actionProviderClass`) in the `app:` namespace, not the `android:` namespace.&#xA;&#xA;Similarly, when **not** using the appcompat library, you should be using the `android:showAsAction` (or `actionViewClass`, or `actionProviderClass`) attribute."
-        errorLine1="    android:showAsAction=&quot;never&quot;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        summary="Redundant label on activity"
+        explanation="When an activity does not have a label attribute, it will use the one from the application tag. Since the application has already specified the same label, the label on this activity can be omitted."
+        errorLine1="              android:label=&quot;@string/app_name&quot;"
+        errorLine2="              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
-            line="39"
-            column="5"/>
+            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/AndroidManifest.xml"
+            line="28"
+            column="15"/>
     </issue>
 
     <issue
-        id="AppCompatResource"
-        severity="Error"
-        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`"
+        id="RedundantLabel"
+        severity="Warning"
+        message="Redundant label can be removed"
         category="Correctness"
         priority="5"
-        summary="Menu namespace"
-        explanation="When using the appcompat library, menu resources should refer to the `showAsAction` (or `actionViewClass`, or `actionProviderClass`) in the `app:` namespace, not the `android:` namespace.&#xA;&#xA;Similarly, when **not** using the appcompat library, you should be using the `android:showAsAction` (or `actionViewClass`, or `actionProviderClass`) attribute."
-        errorLine1="    android:showAsAction=&quot;never&quot;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        summary="Redundant label on activity"
+        explanation="When an activity does not have a label attribute, it will use the one from the application tag. Since the application has already specified the same label, the label on this activity can be omitted."
+        errorLine1="      android:label=&quot;@string/app_name&quot;"
+        errorLine2="      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
-            line="44"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="AppCompatResource"
-        severity="Error"
-        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`"
-        category="Correctness"
-        priority="5"
-        summary="Menu namespace"
-        explanation="When using the appcompat library, menu resources should refer to the `showAsAction` (or `actionViewClass`, or `actionProviderClass`) in the `app:` namespace, not the `android:` namespace.&#xA;&#xA;Similarly, when **not** using the appcompat library, you should be using the `android:showAsAction` (or `actionViewClass`, or `actionProviderClass`) attribute."
-        errorLine1="    android:showAsAction=&quot;never&quot;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
-            line="50"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="AppCompatResource"
-        severity="Error"
-        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`"
-        category="Correctness"
-        priority="5"
-        summary="Menu namespace"
-        explanation="When using the appcompat library, menu resources should refer to the `showAsAction` (or `actionViewClass`, or `actionProviderClass`) in the `app:` namespace, not the `android:` namespace.&#xA;&#xA;Similarly, when **not** using the appcompat library, you should be using the `android:showAsAction` (or `actionViewClass`, or `actionProviderClass`) attribute."
-        errorLine1="    android:showAsAction=&quot;never&quot;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
-            line="56"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="AppCompatResource"
-        severity="Error"
-        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`"
-        category="Correctness"
-        priority="5"
-        summary="Menu namespace"
-        explanation="When using the appcompat library, menu resources should refer to the `showAsAction` (or `actionViewClass`, or `actionProviderClass`) in the `app:` namespace, not the `android:` namespace.&#xA;&#xA;Similarly, when **not** using the appcompat library, you should be using the `android:showAsAction` (or `actionViewClass`, or `actionProviderClass`) attribute."
-        errorLine1="      android:showAsAction=&quot;never&quot;"
-        errorLine2="      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
-            line="62"
+            file="/home/runner/work/FtcRobotController/FtcRobotController/FtcRobotController/src/main/AndroidManifest.xml"
+            line="42"
             column="7"/>
     </issue>
 

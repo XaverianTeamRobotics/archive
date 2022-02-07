@@ -5,7 +5,7 @@ import android.graphics.Path;
 import androidx.annotation.NonNull;
 
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.EncoderTimeoutManager;
-import org.firstinspires.ftc.teamcode.main.utils.geometry.Angle;
+import org.firstinspires.ftc.teamcode.main.utils.helpers.geometry.Angle;
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.location.pipeline.Axis.AxisReading;
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.NavigationSensorCollection;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.groups.StandardVehicleDrivetrain;

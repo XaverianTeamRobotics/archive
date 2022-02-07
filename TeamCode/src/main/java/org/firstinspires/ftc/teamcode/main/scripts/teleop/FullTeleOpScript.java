@@ -49,16 +49,15 @@ public class FullTeleOpScript extends TeleOpScript {
         outputSpace = new OutputSpace(getOpMode().hardwareMap);
         elevatorDriver = new ElevatorDriver(inputSpace, outputSpace, getOpMode());
         elevatorDriver.setFeedbackDestination(gamepadManager);
-        // these are the upper values
-        inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 23);
-        inputSpace.sendInputToLeftHandGrabber(LeftHandGrabbingServoLocation.Action.SET_POSITION, 30);
-        inputSpace.sendInputToRightHandGrabber(RightHandGrabbingServoLocation.Action.SET_POSITION, 60);
-        getOpMode().sleep(500);
-        // these are the lower values
-        inputSpace.sendInputToLeftHandGrabber(LeftHandGrabbingServoLocation.Action.SET_POSITION, 55);
-        inputSpace.sendInputToRightHandGrabber(RightHandGrabbingServoLocation.Action.SET_POSITION, 30);
+        inputSpace.sendInputToLeftHandGrabber(LeftHandGrabbingServoLocation.Action.SET_POSITION, 90);
+        inputSpace.sendInputToRightHandGrabber(RightHandGrabbingServoLocation.Action.SET_POSITION, 35);
         getOpMode().sleep(4000);
         calibrateElevator();
+        /*
+        * VALUES OF ELEVATOR:
+        * LOW: 23
+        * HIGH: 60
+        * */
         inputSpace.sendInputToIntakeLifter(IntakeLiftingServoLocation.Action.SET_POSITION, 60);
         getOpMode().sleep(5000);
         // alert drivers robot is ready
@@ -78,8 +77,6 @@ public class FullTeleOpScript extends TeleOpScript {
         controlEntireLiftAutonomously();
         controlDuck();
         updateLiftControlPermissions();
-        // debug
-        debug();
     }
 
     private void calibrateElevator() {
@@ -147,6 +144,7 @@ public class FullTeleOpScript extends TeleOpScript {
      * This method controls all the autonomous stuff for the lift in TeleOps. Basically, it contains a bunch of routines. On every run, if no routine is running and a button is pressed to toggle a certain routine, the routine will fire. It will enable its routine, making all other routines impossible to run. During running, controllers will give feedback via vibrations to the user to let them know the elevator is performing a routine. Once a routine is complete, they will stop and the elevator will be able to run another routine once input is received.
      */
     private void controlEntireLiftAutonomously() {
+        elevatorDriver.run();
         // enables intake pos routine if requested
         if(gamepadManager.functionThreeGamepad().a) {
             elevatorDriver.setToIntakePosition();
@@ -182,14 +180,6 @@ public class FullTeleOpScript extends TeleOpScript {
         int speed = gamepadManager.functionFourGamepad().right_bumper ? -50 : 0;
         speed += gamepadManager.functionFourGamepad().left_bumper ? 50 : 0;
         inputSpace.sendInputToDuckMotor(DuckMotorLocation.Action.SET_SPEED, speed);
-    }
-
-    private void debug() {
-        getOpMode().telemetry.addData("Elevator Encoder Position", ((StandardMotor) inputSpace.getElevatorLeftLift().getInternalInteractionSurface()).getDcMotor().getCurrentPosition());
-        getOpMode().telemetry.addData("Intake Lift %", ((StandardServo) inputSpace.getIntakeLifter().getInternalInteractionSurface()).getPosition());
-        getOpMode().telemetry.addData("Hand %", ((StandardServo) inputSpace.getHandSpinner().getInternalInteractionSurface()).getPosition());
-        getOpMode().telemetry.addData("Distance Sensor MM", outputSpace.receiveOutputFromHandDistanceSensor());
-        getOpMode().telemetry.update();
     }
 
     @Override

@@ -4,13 +4,14 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.AngularVelocity;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.Position;
 import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
-import org.firstinspires.ftc.teamcode.main.utils.interactions.InteractionSurface;
 
 import java.util.Hashtable;
 
@@ -64,14 +65,13 @@ public class StandardIMU extends InteractionItem {
         parameters.loggingTag          = "IMU";
         parameters.accelerationIntegrationAlgorithm = new JustLoggingAccelerationIntegrator();
 
-
         imu.initialize(parameters);
 
         // Start the logging of measured acceleration
-        imu.startAccelerationIntegration(new Position(), new Velocity(), 1000);
+        imu.startAccelerationIntegration(new Position(), new Velocity(), 100);
     }
 
-    public ReturnData<DataPoint, Float> getCompassData() {
+    public CompassReturnData<HeadingDataPoint, Float> getCompassData() {
         angles = imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
 
         float heading = -angles.firstAngle + headingOffset;
@@ -89,17 +89,42 @@ public class StandardIMU extends InteractionItem {
             pitch = 360 + pitch;
         }*/
 
-        ReturnData<DataPoint, Float> toReturn = new ReturnData<>();
-        toReturn.put(DataPoint.HEADING, heading);
-        toReturn.put(DataPoint.ROLL, roll);
-        toReturn.put(DataPoint.PITCH, pitch);
+        CompassReturnData<HeadingDataPoint, Float> toReturn = new CompassReturnData<>();
+        toReturn.put(HeadingDataPoint.HEADING, heading);
+        toReturn.put(HeadingDataPoint.ROLL, roll);
+        toReturn.put(HeadingDataPoint.PITCH, pitch);
 
         return toReturn;
     }
 
-    public ReturnData<DataPoint, Float> getAcceleration() {
+    public VelocityReturnData<VelocityDataPoint, Float> getVelocity() {
         Velocity velocity = imu.getVelocity();
-        return null;
+        VelocityReturnData<VelocityDataPoint, Float> velocityReturnData = new VelocityReturnData<>();
+        velocityReturnData.put(VelocityDataPoint.X, (float) velocity.xVeloc);
+        velocityReturnData.put(VelocityDataPoint.Y, (float) velocity.yVeloc);
+        velocityReturnData.put(VelocityDataPoint.Z, (float) velocity.zVeloc);
+
+        return velocityReturnData;
+    }
+
+    public VelocityReturnData<VelocityDataPoint, Float> getAcceleration() {
+        Acceleration acceleration = imu.getLinearAcceleration();
+        VelocityReturnData<VelocityDataPoint, Float> velocityReturnData = new VelocityReturnData<>();
+        velocityReturnData.put(VelocityDataPoint.X, (float) acceleration.xAccel*100);
+        velocityReturnData.put(VelocityDataPoint.Y, (float) acceleration.yAccel*100);
+        velocityReturnData.put(VelocityDataPoint.Z, (float) acceleration.zAccel*100);
+
+        return velocityReturnData;
+    }
+
+    public VelocityReturnData<VelocityDataPoint, Float> getAngularVelocity() {
+        AngularVelocity velocity = imu.getAngularVelocity();
+        VelocityReturnData<VelocityDataPoint, Float> velocityReturnData = new VelocityReturnData<>();
+        velocityReturnData.put(VelocityDataPoint.X, (float) velocity.xRotationRate);
+        velocityReturnData.put(VelocityDataPoint.Y, (float) velocity.yRotationRate);
+        velocityReturnData.put(VelocityDataPoint.Z, (float) velocity.zRotationRate);
+
+        return velocityReturnData;
     }
 
     @Override
@@ -115,23 +140,43 @@ public class StandardIMU extends InteractionItem {
         return true;
     }
 
-    public enum DataPoint {HEADING, PITCH, ROLL}
+    public enum HeadingDataPoint {HEADING, PITCH, ROLL}
 
-    public static class ReturnData<K, V> extends Hashtable<K,V> {
-        public ReturnData() {
+    public static class CompassReturnData<K, V> extends Hashtable<K,V> {
+        public CompassReturnData() {
             super();
         }
 
         public float getHeading() {
-            return (float) this.get(DataPoint.HEADING);
+            return (float) this.get(HeadingDataPoint.HEADING);
         }
 
         public float getPitch() {
-            return (float) this.get(DataPoint.PITCH);
+            return (float) this.get(HeadingDataPoint.PITCH);
         }
 
         public float getRoll() {
-            return (float) this.get(DataPoint.ROLL);
+            return (float) this.get(HeadingDataPoint.ROLL);
+        }
+    }
+
+    public enum VelocityDataPoint {X, Y, Z}
+
+    public static class VelocityReturnData<K, V> extends Hashtable<K,V> {
+        public VelocityReturnData() {
+            super();
+        }
+
+        public float getX() {
+            return (float) this.get(VelocityDataPoint.X);
+        }
+
+        public float getY() {
+            return (float) this.get(VelocityDataPoint.Y);
+        }
+
+        public float getZ() {
+            return (float) this.get(VelocityDataPoint.Z);
         }
     }
 }

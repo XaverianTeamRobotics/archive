@@ -21,13 +21,18 @@ jobs:
             if [[ $i == testing-* ]]
             then
               echo "Queueing merge into $i"
+              rm -rf cb.txt
+              touch cb.txt
+              echo $(date +%s%N) > cb.txt
               rm -rf r
               mkdir -p r
               cd r
-              gh workflow run --repo XaverianTeamRobotics/FtcRobotController --ref master merger.yml -f into=$i -f token=$OG
+              sha256sum ../cb.txt > cbh.txt
+              GEN=$(cat cbh.txt)
+              VAL=$(cat ../cb.txt)
+              gh workflow run --repo XaverianTeamRobotics/FtcRobotController --ref master merger.yml -f into=$i -f gen=$GEN -f val=$VAL
               echo "Merge queued!"
             fi
           done
         env:
           GITHUB_TOKEN: ${{ secrets.MASS_MERGE_TOKEN }}
-          OG: ${{ secrets.MASS_MERGE_INDIVIDUAL_TOKEN }}

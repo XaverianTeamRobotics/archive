@@ -22,8 +22,10 @@ jobs:
         distribution: 'adopt'
         cache: gradle
 
-    - name: Gradle version
-      run: ./gradlew --version
+    - name: Debug Gradle
+      run: |
+        chmod +x ./gradlew
+        ./gradlew --version
 
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2

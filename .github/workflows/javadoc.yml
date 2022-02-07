@@ -1,9 +1,12 @@
 name: Javadoc Generation
+# This is the MOST IMPORTANT key in the file. DO NOT remove this key, as it prevents this action from running multiple times at once, potentially breaking deployments of Javadocs. If you edit this, make sure no runs of this workflow are running.
+concurrency: 
+  group: "JAVADOC_GROUP"
 on:
   push:
     branches:
-      - 'master'
-      - 'testing-*'
+      - "testing-*"
+      - "master"
   workflow_dispatch:
 
 jobs:
@@ -11,73 +14,181 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout branch
-      uses: actions/checkout@v2
+    
+      # Set up our environment.
+  
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up the JDK environment
-      uses: actions/setup-java@v2
-      with:
-        java-version: 16
-        distribution: 'adopt'
-        cache: gradle
+      - name: Set up the JDK environment
+        uses: actions/setup-java@v2
+        with:
+          java-version: 16
+          distribution: "temurin"
+          cache: gradle
+      
+      # Make gradle wrapper executable and check it's working properly.
+      
+      - name: Prepare Gradle
+        run: |
+          rm -rf ./docs/
+          mkdir -p ./docs/tempgit/FtcRobotController/
+          chmod +x ./gradlew
+          ./gradlew --version
+        
+      # Install our dependencies by building the app, then discarding the build. The cached deps will still be there, and we can use them for the Javadoc.
 
-    - name: Check Gradle version
-      run: ./gradlew --version
-
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@v2
-      with:
-        arguments: build
-
-    - name: Generate documentation with Javadoc
-      run: javadoc -d javadoc-output $(find . -name "*.java") -Xdoclint:none --ignore-source-errors
-
-    - name: Upload the Javadoc output
-      uses: actions/upload-artifact@v2
-      with:
-        name: Javadoc-output
-        path: ./javadoc-output/
-
-    - name: Commit and push new Javadoc folder
-      run: |
-        # Set up Git and environment variables
-        git config user.name "GitHub Actions Bot"
-        git config user.email "actions@github.com"
-        shopt -s dotglob
-        export BRANCH_NAME=$(echo $GITHUB_REF | sed -e "s/refs\/heads\///")
-
-        # Move Javadocs and build reports
-        mv javadoc-output/ ..
-        mkdir ../team-reports/
-        mv ./TeamCode/build/reports/*  ../team-reports/
-        mkdir ../sdk-reports/
-        mv ./FtcRobotController/build/reports/* ../sdk-reports/
-
-        # Checkout gh-pages branch
-        git remote set-branches origin '*'
-        git fetch -v
-        git checkout gh-pages
-
-        # Copy Javadocs to gh-pages
-        rm -rf ./javadocs/${BRANCH_NAME}/ || true
-        mkdir -p ./javadocs/${BRANCH_NAME}/
-        mv ../javadoc-output/* ./javadocs/${BRANCH_NAME}/
-
-        # Copy build reports to gh-pages
-        rm -rf ./reports/${BRANCH_NAME}/ || true
-        mkdir -p ./reports/${BRANCH_NAME}/team-reports/
-        mkdir -p ./reports/${BRANCH_NAME}/sdk-reports/
-        mv ../team-reports/* ./reports/${BRANCH_NAME}/team-reports/
-        mv ../sdk-reports/* ./reports/${BRANCH_NAME}/sdk-reports/
-        mv ./reports/${BRANCH_NAME}/team-reports/lint-results-debug.html ./reports/${BRANCH_NAME}/team-reports/index.html
-        mv ./reports/${BRANCH_NAME}/sdk-reports/lint-results-debug.html ./reports/${BRANCH_NAME}/sdk-reports/index.html
-
-        # Commit and push changes
-        git add .
-        git commit -a -m "Javadoc documentation update ($GITHUB_RUN_NUMBER)
-        Information:
+      - name: Import dependencies with Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          
+      # Checkout repository to place FTC SDK into.
+          
+      - name: Prepare link update
+        uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+          path: './docs/tempgit/FtcRobotController/'
+      
+      # We host our own Javadoc of the FTC SDK to allow for easier linking of external Javadocs, so we update the Javadocs on each run.
+      
+      - name: Update links
+        run: |
+          ./gradlew extractJavadoc
+          cd ./docs/
+          cd tempgit/FtcRobotController
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          cd ../../
+          rm -rf ./tempgit/FtcRobotController/javadocs/ftc/
+          mkdir -p ./tempgit/FtcRobotController/javadocs/ftc/ftccommon
+          mkdir -p ./tempgit/FtcRobotController/javadocs/ftc/hardware
+          mkdir -p ./tempgit/FtcRobotController/javadocs/ftc/inspection
+          mkdir -p ./tempgit/FtcRobotController/javadocs/ftc/onbotjava
+          mkdir -p ./tempgit/FtcRobotController/javadocs/ftc/robotcore
+          mv ./7.1.0/FtcCommon/* ./tempgit/FtcRobotController/javadocs/ftc/ftccommon
+          mv ./7.1.0/Hardware/* ./tempgit/FtcRobotController/javadocs/ftc/hardware
+          mv ./7.1.0/Inspection/* ./tempgit/FtcRobotController/javadocs/ftc/inspection
+          mv ./7.1.0/OnBotJava/* ./tempgit/FtcRobotController/javadocs/ftc/onbotjava
+          mv ./7.1.0/RobotCore/* ./tempgit/FtcRobotController/javadocs/ftc/robotcore
+          cd ./tempgit/FtcRobotController
+          git add -A
+          git commit --allow-empty -a -m "Update external link sources ($GITHUB_RUN_NUMBER)
+          Information:
             Repository: $GITHUB_REPOSITORY
             Branch: $GITHUB_REF
             Commit: $GITHUB_SHA
             Who triggered action: $GITHUB_ACTOR"
-        git push
+          git push
+          cd ../../../
+          rm -rf ./docs/
+          
+      # Since our Javadocs are on GitHub Pages, we need to wait for GitHub Pages to update before continuing. This should, at most, take about 12 minutes between queue and build time and another 12 for the cache to update.
+      
+      - name: Allow update to publish to Pages
+        run: |
+          sleep 1440
+        
+      # Locate our dependencies, build a classpath using them, append Android itself to said classpath, and run the Javadoc command with our flags. All of this, especially the dependendy preperation, is critical to the Javadoc command succeeding. It will fail due to a JDK bug affecting all versions <18, which sadly includes us due to FTC's reliance on Gradle 7. Talk to @tom-ricci amd @MatthewL246 before editing anything to do with this step.
+
+      - name: Generate documentation with Javadoc
+        run: |
+          echo '-classpath "./FtcRobotController/:' >> ./jdtclsp.txt
+          aarray=( $(find ~/.gradle/caches/transform*/ -name "classes.jar"  -not -type d) )
+          jarray=( $(find ~/.gradle/caches/module*/ -name "*.jar"  -not -type d) )
+          rarray=( $(find ~/.gradle/caches/ -name "res" -type d) )
+          marray=( $(find ~/.gradle/caches/ -name "AndroidManifest.xml"  -not -type d) )
+          for i in ${aarray[@]}
+          do
+              echo $i >> ./jdtclsp.txt
+              echo ":" >> ./jdtclsp.txt
+          done
+          for i in ${jarray[@]}
+          do
+              echo $i >> ./jdtclsp.txt
+              echo ":" >> ./jdtclsp.txt
+          done
+          for i in ${rarray[@]}
+          do
+              echo $i >> ./jdtclsp.txt
+              echo ":" >> ./jdtclsp.txt
+          done
+          for i in ${marray[@]}
+          do
+              echo $i >> ./jdtclsp.txt
+              echo ":" >> ./jdtclsp.txt
+          done
+          echo '/usr/local/lib/android/sdk/platforms/android-29/android.jar"' >> ./jdtclsp.txt
+          STR=$( cat ./jdtclsp.txt )
+          STR=${STR//$'\n'/}
+          rm -rf ./jdtclsp.txt
+          echo $STR >> ./jdtclsp.txt
+          rm -rf ./javadoc-output/
+          mkdir ./javadoc-output/
+          javadoc -Xdoclint:none -public -splitindex -use -author -version -sourcepath /usr/local/lib/android/sdk/platforms/android-29/android.jar -d ./javadoc-output -link https://docs.oracle.com/en/java/javase/11/docs/api/ -link https://xaverianteamrobotics.github.io/FtcRobotController/javadocs/ftc/ftccommon/ -link https://xaverianteamrobotics.github.io/FtcRobotController/javadocs/ftc/hardware/ -link https://xaverianteamrobotics.github.io/FtcRobotController/javadocs/ftc/inspection/ -link https://xaverianteamrobotics.github.io/FtcRobotController/javadocs/ftc/onbotjava/ -link https://xaverianteamrobotics.github.io/FtcRobotController/javadocs/ftc/robotcore/ @./jdtclsp.txt $(find ./TeamCode/ -name "*.java" -not -type d) --ignore-source-errors
+          echo -e "\n\n\n\n------------------------------\nDEBUG LOGS START\n------------------------------\n\n\n\n"
+          echo -e "CLASSPATH:\n\n"
+          cat ./jdtclsp.txt
+          echo -e "\n\n\nINPUT:\n\n"
+          find ./TeamCode/ -name "*.java" -not -type d
+          echo -e "\n\n\nOUTPUT:\n\n"
+          ls ./javadoc-output/
+          echo -e "\n\n\n\n------------------------------\nDEBUG LOGS END\n------------------------------\n\n\n\n"
+          
+      # Upload an Artifact of the Javadoc if for whatever reason one might need to download one.
+
+      - name: Upload generated Javadoc to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Javadoc-output
+          path: ./javadoc-output/
+          
+      # Upload build reports and the Javadoc to Pages to access online.
+
+      - name: Prepare Javadoc upload to Pages
+        run: |
+          # Set up Git and environment variables
+          shopt -s dotglob
+          # Move Javadoc output and build reports
+          mkdir ./team-reports/
+          mv ./TeamCode/build/reports/*  ./team-reports/
+          mkdir ./sdk-reports/
+          mv ./FtcRobotController/build/reports/* ./sdk-reports/
+          rm -rf ./tjdmp/
+          mkdir ./tjdmp/
+      
+      - name: Checkout Pages in Action Workspace
+        uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+          path: './tjdmp/'
+      
+      - name: Upload generated Javadoc to Pages
+        run: |
+          # Copy Javadoc docs to gh-pages
+          cd ./tjdmp/
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          shopt -s dotglob
+          export BRANCH_NAME=$(echo $GITHUB_REF | sed -e "s/refs\/heads\///")
+          rm -rf ./javadocs/branch/${BRANCH_NAME}/ || true
+          mkdir -p ./javadocs/branch/${BRANCH_NAME}/
+          mv ../javadoc-output/* ./javadocs/branch/${BRANCH_NAME}/
+          # Copy build reports to gh-pages
+          rm -rf ./reports/branch/${BRANCH_NAME}/ || true
+          mkdir -p ./reports/branch/${BRANCH_NAME}/team-reports/
+          mkdir -p ./reports/branch/${BRANCH_NAME}/sdk-reports/
+          mv ../team-reports/* ./reports/branch/${BRANCH_NAME}/team-reports/
+          mv ../sdk-reports/* ./reports/branch/${BRANCH_NAME}/sdk-reports/
+          mv ./reports/branch/${BRANCH_NAME}/team-reports/lint-results-debug.html ./reports/branch/${BRANCH_NAME}/team-reports/index.html || true
+          mv ./reports/branch/${BRANCH_NAME}/sdk-reports/lint-results-debug.html ./reports/branch/${BRANCH_NAME}/sdk-reports/index.html || true
+          # Commit and push changes
+          git add -A
+          git commit --allow-empty -a -m "Javadoc documentation update ($GITHUB_RUN_NUMBER)
+          Information:
+            Repository: $GITHUB_REPOSITORY
+            Branch: $GITHUB_REF
+            Commit: $GITHUB_SHA
+            Who triggered action: $GITHUB_ACTOR"
+          git push

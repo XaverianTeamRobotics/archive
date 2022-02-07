@@ -2,10 +2,15 @@ name: DevSkim Analysis
 on:
   push:
     branches:
-      - 'master'
-      - 'testing-*'
+      - "master"
+      - "testing-*"
   pull_request:
+    branches:
+      - "master"
+      - "testing-*"
   workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * 0"
 
 jobs:
   analyze:
@@ -17,13 +22,13 @@ jobs:
       security-events: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run DevSkim
-      uses: microsoft/DevSkim-Action@v1
+      - name: Run DevSkim
+        uses: microsoft/DevSkim-Action@v1
 
-    - name: Upload results
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: devskim-results.sarif
+      - name: Upload results
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: devskim-results.sarif

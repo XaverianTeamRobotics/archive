@@ -1,0 +1,33 @@
+name: Fetch local upstream
+on:
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find branches to fetch upstream from
+        run: |
+          echo "Finding branches..."
+          rm -rf wksp
+          mkdir -p wksp
+          cd wksp
+          touch b.txt
+          echo $(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/XaverianTeamRobotics/FtcRobotController/branches | jq '[.[] | {name: .name}]') > b.txt
+          echo $(jq -r .[].name b.txt) > b.txt
+          echo $(cat b.txt | tr " " "\n") > b.txt
+          echo "Branches found! - $(cat b.txt)"
+          for i in `cat b.txt`;
+          do
+            if [[ $i == testing-* ]]
+            then
+              echo "Queueing merge into $i"
+              rm -rf r
+              mkdir -p r
+              cd r
+              gh workflow run --repo XaverianTeamRobotics/FtcRobotController --ref master merger.yml -f into=$i -f token=$OG
+              echo "Merge queued!"
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.MASS_MERGE_TOKEN }}
+          OG: ${{ secrets.MASS_MERGE_INDIVIDUAL_TOKEN }}

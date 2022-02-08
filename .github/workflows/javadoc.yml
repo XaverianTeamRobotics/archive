@@ -4,9 +4,9 @@ concurrency:
   group: "JAVADOC_GROUP"
 on:
   push:
-    branches-ignore:
-      - "gh-pages"
-      - "docs"
+    branches:
+      - "testing-*"
+      - "master"
   workflow_dispatch:
 
 jobs:

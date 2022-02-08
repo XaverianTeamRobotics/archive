@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.main.utils.geometry;
+package org.firstinspires.ftc.teamcode.main.utils.helpers.geometry;
 
 public class Angle extends Number {
 

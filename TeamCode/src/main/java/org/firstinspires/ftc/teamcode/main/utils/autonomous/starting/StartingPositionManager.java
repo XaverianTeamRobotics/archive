@@ -1,19 +1,21 @@
 package org.firstinspires.ftc.teamcode.main.utils.autonomous.starting;
 
-import android.util.Range;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.EncoderTimeoutManager;
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.image.ImgProc;
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.location.pipeline.PositionSystem;
-import org.firstinspires.ftc.teamcode.main.utils.geometry.Angle;
+import org.firstinspires.ftc.teamcode.main.utils.helpers.elevator.ElevatorDriver;
+import org.firstinspires.ftc.teamcode.main.utils.helpers.geometry.Angle;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.groups.StandardTankVehicleDrivetrain;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardMotor;
 import org.firstinspires.ftc.teamcode.main.utils.io.InputSpace;
 import org.firstinspires.ftc.teamcode.main.utils.io.OutputSpace;
 import org.firstinspires.ftc.teamcode.main.utils.locations.*;
 import org.firstinspires.ftc.teamcode.main.utils.resources.Resources;
+
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class StartingPositionManager {
     PositionSystem positionSystem;
@@ -28,12 +30,16 @@ public class StartingPositionManager {
     boolean intakeShouldBeDown = false, liftAutoMovementIsDone = false, liftIsMovingDown = false, robotIsMovingBackToTurningPositionAfterLiftMovement = false;
     boolean isMovingToLBall = false, isMovingToMBall = false, isMovingToTBall = false, isMovingToLBlock = false, isMovingToMBlock = false, isMovingToTBlock = false, isMovingToBasePos = false, isMovingToIntakePos = false;
     ImgProc imgProc;
+    AtomicBoolean readyForElevator = new AtomicBoolean(false);
+    ElevatorDriver elevatorDriver;
 
     // this should be true if the camera is upside down in real life (it wont work as well upside down, but this provides some functionality)
     boolean isCameraUpsideDown = false;
 
     // this should be true if a block is loaded, false if a ball
     boolean isBlock = true;
+
+    int h = 0;
 
     boolean isBlueSide, isCloseToParking;
 
@@ -42,32 +48,27 @@ public class StartingPositionManager {
         this.isBlueSide = isBlueSide;
         this.isCloseToParking = isCloseToParking;
         this.ballDropHeight = ballDropHeight;
-
         positionSystem = Resources.Navigation.Sensors.getPositionSystem(opMode.hardwareMap);
 
         input = new InputSpace(opMode.hardwareMap);
         output = new OutputSpace(opMode.hardwareMap);
         tank = (StandardTankVehicleDrivetrain) input.getTank().getInternalInteractionSurface();
+        elevatorDriver = new ElevatorDriver(input, output, opMode);
         positionSystem.setDrivetrain(tank);
 
         imgProc = new ImgProc(opMode.hardwareMap, new String[]{"Duck", "Marker"}, "FreightFrenzy_DM.tflite");
         imgProc.init();
         imgProc.activate();
-        imgProc.setZoom(1, 16/9);
+        imgProc.setZoom(1, 16.0/9);
 
-        int h = 0;
         while (h == 0) {
             h = initialPositionsOrientation(imgProc.identifyStartingPos());
         }
-        h = isBlock ? h + 3 : h;
         this.ballDropHeight = h;
-        ballDropHeight = h;
-
-        int finalH = h;
-        opMode.telemetry.addAction(() -> opMode.telemetry.addData("Detected Position", finalH));
 
         int turnModifier = 1;
         if (!isBlueSide) turnModifier = -turnModifier;
+        int finalTurnModifier = turnModifier;
 
         opMode.waitForStart();
 
@@ -82,35 +83,28 @@ public class StartingPositionManager {
             // Move Forward 1 Tile
             positionSystem.encoderDrive(15);
             drivetrainHold();
-
             // Turn counter-clockwise 135 degrees
-            positionSystem.turnWithCorrection(new Angle(135 * turnModifier, Angle.AngleUnit.DEGREE));
+            positionSystem.turnWithCorrection(new Angle(135 * finalTurnModifier, Angle.AngleUnit.DEGREE));
             drivetrainHold();
-
             // Drive Back two inches
-            positionSystem.encoderDrive(-2);
+            positionSystem.encoderDrive(-1.5);
             drivetrainHold();
 
-            // Do Lift
-            while(!liftAutoMovementIsDone) {
-                controlEntireLiftAutonomously(ballDropHeight);
-            }
+            runElevator();
+            drivetrainHold();
 
             // Drive forward 4 inches
             positionSystem.encoderDrive(3);
             drivetrainHold();
-
             // Turn counter-clockwise 33 degrees
-            positionSystem.turnWithCorrection(new Angle(33 * turnModifier, Angle.AngleUnit.DEGREE));
+            positionSystem.turnWithCorrection(new Angle(33 * finalTurnModifier, Angle.AngleUnit.DEGREE));
             drivetrainHold();
-
             // Turn clockwise 135 degrees
-            positionSystem.turnWithCorrection(new Angle(-135 * turnModifier, Angle.AngleUnit.DEGREE));
+            positionSystem.turnWithCorrection(new Angle(-135 * finalTurnModifier, Angle.AngleUnit.DEGREE));
             drivetrainHold();
-
             // Raise the intake
             toggleIntakeLifter();
-
+            drivetrainHold();
             // Go backward 1 tile
             positionSystem.encoderDrive(-15);
             drivetrainHold();
@@ -119,37 +113,54 @@ public class StartingPositionManager {
             // Move Forward 1 Tile
             positionSystem.encoderDrive(15);
             drivetrainHold();
-
-            // Turn clockwise 1350 degrees
-            positionSystem.turnWithCorrection(new Angle(-135 * turnModifier, Angle.AngleUnit.DEGREE));
+            // Turn clockwise 135 degrees
+            positionSystem.turnWithCorrection(new Angle(-135 * finalTurnModifier, Angle.AngleUnit.DEGREE));
+            drivetrainHold();
+            // Move Back 2 Inches
+            positionSystem.encoderDrive(-1.5);
             drivetrainHold();
 
-            // Do lift
-            positionSystem.encoderDrive(-2);
-            while(!liftAutoMovementIsDone) {
-                controlEntireLiftAutonomously(ballDropHeight);
-                if(liftIsMovingDown) {
-                    positionSystem.encoderDrive(3);
-                    liftIsMovingDown = false;
-                    robotIsMovingBackToTurningPositionAfterLiftMovement = true;
-                }
-            }
+            runElevator();
             drivetrainHold();
 
             // Turn counter-clockwise 33 degrees and raise intake
-            positionSystem.turnWithCorrection(new Angle(33 * turnModifier, Angle.AngleUnit.DEGREE));
-            toggleIntakeLifter();
+            positionSystem.turnWithCorrection(new Angle(33 * finalTurnModifier, Angle.AngleUnit.DEGREE));
             drivetrainHold();
 
+            toggleIntakeLifter();
             // Drive One Tile
             positionSystem.encoderDrive(13);
             drivetrainHold();
         }
     }
 
+    private void runElevator() {
+        boolean hasDriven = false;
+
+        elevatorDriver.setPosition(h, isBlock);
+
+        while (!elevatorDriver.isStable()) {
+            // controlEntireLiftAutonomously(ballDropHeight); // DEPRECATED IN FAVOR OF
+            //                                                   ElevatorDriver.runToHeight
+            elevatorDriver.run();
+            if (elevatorDriver.isResettingToOriginalPos() && !hasDriven) {
+                elevatorDriver.setPosition(h, isBlock);
+
+                // Go forward 3 if we are ready to move
+                positionSystem.encoderDrive(3);
+                resetTimer();
+                hasDriven = true;
+            }
+        }
+    }
+
+    private void encoderDriveAndReadyElevator(int distance) {
+        positionSystem.encoderDrive(distance);
+        readyForElevator.set(true);
+    }
+
     private void drivetrainHold() {
-        encoderTimeout.restart();
-        encoderTimeout.durationMillis = 5000;
+        resetTimer();
 
         while (positionSystem.areMotorsBusy() && !encoderTimeout.hasTimedOut() && opMode.opModeIsActive()) {
             opMode.telemetry.addData("Motors busy for", encoderTimeout.getOperationTime());
@@ -158,6 +169,15 @@ public class StartingPositionManager {
 
         positionSystem.getDrivetrain().brake();
         encoderTimeout.restart();
+    }
+
+    private boolean isDrivetrainReady() {
+        return !positionSystem.areMotorsBusy() && encoderTimeout.hasTimedOut() && opMode.opModeIsActive();
+    }
+
+    private void resetTimer() {
+        encoderTimeout.restart();
+        encoderTimeout.durationMillis = 5000;
     }
 
     @Deprecated
@@ -199,6 +219,7 @@ public class StartingPositionManager {
         input.sendInputToIntakeSpinner(IntakeSpinningMotorLocation.Action.SET_SPEED, speed);
     }
 
+    @Deprecated
     private void controlEntireLiftAutonomously(int h) {
         // enables intake pos routine if requested
         if(!isMovingToBasePos && !isMovingToLBall && !isMovingToMBall && !isMovingToTBall && !isMovingToLBlock && !isMovingToMBlock && !isMovingToTBlock && !isMovingToIntakePos) {
@@ -535,5 +556,9 @@ public class StartingPositionManager {
             }
         }
         return raw;
+    }
+
+    private interface Movement {
+        void run();
     }
 }

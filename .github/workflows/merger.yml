@@ -1,0 +1,52 @@
+name: Programatically Merge
+
+on:
+  workflow_dispatch:
+    inputs:
+      into:
+        description: 'Into'
+        type: string
+        required: true
+      token:
+        description: 'Token'
+        type: string
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sanatize
+        run: |
+          echo "Verifying input..."
+          rm -rf wksp
+          mkdir -p wksp
+          cd wksp
+          touch b.txt
+          echo $(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/XaverianTeamRobotics/FtcRobotController/branches | jq '[.[] | {name: .name}]') > b.txt
+          echo $(jq -r .[].name b.txt) > b.txt
+          echo $(cat b.txt | tr " " "\n") > b.txt
+          branches=()
+          mapfile -t branches < b.txt
+          value=${{ github.event.inputs.into }}
+          if [[ ! " ${branches[*]} " =~ " ${value} " ]]; then
+            echo "Input could not be verified!"
+            exit 1
+          fi
+          echo "Input verified."
+      - name: Authenticate
+        run: |
+          if [[ ! "$OG" == "$TOKEN" ]]
+          then
+            echo "Authentication failed!"
+            exit 1
+          fi
+          echo "Authentication successful, attempting to merge..."
+        env:
+          TOKEN: ${{ github.event.inputs.token }}
+          OG: ${{ secrets.MASS_MERGE_INDIVIDUAL_TOKEN }}
+      - name: Branch Merge
+        uses: everlytic/branch-merge@1.1.2
+        with:
+          target_branch: ${{ github.event.inputs.into }}
+          commit_message_template: Fetched Local Upstream
+      

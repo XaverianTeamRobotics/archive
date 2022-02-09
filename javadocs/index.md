@@ -1,7 +1,7 @@
 # Javadocs
 Javadocs are automatically-generated documentation pages based on Javadoc `/***/` comments.
 <div class="list">
-    <a class="btn item" href="./ftc">
+    <a class="btn item" href="./ftclibs">
         <div class="item-img">
             {% octicon git-branch height:1.8rem fill:#197AF4 width:1.8rem %}
         </div>

@@ -37,18 +37,8 @@
       </footer>
     </main>
     <script>
-      let url = document.location.hostname;
-      let path = document.location.pathname;
-      if(url.endsWith("/")) {
-        url = url.substring(0, url.length - 1);
-      }
-      if(path.endsWith("/")) {
-        path = path.substring(0, path.length - 1);
-      }
-      if(path.startsWith("/")) {
-        path = path.substring(1);
-      }
-      if(url !== "robotics.xbhs.net" && url + "/" + path + "/" !== "xaverianteamrobotics.github.io/FtcRobotController/") {
+      let url = document.location.href.toUpperCase();
+      if(url !== "HTTPS://ROBOTICS.XBHS.NET/" && url !== "HTTPS://XAVERIANTEAMROBOTICS.GITHUB.IO/FTCROBOTCONTOLLER/") {
         document.getElementById("homeButton").style["display"] = "inline-block";
       }
     </script>

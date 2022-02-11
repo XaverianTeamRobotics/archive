@@ -18,7 +18,9 @@ org.firstinspires.ftc.teamcode.main.utils.devices
 org.firstinspires.ftc.teamcode.main.utils.gamepads
 org.firstinspires.ftc.teamcode.main.utils.helpers.builders
 org.firstinspires.ftc.teamcode.main.utils.helpers.elevator
+org.firstinspires.ftc.teamcode.main.utils.helpers.encoders
 org.firstinspires.ftc.teamcode.main.utils.helpers.geometry
+org.firstinspires.ftc.teamcode.main.utils.helpers.mafs
 org.firstinspires.ftc.teamcode.main.utils.interactions
 org.firstinspires.ftc.teamcode.main.utils.interactions.groups
 org.firstinspires.ftc.teamcode.main.utils.interactions.items

@@ -174,10 +174,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 37 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 39 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Wed Feb 09 19:48:41 UTC 2022      </nav>
+Check performed at Fri Feb 11 19:41:07 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -186,6 +186,7 @@ Check performed at Wed Feb 09 19:48:41 UTC 2022      </nav>
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (17)</a>
       <a class="mdl-navigation__link" href="#SdCardPath"><i class="material-icons warning-icon">warning</i>Hardcoded reference to <code>/sdcard</code> (2)</a>
+      <a class="mdl-navigation__link" href="#RedundantLabel"><i class="material-icons warning-icon">warning</i>Redundant label on activity (2)</a>
       <a class="mdl-navigation__link" href="#IntentFilterExportedReceiver"><i class="material-icons warning-icon">warning</i>Unspecified <code>android:exported</code> in manifest (2)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (9)</a>
@@ -213,6 +214,9 @@ Check performed at Wed Feb 09 19:48:41 UTC 2022      </nav>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SdCardPath">SdCardPath</a>: Hardcoded reference to <code>/sdcard</code></td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#RedundantLabel">RedundantLabel</a>: Redundant label on activity</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
 <tr>
@@ -244,7 +248,7 @@ Check performed at Wed Feb 09 19:48:41 UTC 2022      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#RelativeOverlap">RelativeOverlap</a>: Overlapping items in RelativeLayout</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (37)</a>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (35)</a>
 </td></tr></table>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
@@ -517,6 +521,59 @@ Similarly, do not reference the <code>/data/data/</code> path directly; it can v
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSdCardPathLink" onclick="reveal('explanationSdCardPath');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SdCardPathCardLink" onclick="hideid('SdCardPathCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="RedundantLabel"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="RedundantLabelCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Redundant label on activity</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:28</span>: <span class="message">Redundant label can be removed</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>  <span class="tag">&lt;activity</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"</span>
+<span class="lineno"> 26 </span>            <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 27 </span>            <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="caretline"><span class="lineno"> 28 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>            <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+<span class="lineno"> 30 </span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;intent-filter></span></pre>
+
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:42</span>: <span class="message">Redundant label can be removed</span><br /><pre class="errorlines">
+<span class="lineno"> 39 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"</span>
+<span class="lineno"> 40 </span>    <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 41 </span>    <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="caretline"><span class="lineno"> 42 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 43 </span>    <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+<span class="lineno"> 44 </span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;intent-filter></span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationRedundantLabel" style="display: none;">
+When an activity does not have a label attribute, it will use the one from the application tag. Since the application has already specified the same label, the label on this activity can be omitted.<br/>To suppress this error, use the issue id "RedundantLabel" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">RedundantLabel</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationRedundantLabelLink" onclick="reveal('explanationRedundantLabel');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="RedundantLabelCardLink" onclick="hideid('RedundantLabelCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -1178,15 +1235,6 @@ This detector looks for invalid line endings with repeated carriage return chara
 </div>
 </div>
 <div class="issue">
-<div class="id">MediaCapabilities<div class="issueSeparator"></div>
-</div>
-<div class="metadata">Disabled By: Default<br/>
-<div class="explanation">
-In Android 12 and higher, an app that opens media files should explicitly specify media formats that it doesn't support, so the OS can provide a transcoded file instead.<br/>To suppress this error, use the issue id "MediaCapabilities" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
 <div class="id">MinSdkTooLow<div class="issueSeparator"></div>
 </div>
 <div class="metadata">Disabled By: Default<br/>
@@ -1305,11 +1353,7 @@ To suppress this error, use the issue id "SyntheticAccessor" as explained in the
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable.<br/>
-<br/>
-Note that you should never use grave accents and apostrophes to quote, `like this'.<br/>
-<br/>
-(Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
+Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable. Note that you should never use grave accents and apostrophes to quote, `like this'. (Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
 </div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "TypographyQuotes" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
@@ -1378,17 +1422,6 @@ To suppress this error, use the issue id "UnusedIds" as explained in the <a href
 <div class="explanation">
 Ensures that an actions XML file is properly formed<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "ValidActionsXml" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
-<div class="id">VectorDrawableCompat<div class="issueSeparator"></div>
-</div>
-<div class="metadata">Disabled By: Default<br/>
-<div class="explanation">
-To use VectorDrawableCompat, you need to make two modifications to your project. First, set <code>android.defaultConfig.vectorDrawables.useSupportLibrary = true</code> in your <code>build.gradle</code> file, and second, use <code>app:srcCompat</code> instead of <code>android:src</code> to refer to vector drawables.<br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/guide/topics/graphics/vector-drawable-resources">https://developer.android.com/guide/topics/graphics/vector-drawable-resources</a>
-<li><a href="https://medium.com/androiddevelopers/using-vector-assets-in-android-apps-4318fd662eb9">https://medium.com/androiddevelopers/using-vector-assets-in-android-apps-4318fd662eb9</a>
-</ul></div>To suppress this error, use the issue id "VectorDrawableCompat" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>

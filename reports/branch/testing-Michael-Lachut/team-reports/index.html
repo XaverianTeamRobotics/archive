@@ -174,10 +174,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 1 error and 61 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 1 error and 60 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Wed Feb 09 19:50:42 UTC 2022      </nav>
+Check performed at Fri Feb 11 19:43:15 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -189,7 +189,6 @@ Check performed at Wed Feb 09 19:50:42 UTC 2022      </nav>
       <a class="mdl-navigation__link" href="#GradleDynamicVersion"><i class="material-icons warning-icon">warning</i>Gradle Dynamic Version (2)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (6)</a>
       <a class="mdl-navigation__link" href="#ExtraTranslation"><i class="material-icons error-icon">error</i>Extra translation (1)</a>
-      <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (41)</a>
     </nav>
   </div>
@@ -222,17 +221,12 @@ Check performed at Wed Feb 09 19:50:42 UTC 2022      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
 <a href="#ExtraTranslation">ExtraTranslation</a>: Extra translation</td></tr>
-<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
-</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#AllowBackup">AllowBackup</a>: AllowBackup/FullBackupContent Problems</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
 <td class="countColumn">41</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (37)</a>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (35)</a>
 </td></tr></table>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
@@ -624,63 +618,6 @@ To suppress this error, use the issue id "ExtraTranslation" as explained in the 
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationExtraTranslationLink" onclick="reveal('explanationExtraTranslation');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ExtraTranslationCardLink" onclick="hideid('ExtraTranslationCard');">
-Dismiss</button>            </div>
-            </div>
-          </section>
-<a name="Security"></a>
-<a name="AllowBackup"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AllowBackupCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">AllowBackup/FullBackupContent Problems</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../../FtcRobotController/build/intermediates/merged_manifest/debug/AndroidManifest.xml">../../../FtcRobotController/build/intermediates/merged_manifest/debug/AndroidManifest.xml</a>:15</span>: <span class="message">On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute <code>android:fullBackupContent</code> to specify an <code>@xml</code> resource which configures which files to backup, or just set <code>android:fullBackupOnly=true</code>. More info: <a href="https://developer.android.com/guide/topics/data/autobackup">https://developer.android.com/guide/topics/data/autobackup</a></span><br /><pre class="errorlines">
-<span class="lineno"> 12 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.RECEIVE_BOOT_COMPLETED"</span> />
-<span class="lineno"> 13 </span>
-<span class="lineno"> 14 </span>    <span class="tag">&lt;application</span><span class="attribute">
-</span><span class="caretline"><span class="lineno"> 15 </span><span class="attribute">        </span><span class="warning"><span class="prefix">android:</span><span class="attribute">allowBackup</span></span>=<span class="value">"true"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 16 </span>        <span class="prefix">android:</span><span class="attribute">extractNativeLibs</span>=<span class="value">"true"</span>
-<span class="lineno"> 17 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@drawable/ic_launcher"</span>
-<span class="lineno"> 18 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationAllowBackup" style="display: none;">
-The <code>allowBackup</code> attribute determines if an application's data can be backed up and restored. It is documented at <a href="https://developer.android.com/reference/android/R.attr.html#allowBackup">https://developer.android.com/reference/android/R.attr.html#allowBackup</a><br/>
-<br/>
-By default, this flag is set to <code>true</code> which means application data can be backed up and restored by the OS. Setting <code>allowBackup="false"</code> opts the application out of being backed up and so users can't restore data related to it when they go through the device setup wizard.<br/>
-<br/>
-Allowing backups may have security consequences for an application. Currently <code>adb backup</code> allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. <code>adb restore</code> allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.<br/>
-<br/>
-To fix this warning, decide whether your application should support backup, and explicitly set <code>android:allowBackup=(true|false)"</code>.<br/>
-<br/>
-If not set to false, and if targeting API 23 or later, lint will also warn that you should set <code>android:fullBackupContent</code> or <code>android:fullBackupOnly</code> to configure auto backup.<br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/guide/topics/data/autobackup">https://developer.android.com/guide/topics/data/autobackup</a>
-<li><a href="https://developer.android.com/reference/android/R.attr.html#allowBackup">https://developer.android.com/reference/android/R.attr.html#allowBackup</a>
-</ul></div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "AllowBackup" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">AllowBackup</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Security</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 3/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAllowBackupLink" onclick="reveal('explanationAllowBackup');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AllowBackupCardLink" onclick="hideid('AllowBackupCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -1302,15 +1239,6 @@ This detector looks for invalid line endings with repeated carriage return chara
 </div>
 </div>
 <div class="issue">
-<div class="id">MediaCapabilities<div class="issueSeparator"></div>
-</div>
-<div class="metadata">Disabled By: Default<br/>
-<div class="explanation">
-In Android 12 and higher, an app that opens media files should explicitly specify media formats that it doesn't support, so the OS can provide a transcoded file instead.<br/>To suppress this error, use the issue id "MediaCapabilities" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
 <div class="id">MinSdkTooLow<div class="issueSeparator"></div>
 </div>
 <div class="metadata">Disabled By: Default<br/>
@@ -1429,11 +1357,7 @@ To suppress this error, use the issue id "SyntheticAccessor" as explained in the
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable.<br/>
-<br/>
-Note that you should never use grave accents and apostrophes to quote, `like this'.<br/>
-<br/>
-(Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
+Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable. Note that you should never use grave accents and apostrophes to quote, `like this'. (Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
 </div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "TypographyQuotes" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
@@ -1502,17 +1426,6 @@ To suppress this error, use the issue id "UnusedIds" as explained in the <a href
 <div class="explanation">
 Ensures that an actions XML file is properly formed<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "ValidActionsXml" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
-<div class="id">VectorDrawableCompat<div class="issueSeparator"></div>
-</div>
-<div class="metadata">Disabled By: Default<br/>
-<div class="explanation">
-To use VectorDrawableCompat, you need to make two modifications to your project. First, set <code>android.defaultConfig.vectorDrawables.useSupportLibrary = true</code> in your <code>build.gradle</code> file, and second, use <code>app:srcCompat</code> instead of <code>android:src</code> to refer to vector drawables.<br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/guide/topics/graphics/vector-drawable-resources">https://developer.android.com/guide/topics/graphics/vector-drawable-resources</a>
-<li><a href="https://medium.com/androiddevelopers/using-vector-assets-in-android-apps-4318fd662eb9">https://medium.com/androiddevelopers/using-vector-assets-in-android-apps-4318fd662eb9</a>
-</ul></div>To suppress this error, use the issue id "VectorDrawableCompat" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>

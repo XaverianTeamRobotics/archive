@@ -7,6 +7,7 @@ org.firstinspires.ftc.teamcode.main.scripts.autonomous
 org.firstinspires.ftc.teamcode.main.scripts.teleop
 org.firstinspires.ftc.teamcode.main.utils.autonomous
 org.firstinspires.ftc.teamcode.main.utils.autonomous.image
+org.firstinspires.ftc.teamcode.main.utils.autonomous.image.opencv.pipelines
 org.firstinspires.ftc.teamcode.main.utils.autonomous.image.sample
 org.firstinspires.ftc.teamcode.main.utils.autonomous.location.pipeline
 org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors
@@ -16,8 +17,11 @@ org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.other
 org.firstinspires.ftc.teamcode.main.utils.autonomous.starting
 org.firstinspires.ftc.teamcode.main.utils.devices
 org.firstinspires.ftc.teamcode.main.utils.gamepads
+org.firstinspires.ftc.teamcode.main.utils.helpers.builders
 org.firstinspires.ftc.teamcode.main.utils.helpers.elevator
+org.firstinspires.ftc.teamcode.main.utils.helpers.encoders
 org.firstinspires.ftc.teamcode.main.utils.helpers.geometry
+org.firstinspires.ftc.teamcode.main.utils.helpers.mafs
 org.firstinspires.ftc.teamcode.main.utils.interactions
 org.firstinspires.ftc.teamcode.main.utils.interactions.groups
 org.firstinspires.ftc.teamcode.main.utils.interactions.items

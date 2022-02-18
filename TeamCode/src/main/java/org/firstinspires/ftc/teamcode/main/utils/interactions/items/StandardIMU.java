@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.main.utils.interactions.items;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
-import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -10,8 +9,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngularVelocity;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-import org.firstinspires.ftc.robotcore.external.navigation.Position;
 import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
+import org.firstinspires.ftc.teamcode.main.utils.autonomous.location.pipeline.CustomAccelerationIntegrator;
 
 import java.util.Hashtable;
 
@@ -63,12 +62,12 @@ public class StandardIMU extends InteractionItem {
         parameters.calibrationDataFile = "BNO055IMUCalibration.json"; // see the calibration sample opmode
         parameters.loggingEnabled      = true;
         parameters.loggingTag          = "IMU";
-        parameters.accelerationIntegrationAlgorithm = new JustLoggingAccelerationIntegrator();
+        parameters.accelerationIntegrationAlgorithm = new CustomAccelerationIntegrator();
 
         imu.initialize(parameters);
 
         // Start the logging of measured acceleration
-        imu.startAccelerationIntegration(new Position(), new Velocity(), 100);
+        imu.startAccelerationIntegration(null, null, 10);
     }
 
     public CompassReturnData<HeadingDataPoint, Float> getCompassData() {
@@ -110,9 +109,9 @@ public class StandardIMU extends InteractionItem {
     public VelocityReturnData<VelocityDataPoint, Float> getAcceleration() {
         Acceleration acceleration = imu.getLinearAcceleration();
         VelocityReturnData<VelocityDataPoint, Float> velocityReturnData = new VelocityReturnData<>();
-        velocityReturnData.put(VelocityDataPoint.X, (float) acceleration.xAccel*100);
-        velocityReturnData.put(VelocityDataPoint.Y, (float) acceleration.yAccel*100);
-        velocityReturnData.put(VelocityDataPoint.Z, (float) acceleration.zAccel*100);
+        velocityReturnData.put(VelocityDataPoint.X, (float) acceleration.xAccel);
+        velocityReturnData.put(VelocityDataPoint.Y, (float) acceleration.yAccel);
+        velocityReturnData.put(VelocityDataPoint.Z, (float) acceleration.zAccel);
 
         return velocityReturnData;
     }

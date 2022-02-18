@@ -1,19 +1,17 @@
 package org.firstinspires.ftc.teamcode.main.utils.locations;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
-
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.InteractionSurface;
-import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardDistanceSensor;
+import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardColorSensor;
 import org.firstinspires.ftc.teamcode.main.utils.resources.Resources;
 
-public class HandDistanceSensorLocation extends Location {
+public class HandColorSensorLocation extends Location {
 
-    private StandardDistanceSensor SENSOR;
+    private StandardColorSensor SENSOR;
 
-    public HandDistanceSensorLocation(HardwareMap hardware) {
+    public HandColorSensorLocation(HardwareMap hardware) {
         try {
-            SENSOR = new StandardDistanceSensor(hardware, Resources.Hand.Sensors.HandDistance);
+            SENSOR = new StandardColorSensor(hardware, Resources.Hand.Sensors.HandColor);
         } catch(Exception ignored) {}
     }
 
@@ -21,11 +19,11 @@ public class HandDistanceSensorLocation extends Location {
      * Returns the distance detected by the sensor.
      * @return The distance in millimeters
      */
-    public int returnOutput() {
+    public int[] returnOutput() {
         if(SENSOR == null) {
-            return 0;
+            return null;
         }
-        return SENSOR.getDistance(DistanceUnit.MM);
+        return SENSOR.getRGBA();
     }
 
     @Override

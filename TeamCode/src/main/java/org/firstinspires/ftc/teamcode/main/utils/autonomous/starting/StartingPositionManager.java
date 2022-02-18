@@ -24,7 +24,6 @@ public class StartingPositionManager {
     InputSpace input;
     OutputSpace output;
     int ballDropHeight;
-    int step = 0;
     boolean intakeShouldBeDown = false;
     ImgProc imgProc;
     ElevatorDriver elevatorDriver;
@@ -36,6 +35,8 @@ public class StartingPositionManager {
     boolean isBlock = true;
 
     int h = 0;
+
+    int step = 0;
 
     boolean isBlueSide, isCloseToParking;
 
@@ -54,6 +55,7 @@ public class StartingPositionManager {
 
         if (!simple) {
             imgProc = new ImgProc(opMode.hardwareMap, new String[]{"Duck", "Marker"}, "FreightFrenzy_DM.tflite");
+            imgProc.confidence = 0.55f;
             imgProc.init();
             imgProc.activate();
             imgProc.setZoom(1.5, 16.0/9);
@@ -79,7 +81,9 @@ public class StartingPositionManager {
 
             opMode.waitForStart();
 
-            opMode.telemetry.addAction(() -> opMode.telemetry.addLine("github.com/michaell4438"));
+            opMode.telemetry.addAction(() -> opMode.telemetry.addData("Detected Position", h));
+
+            opMode.telemetry.update();
 
             encoderTimeout = new EncoderTimeoutManager(0);
 
@@ -87,30 +91,42 @@ public class StartingPositionManager {
             toggleIntakeLifter();
 
             int initialTurnModifier = turnModifier;
-            if (isCloseToParking) initialTurnModifier = -initialTurnModifier;
+            if (!isCloseToParking) initialTurnModifier = -initialTurnModifier;
 
-            positionSystem.encoderDrive(5);
-            drivetrainHold();
-            positionSystem.turnWithCorrection(new Angle(-90 * initialTurnModifier, Angle.AngleUnit.DEGREE));
-            // Move Forward 1 Tile
-            positionSystem.encoderDrive(-12);
-            drivetrainHold();
-            positionSystem.turnWithCorrection(new Angle(-90 * turnModifier, Angle.AngleUnit.DEGREE));
-            // Move Forward 1 Tile
-            positionSystem.encoderDrive(-3);
-            drivetrainHold();
+            while (opMode.opModeIsActive()) {
+                if (step == 0) {
+                    positionSystem.encoderDrive(5);
+                }
 
-            runElevator(0);
-            toggleIntakeLifter();
-            opMode.sleep(3000);
-            drivetrainHold();
+                if (step == 1) {
+                    positionSystem.turnWithCorrection(new Angle(-90 * initialTurnModifier, Angle.AngleUnit.DEGREE));
+                }
 
-            positionSystem.encoderDrive(-2.1);
-            drivetrainHold();
-            positionSystem.turnWithCorrection(new Angle(90 * turnModifier, Angle.AngleUnit.DEGREE));
+                if (step == 2) {
+                    positionSystem.encoderDrive(-12);
+                }
 
-            positionSystem.encoderDrive(-35, 35, 75);
-            drivetrainHold();
+                if (step == 3) {
+                    positionSystem.turnWithCorrection(new Angle(-90 * initialTurnModifier, Angle.AngleUnit.DEGREE));
+                }
+
+                if (step == 4) {
+                    positionSystem.encoderDrive(-5, 5, 30);
+                }
+
+                if (step == 5) {
+                    runElevator(0);
+                }
+
+                if (step == 6) {
+                    toggleIntakeLifter();
+                    positionSystem.encoderDrive(-2.1);
+                }
+
+                while (opMode.opModeIsActive() && positionSystem.areMotorsBusy()) {}
+                if (opMode.isStopRequested()) { break; }
+                step++;
+            }
 
         }else{
             opMode.waitForStart();
@@ -118,7 +134,7 @@ public class StartingPositionManager {
             positionSystem.encoderDrive(-8);
             toggleIntakeLifter();
             drivetrainHold();
-            elevatorDriver.setPosition(3, isBlock);
+            elevatorDriver.setPosition(2, isBlock);
             while(!elevatorDriver.isStable()) {
                 elevatorDriver.run();
             }
@@ -129,7 +145,7 @@ public class StartingPositionManager {
         }
     }
 
-    private void runElevator(float finalDist) throws InterruptedException {
+    private void runElevator(double finalDist) throws InterruptedException {
         boolean hasDriven = false;
 
         elevatorDriver.setPosition(h, isBlock);
@@ -141,40 +157,20 @@ public class StartingPositionManager {
             if (elevatorDriver.isResettingToOriginalPos() && !hasDriven) {
                 elevatorDriver.setPosition(h, isBlock);
 
-                // Go forward 3 if we are ready to move
                 positionSystem.encoderDrive(finalDist);
                 resetTimer();
                 hasDriven = true;
             }
 
             if (opMode.isStopRequested()) {
+                positionSystem.getDrivetrain().brake();
                 throw new InterruptedException();
             }
         }
     }
 
     private void runElevator() throws InterruptedException {
-        boolean hasDriven = false;
-
-        elevatorDriver.setPosition(h, isBlock);
-
-        while (!elevatorDriver.isStable()) {
-            // controlEntireLiftAutonomously(ballDropHeight); // DEPRECATED IN FAVOR OF
-            //                                                   ElevatorDriver.runToHeight
-            elevatorDriver.run();
-            if (elevatorDriver.isResettingToOriginalPos() && !hasDriven) {
-                elevatorDriver.setPosition(h, isBlock);
-
-                // Go forward 3 if we are ready to move
-                positionSystem.encoderDrive(2.1);
-                resetTimer();
-                hasDriven = true;
-            }
-
-            if (opMode.isStopRequested()) {
-                throw new InterruptedException();
-            }
-        }
+        runElevator(2.1);
     }
 
     private void drivetrainHold() throws InterruptedException {
@@ -185,6 +181,7 @@ public class StartingPositionManager {
             opMode.telemetry.update();
 
             if (opMode.isStopRequested()) {
+                positionSystem.getDrivetrain().brake();
                 throw new InterruptedException();
             }
         }

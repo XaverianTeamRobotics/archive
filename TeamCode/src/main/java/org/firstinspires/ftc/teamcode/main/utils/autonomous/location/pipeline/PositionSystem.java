@@ -172,7 +172,7 @@ public class PositionSystem {
 
     public void encoderDrive(float distanceLeft, float distanceRight, int speed) {
         if (drivetrain != null) {
-            drivetrain.driveDistance((int) distanceLeft + 1, (int) distanceRight - 1, 30);
+            drivetrain.driveDistance((int) distanceLeft + 1, (int) distanceRight - 1, 60);
         }
     }
 

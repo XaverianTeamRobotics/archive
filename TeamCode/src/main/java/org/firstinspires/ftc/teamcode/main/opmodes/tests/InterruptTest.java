@@ -15,16 +15,16 @@ public class InterruptTest extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         waitForStart();
 
+        testInterrupts();
     }
 
     private void testInterrupts() throws InterruptedException {
-        while (!isStopRequested()) {
+        do {
             telemetry.addData("Time", time);
             telemetry.update();
             if (isStopRequested()) {
                 throw new InterruptedException();
             }
-        }
+        } while (true);
     }
-
 }

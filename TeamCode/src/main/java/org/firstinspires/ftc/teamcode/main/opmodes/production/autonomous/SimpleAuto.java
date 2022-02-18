@@ -5,11 +5,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.starting.StartingPositionManager;
 
-@Autonomous(name = "Starting Position Blue Right", preselectTeleOp = "FullTeleOp")
-public class StartingPositionBlueRight extends LinearOpMode {
+@Autonomous(name = "StartingPositionBothMiddle", preselectTeleOp = "FullTeleOp")
+public class SimpleAuto extends LinearOpMode {
+
     @Override
     public void runOpMode() throws InterruptedException {
-        new StartingPositionManager(this, true, true, 3, false);
+        new StartingPositionManager(this, true, false, 3, true);
     }
 
 }

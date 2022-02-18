@@ -72,6 +72,7 @@ public class Resources {
         }
         public static final class Sensors {
             public static final String HandDistance = "diD";
+            public static final String HandColor = "hC";
         }
     }
 

@@ -137,6 +137,7 @@ public class ImgProc {
         tfodParameters.inputSize = 320;
         tfod = ClassFactory.getInstance().createTFObjectDetector(tfodParameters, vuforia);
         tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABELS);
+        tfod.setZoom(1.5, 16.0/9.0);
 
         possibleStartingPositions.add(InitialPositions.POS1);
         possibleStartingPositions.add(InitialPositions.POS2);

@@ -7,7 +7,7 @@ import org.firstinspires.ftc.teamcode.main.scripts.teleop.FullTeleOpScript;
 import org.firstinspires.ftc.teamcode.main.utils.scripting.Script;
 import org.firstinspires.ftc.teamcode.main.utils.scripting.ScriptRunner;
 
-@TeleOp(name="FullTeleOp", group="production")
+@TeleOp(name="FullTeleOp", group="aproduction")
 public class FullTeleOp extends LinearOpMode {
 
     @Override

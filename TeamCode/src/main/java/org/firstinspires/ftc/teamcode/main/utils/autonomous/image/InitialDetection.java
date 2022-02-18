@@ -41,7 +41,6 @@ public class InitialDetection extends LinearOpMode {
         PossiblePositions.add(InitialPositions.POS2);
         PossiblePositions.add(InitialPositions.POS3);
 
-
         VUFORIA_KEY = Resources.Misc.VuforiaKey;
 
         tflite = new ImgProc(hardwareMap);
@@ -52,13 +51,15 @@ public class InitialDetection extends LinearOpMode {
         if (tflite.tfod != null) {
             tflite.activate();
 
-            // tflite.setZoom(1.5, 16.0/9.0);
+            tflite.setZoom(1.5, 16.0/9.0);
         }
 
         /** Wait for the game to begin */
         telemetry.addData(">", "Press Play to start op mode");
         telemetry.update();
         waitForStart();
+
+        tflite.setZoom(1.5, 16.0/9.0);
 
         if (opModeIsActive()) {
             while (opModeIsActive()) {

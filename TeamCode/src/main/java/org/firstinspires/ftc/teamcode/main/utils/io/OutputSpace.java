@@ -3,12 +3,10 @@ package org.firstinspires.ftc.teamcode.main.utils.io;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.main.utils.autonomous.sensors.distance.wrappers.DistanceSensorWrapper;
+import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardColorSensor;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardDistanceSensor;
 import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardTouchSensor;
-import org.firstinspires.ftc.teamcode.main.utils.locations.ElevatorBottomLimitSwitchLocation;
-import org.firstinspires.ftc.teamcode.main.utils.locations.HandDistanceSensorLocation;
-import org.firstinspires.ftc.teamcode.main.utils.locations.IntakeLiftingDistanceSensorLocation;
-import org.firstinspires.ftc.teamcode.main.utils.locations.IntakeLimitSwitchLocation;
+import org.firstinspires.ftc.teamcode.main.utils.locations.*;
 
 /**
  * <p>This class can be used to receive output from locations. Locations get data from the interaction surfaces they handle, and then return that to this space.</p>
@@ -22,6 +20,7 @@ public class OutputSpace {
     private final ElevatorBottomLimitSwitchLocation ELEVATOR_BOTTOM_LIMIT_SWITCH;
     private final IntakeLiftingDistanceSensorLocation INTAKE_DISTANCE_SENSOR;
     private final HandDistanceSensorLocation HAND_DISTANCE_SENSOR;
+    private final HandColorSensorLocation HAND_COLOR_SENSOR;
 
     public OutputSpace(HardwareMap hardware) {
         HARDWARE = hardware;
@@ -29,6 +28,7 @@ public class OutputSpace {
         ELEVATOR_BOTTOM_LIMIT_SWITCH = new ElevatorBottomLimitSwitchLocation(HARDWARE);
         INTAKE_DISTANCE_SENSOR = new IntakeLiftingDistanceSensorLocation(HARDWARE);
         HAND_DISTANCE_SENSOR = new HandDistanceSensorLocation(HARDWARE);
+        HAND_COLOR_SENSOR = new HandColorSensorLocation(HARDWARE);
     }
 
     public double receiveOutputFromIntakeLiftingDistanceSensor() {
@@ -43,8 +43,12 @@ public class OutputSpace {
         return ELEVATOR_BOTTOM_LIMIT_SWITCH.returnOutput(type);
     }
 
-    public double receiveOutputFromHandDistanceSensor() {
+    public int receiveOutputFromHandDistanceSensor() {
         return HAND_DISTANCE_SENSOR.returnOutput();
+    }
+
+    public int[] receiveOutputFromHandColorSensor() {
+        return HAND_COLOR_SENSOR.returnOutput();
     }
 
     public HardwareMap getHardware() {
@@ -65,6 +69,10 @@ public class OutputSpace {
 
     public HandDistanceSensorLocation getHandDistanceSensor() {
         return HAND_DISTANCE_SENSOR;
+    }
+
+    public HandColorSensorLocation getHandColorSensor() {
+        return HAND_COLOR_SENSOR;
     }
 
     public void stop() {

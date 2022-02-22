@@ -1,0 +1,245 @@
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:145: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:148: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:145: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:148: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:143: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:144: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/WebcamExample.java:110: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            telemetry.addData("FPS", String.format("%.2f", webcam.getFps()));
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.US) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.7.0 [GradleDependency]
+    implementation "androidx.core:core-ktx:1.5.0"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:34: Warning: Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-core:+) [GradleDynamicVersion]
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:+'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:35: Warning: Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.jetbrains.kotlinx:kotlinx-coroutines-android:+) [GradleDynamicVersion]
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:+'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDynamicVersion":
+   Using + in dependencies lets you automatically pick up the latest available
+   version rather than a specific, named version. However, this is not
+   recommended; your builds are not repeatable; you may have tested with a
+   slightly different version than what the build server used. (Using a
+   dynamic version as the major version number is more problematic than using
+   it in the minor version position.)
+
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:4: Warning: Did you mean "ld!" instead of "ld1" ? [Typos]
+        <item>ld1</item>
+              ^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:8: Warning: Did you mean "rd!" instead of "rd1" ? [Typos]
+        <item>rd1</item>
+              ^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:11: Warning: Did you mean "cd!" instead of "cd1" ? [Typos]
+        <item>cd1</item>
+              ^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "JD!" instead of "JD1" ? [Typos]
+    <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
+                                                                                                                                                                                                                                                                    ^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "iGlT!" instead of "iGlT1" ? [Typos]
+    <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
+                                                                                                                                                                                                                                                                                               ^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "prrE!" instead of "prrE1" ? [Typos]
+    <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
+                                                                                                                                                                ^
+
+   Explanation for issues of type "Typos":
+   This check looks through the string definitions, and if it finds any words
+   that look like likely misspellings, they are flagged.
+
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values-round/strings.xml:2: Error: "hello_world" is translated here but not found in default locale [ExtraTranslation]
+    <string name="hello_world">Hello Round World!</string>
+            ~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ExtraTranslation":
+   If a string appears in a specific language translation file, but there is
+   no corresponding string in the default locale, then this string is probably
+   unused. (It's technically possible that your application is only intended
+   to run in a specific locale, but it's still a good idea to provide a
+   fallback.)
+
+   Note that these strings can lead to crashes if the string is looked up on
+   any locale not providing a translation, so it's important to clean them
+   up.
+
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:3: Warning: The resource R.array.LEFT_DRIVE appears to be unused [UnusedResources]
+    <string-array name="LEFT_DRIVE">
+                  ~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:7: Warning: The resource R.array.RIGHT_DRIVE appears to be unused [UnusedResources]
+    <string-array name="RIGHT_DRIVE">
+                  ~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:10: Warning: The resource R.array.CENTER_DRIVE appears to be unused [UnusedResources]
+    </string-array><string-array name="CENTER_DRIVE">
+                                 ~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/dimens.xml:7: Warning: The resource R.dimen.box_inset_layout_padding appears to be unused [UnusedResources]
+    <dimen name="box_inset_layout_padding">0dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/dimens.xml:14: Warning: The resource R.dimen.inner_frame_layout_padding appears to be unused [UnusedResources]
+    <dimen name="inner_frame_layout_padding">5dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:3: Warning: The resource R.integer.leftDriveID appears to be unused [UnusedResources]
+    <integer name="leftDriveID">1</integer>
+             ~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:4: Warning: The resource R.integer.rightDriveID appears to be unused [UnusedResources]
+    <integer name="rightDriveID">2</integer>
+             ~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:5: Warning: The resource R.integer.centerDriveID appears to be unused [UnusedResources]
+    <integer name="centerDriveID">3</integer>
+             ~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:7: Warning: The resource R.integer.ld1_offset appears to be unused [UnusedResources]
+    <integer name="ld1_offset">-1</integer>
+             ~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:8: Warning: The resource R.integer.rd1_offset appears to be unused [UnusedResources]
+    <integer name="rd1_offset">1</integer>
+             ~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/integers.xml:9: Warning: The resource R.integer.cd1_offset appears to be unused [UnusedResources]
+    <integer name="cd1_offset">1</integer>
+             ~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/pi.xml:3: Warning: The resource R.string.pi appears to be unused [UnusedResources]
+    <string name="pi">3.14159265358979323846264338327950</string>
+            ~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/raw/readme.md: Warning: The resource R.raw.readme appears to be unused [UnusedResources]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values-round/strings.xml:2: Warning: The resource R.string.hello_world appears to be unused [UnusedResources]
+    <string name="hello_world">Hello Round World!</string>
+            ~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:20: Warning: The resource R.string.title_activity_imgproc appears to be unused [UnusedResources]
+    <string name="title_activity_imgproc">imgproc</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: The resource R.string.VUFORIA_KEY appears to be unused [UnusedResources]
+    <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
+            ~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:22: Warning: The resource R.string.WEBCAM appears to be unused [UnusedResources]
+    <string name="WEBCAM">webcam</string>
+            ~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:23: Warning: The resource R.string.Webcam1 appears to be unused [UnusedResources]
+    <string name="Webcam1">webcam</string>
+            ~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:25: Warning: The resource R.string.NAVIGATION_NORTH_DISTANCE_SENSOR appears to be unused [UnusedResources]
+    <string name="NAVIGATION_NORTH_DISTANCE_SENSOR">distN</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:26: Warning: The resource R.string.NAVIGATION_EAST_DISTANCE_SENSOR appears to be unused [UnusedResources]
+    <string name="NAVIGATION_EAST_DISTANCE_SENSOR">distE</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:27: Warning: The resource R.string.NAVIGATION_WEST_DISTANCE_SENSOR appears to be unused [UnusedResources]
+    <string name="NAVIGATION_WEST_DISTANCE_SENSOR">distW</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:29: Warning: The resource R.string.DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR appears to be unused [UnusedResources]
+    <string name="DRIVETRAIN_LEFT_TOP_DRIVING_MOTOR">ltM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:30: Warning: The resource R.string.DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR appears to be unused [UnusedResources]
+    <string name="DRIVETRAIN_LEFT_BOTTOM_DRIVING_MOTOR">lbM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:31: Warning: The resource R.string.DRIVETRAIN_CENTER_DRIVING_MOTOR appears to be unused [UnusedResources]
+    <string name="DRIVETRAIN_CENTER_DRIVING_MOTOR">cdM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:32: Warning: The resource R.string.DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR appears to be unused [UnusedResources]
+    <string name="DRIVETRAIN_RIGHT_TOP_DRIVING_MOTOR">rtM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:33: Warning: The resource R.string.DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR appears to be unused [UnusedResources]
+    <string name="DRIVETRAIN_RIGHT_BOTTOM_DRIVING_MOTOR">rbM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:35: Warning: The resource R.string.INTAKE_SPINNING_MOTOR appears to be unused [UnusedResources]
+    <string name="INTAKE_SPINNING_MOTOR">iM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:36: Warning: The resource R.string.INTAKE_LIFTING_SERVO appears to be unused [UnusedResources]
+    <string name="INTAKE_LIFTING_SERVO">iuS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:37: Warning: The resource R.string.INTAKE_LIFTING_LIMIT_SWITCH appears to be unused [UnusedResources]
+    <string name="INTAKE_LIFTING_LIMIT_SWITCH">iT</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:38: Warning: The resource R.string.INTAKE_LIFTING_DISTANCE_SENSOR appears to be unused [UnusedResources]
+    <string name="INTAKE_LIFTING_DISTANCE_SENSOR">iS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:40: Warning: The resource R.string.LIFT_RIGHT_ELEVATOR_MOTOR appears to be unused [UnusedResources]
+    <string name="LIFT_RIGHT_ELEVATOR_MOTOR">l1M</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:41: Warning: The resource R.string.LIFT_LEFT_ELEVATOR_MOTOR appears to be unused [UnusedResources]
+    <string name="LIFT_LEFT_ELEVATOR_MOTOR">l2M</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:42: Warning: The resource R.string.LIFT_BOTTOM_LIFTING_LIMIT_SWITCH appears to be unused [UnusedResources]
+    <string name="LIFT_BOTTOM_LIFTING_LIMIT_SWITCH">lT</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:44: Warning: The resource R.string.HAND_DISTANCE_SENSOR appears to be unused [UnusedResources]
+    <string name="HAND_DISTANCE_SENSOR">diD</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:45: Warning: The resource R.string.HAND_SPINNING_SERVO_X appears to be unused [UnusedResources]
+    <string name="HAND_SPINNING_SERVO_X">htS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:46: Warning: The resource R.string.HAND_SPINNING_SERVO_Y appears to be unused [UnusedResources]
+    <string name="HAND_SPINNING_SERVO_Y">hfS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:47: Warning: The resource R.string.HAND_RIGHT_GRABBING_SERVO appears to be unused [UnusedResources]
+    <string name="HAND_RIGHT_GRABBING_SERVO">hgrS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:48: Warning: The resource R.string.HAND_LEFT_GRABBING_SERVO appears to be unused [UnusedResources]
+    <string name="HAND_LEFT_GRABBING_SERVO">hglS</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:50: Warning: The resource R.string.DUCK_SPINNING_MOTOR appears to be unused [UnusedResources]
+    <string name="DUCK_SPINNING_MOTOR">duM</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml:53: Warning: The resource R.xml.teamwebcamcalibrations appears to be unused [UnusedResources]
+<Calibrations>
+^
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/xml/test.xml:2: Warning: The resource R.xml.test appears to be unused [UnusedResources]
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+1 errors, 60 warnings

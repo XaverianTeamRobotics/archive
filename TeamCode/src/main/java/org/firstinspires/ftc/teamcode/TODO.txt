@@ -1,3 +1,10 @@
+TODO: kotlin support, c++ support
+TODO: take inspiration from mike
+TODO: change teamcode name to something else
+TODO: determine if we can remove samples, and if so do that
+TODO: unfork
+TODO: add notifs for state changes in upstream once unforked since we wont get them anymore
+TODO: update deps
 TODO: driving system:
     - odometry
     - road runner impl and wrappers

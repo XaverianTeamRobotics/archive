@@ -1,5 +1,3 @@
-TODO: change teamcode name to something else
-TODO: determine if we can remove samples, and if so do that
 TODO: update deps
 TODO: driving system:
     - odometry
@@ -7,7 +5,7 @@ TODO: driving system:
     - dead wheels
     - mech, swivel, tank, car, etc. support
     - mapping environment via depth perception to determine available spots to move
-    - wrap everything in such a way that a coordinate and rotation can be given to the robot to drive it to a certain location, with the apex in the center of the field and a window of [ -100[.0], 100[.0] ] in both the x and y axes and the robot will drive to said location in the smoothest path possible, avoiding obstacles in its environment
+    - wrap everything in such a way that a coordinate and rotation can be given to the robot to drive it to a certain location, with the apex in the center of the field and a window of [ -100[.0], 100[.0] ] in both the x and y axes and the robot will drive to said location in the smoothest path possible, avoiding obstacles in its environment - base coords on /FtcRobotController.src.main.java.org.firstinspires.ftc.robotcontroller.external.samples.FTC_FieldCoordinateSystemDefintion.pdf
     - implement all of this into a tele op system as well
 TODO: misc motion planning:
     - implement odometry in a general fashion for controlling other motors, servos, etc.

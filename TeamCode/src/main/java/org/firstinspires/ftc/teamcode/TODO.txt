@@ -1,0 +1,58 @@
+TODO: change teamcode name to something else
+TODO: determine if we can remove samples, and if so do that
+TODO: update deps
+TODO: driving system:
+    - odometry
+    - road runner impl and wrappers
+    - dead wheels
+    - mech, swivel, tank, car, etc. support
+    - mapping environment via depth perception to determine available spots to move
+    - wrap everything in such a way that a coordinate and rotation can be given to the robot to drive it to a certain location, with the apex in the center of the field and a window of [ -100[.0], 100[.0] ] in both the x and y axes and the robot will drive to said location in the smoothest path possible, avoiding obstacles in its environment
+    - implement all of this into a tele op system as well
+TODO: misc motion planning:
+    - implement odometry in a general fashion for controlling other motors, servos, etc.
+    - implement feedforward for things like gravity, friction, etc.
+    - implement proper encoding without using builtin encoders
+TODO: servos:
+    - make servos smarter so they know their position, likely with an encoder and pid loop
+TODO: misc:
+    - wrappers to control as much hardware as possible
+    - refactors to misc classes
+    - refactors to opmode control and registration, remove scripts
+    - refactors to autonomous control, queueing, easier impl of things, stuff like that
+    - refactors to telemetry including adding acme dash
+    - refactors to gamepads maybe? probably just add ways to set functions on the fly or get specific gamepads, not functional ones (or maybe a psuedo gamepad which refers to all gamepads if multi-gamepad i/o is needed)
+    - led control
+    - refactor custom devices maybe
+TODO: vision
+    - implement opencv, tensorflow, vuforia, etc. into one, easy to use wrapper
+    - make everything stupidly easy
+    - add custom training data maybe if needed
+TODO: io
+    - hardware config, map, etc. all in one robot class
+    - make i/o stupidly easy, remove spaces & locations and use raw wrappers
+TODO: testing
+    - proprietary robot simulator
+    - roight propah testin librarie jams vroom vroom exoohust foumme
+    - auto smoke tests
+    - auto unit tests
+    - auto integration tests
+TODO: building
+    - wireless building
+    - more workflows for building like wireless automated building
+TODO: workflow
+    - more automation
+    - issues
+    - projects
+    - fix all workflows, esp. jdoc
+    - add some new ones for building, testing, etc.
+    - proper auth keys
+    - proper security-- people can't just go make workflows, push to master without approval, push to dev without approval, make branches, etc.
+TODO: docs
+    - proper documentation
+    - dev env installation, intro coding, and other tutorials
+    - impl jdoc into main doc hub
+    - docs to write docs
+    - write docs in mkdown in origin/docs
+    - workflows for docs
+TODO: anything else i think of

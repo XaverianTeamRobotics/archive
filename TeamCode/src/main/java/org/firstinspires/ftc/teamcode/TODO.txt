@@ -1,4 +1,3 @@
-TODO: update deps
 TODO: driving system:
     - odometry
     - road runner impl and wrappers

@@ -30,8 +30,8 @@ TODO: vision
     - make everything stupidly easy
     - add custom training data maybe if needed
 TODO: io
-    - hardware config, map, etc. all in one robot class
-    - make i/o stupidly easy, remove spaces & locations and use raw wrappers
+    - basically, there will be a robot class thats instantiated on every opmode run. it will load the classes found in the config package, like the hardware name config, odometry tuning config, etc
+    - make i/o stupidly easy, remove spaces & locations and use raw hardware wrappers
 TODO: testing
     - proprietary robot simulator
     - roight propah testin librarie jams vroom vroom exoohust foumme

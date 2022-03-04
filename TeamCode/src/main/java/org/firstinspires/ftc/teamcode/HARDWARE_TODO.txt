@@ -1,0 +1,31 @@
+TODO: hardware
+    - acceleration sensor
+    - analog i/o
+    - color range
+    - color
+    - compass
+    - continious servo
+    - dc motor
+    - distance sensor
+    - gyro sensor
+    - IMU
+    - ir seeker
+    - legacy
+    - light sensor
+    - normalized color sensor
+    - optical distance sensor
+    - ultrasonic distance sensor
+    - normal servo
+    - touch sensor
+    - touch sensor multiplexer
+    - ultrasonic sensor
+    - voltage sensor
+    - webcam
+    - blinkin led driver
+    - normal led driver
+    - any interaction surface i find useful
+
+
+hardware
+$hardware - dangerous hardware (analog, digital controllers, etc.)
+            $hardware

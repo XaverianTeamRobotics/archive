@@ -25,6 +25,7 @@ TODO: misc:
     - refactors to gamepads maybe? probably just add ways to set functions on the fly or get specific gamepads, not functional ones (or maybe a psuedo gamepad which refers to all gamepads if multi-gamepad i/o is needed)
     - led control
     - refactor custom devices maybe
+    - class jdocs have accurate author tags and all that good meta stuff
 TODO: vision
     - implement opencv, tensorflow, vuforia, etc. into one, easy to use wrapper
     - make everything stupidly easy

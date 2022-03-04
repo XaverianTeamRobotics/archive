@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class Environment {
 
     private static HardwareMap currentHardwareMap = null;
-    private static String setterToken = "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg";
+    private static final String SETTER_TOKEN = "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg";
 
     /**
      * Private constructor to prevent instantiation of the environment, as it should only contain static members. Do not make this public, <em>cough</em> <em>cough</em> Michael <em>cough</em>.
@@ -23,7 +23,7 @@ public class Environment {
      * @throws IllegalArgumentException Thrown when the token is incorrect
      */
     public void setHardwareMap(HardwareMap map, String token) throws IllegalArgumentException {
-        if(!token.equals(setterToken)) {
+        if(!token.equals(SETTER_TOKEN)) {
             throw new IllegalArgumentException("The token is incorrect! Are you sure you know what you're doing? If you don't, please do not call this.");
         }
         currentHardwareMap = map;

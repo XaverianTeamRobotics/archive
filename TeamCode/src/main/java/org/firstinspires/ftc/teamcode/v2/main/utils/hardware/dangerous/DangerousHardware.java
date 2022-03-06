@@ -1,6 +1,6 @@
-package org.firstinspires.ftc.teamcode.v2.main.hardware.dangerous;
+package org.firstinspires.ftc.teamcode.v2.main.utils.hardware.dangerous;
 
-import org.firstinspires.ftc.teamcode.v2.main.hardware.Hardware;
+import org.firstinspires.ftc.teamcode.v2.main.utils.hardware.Hardware;
 
 /**
  * A {@link DangerousHardware} instance refers to lower-level types of hardware, or dangerous hardware. This includes things like raw analog channels, which are usually a bit dangerous to use.

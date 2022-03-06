@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode.v2.main.hardware;
+package org.firstinspires.ftc.teamcode.v2.main.utils.hardware;
 
 import com.qualcomm.robotcore.hardware.HardwareDevice;
 
-import org.firstinspires.ftc.teamcode.v2.main.env.Environment;
+import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
 
 /**
  * A {@link Hardware} object refers to a physical piece of hardware on the real-life robot. Each subclass of {@link Hardware} wraps a subclass, or multiple subclasses, of a {@link com.qualcomm.robotcore.hardware.HardwareDevice}. Using subclasses of {@link Hardware} help simplify the creation and control of physical hardware.

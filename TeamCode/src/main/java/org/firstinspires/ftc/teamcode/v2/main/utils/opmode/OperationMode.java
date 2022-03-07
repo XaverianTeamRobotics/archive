@@ -1,17 +1,17 @@
 package org.firstinspires.ftc.teamcode.v2.main.utils.opmode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 /**
  * An {@link OperationMode} represents a program the robot can run.
  * <br>
  * <br>
- * To make an {@link OperationMode}, make a class extending extending this one, and implement the necessary methods.
+ * To make an {@link OperationMode}, make a class extending extending this one, implement the necessary methods, and inplement {@link TeleOperation} and/or {@link AutonomousOperation} to determine the operation type.
  * <br>
  * <br>
- * <em>For advanced users:</em>
- * <br>
- * We're manually registering {@link OperationMode}s rather than using annotations. This is to make it easier to make OpModes, as it's stupidly easy to forget to annotate the OpMode. While there are a few ways to do this, the best way is internally using an {@link com.qualcomm.robotcore.eventloop.opmode.OpModeRegistrar}, as it's not deprecated nor discouraged. See {@link OperationModeRegistrar} for more details.
+ * To disable an {@link OperationMode}, annotate it with {@link Disabled}.
+ * @see OperationModeRegistrar
  */
 public abstract class OperationMode extends LinearOpMode {
 

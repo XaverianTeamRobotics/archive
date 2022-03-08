@@ -22,7 +22,6 @@ TODO: misc:
     - refactors to misc classes
     - refactors to autonomous control, queueing, easier impl of things, stuff like that
     - refactors to telemetry including adding acme dash
-    - refactors to gamepads maybe? probably just add ways to set functions on the fly or get specific gamepads, not functional ones (or maybe a psuedo gamepad which refers to all gamepads if multi-gamepad i/o is needed) -- DO THIS NEXT, INTRGRATE THIS INTO ENVIRONMENT VARIABLES
     - led control
     - refactor custom devices maybe
     - class jdocs have accurate author tags and all that good meta stuff

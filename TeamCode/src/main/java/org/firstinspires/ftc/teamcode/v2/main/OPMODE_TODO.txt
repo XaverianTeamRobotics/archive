@@ -1,5 +1,2 @@
 TODO: opmodes
-    - manual registration
-    - basically, internal ftc opmode manual registration system will call a method in some static opmode registerer class, passing the manager. this will find all subclasses of OperationMode, and instantiate them. after instantiation, it will call manager.register(meta, class), registering the opmode class. **CONSTRUCTOR SHOULD NOT DO THIS ITSELF. IF IT DOES, IT WILL REREGISTER ON EVERY OPMODE RUN. THAT IS VERY VERY BAD.**
     - add getters/setters for members of parents of OperationModes
-    - use an interface with fields to define metadata for the opmode registrar (one for teleop, one for auto)

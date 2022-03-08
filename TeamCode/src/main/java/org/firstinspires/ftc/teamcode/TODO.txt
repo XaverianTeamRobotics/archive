@@ -22,7 +22,7 @@ TODO: misc:
     - refactors to misc classes
     - refactors to autonomous control, queueing, easier impl of things, stuff like that
     - refactors to telemetry including adding acme dash
-    - led controlYmd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg
+    - led control
     - refactor custom devices maybe
     - class jdocs have accurate author tags and all that good meta stuff
 TODO: vision

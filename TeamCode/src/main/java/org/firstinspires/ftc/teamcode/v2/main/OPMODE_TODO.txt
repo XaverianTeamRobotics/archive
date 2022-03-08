@@ -1,2 +1,0 @@
-TODO: opmodes
-    - add getters/setters for members of parents of OperationModes

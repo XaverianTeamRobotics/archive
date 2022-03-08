@@ -51,9 +51,7 @@ public class OperationModeRegistrar {
             }
             // initialize registration data
             boolean isPsuedoDisabled = true;
-            String name = opmode.getPackage().getName();
-            name = name.substring(name.lastIndexOf("."));
-            name = name.toUpperCase(Locale.ROOT);
+            String name = "A";
             String nextName = null;
             // begin creation of opmode meta
             OpModeMeta.Builder opModeMetaBuilder = new OpModeMeta.Builder().setName(opmode.getName()).setGroup(name).setSource(OpModeMeta.Source.EXTERNAL_LIBRARY);

@@ -35,7 +35,7 @@ public abstract class OperationMode extends LinearOpMode {
         construct();
         waitForStart();
         resetStartTime();
-        while(opModeIsActive()) {
+        while(opModeIsActive() && !gm.isEscaping()) {
             run();
         }
         destruct();

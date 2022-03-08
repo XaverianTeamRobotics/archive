@@ -1,29 +1,27 @@
 TODO: hardware
     - acceleration sensor
-    - analog i/o
-    - color range
-    - color
+    - analog i/o - dangerous
+    - digital i/o - dangerous
+    - controllers/other i/o - dangerous
+    - color range, color, normalized
     - compass
-    - continious servo
+    - continious servo, normal servo, smart servo
     - dc motor
-    - distance sensor
+    - distance sensor, optical, ultrasonic
     - gyro sensor
     - IMU
     - ir seeker
-    - legacy
+    - legacy - dangerous
     - light sensor
-    - normalized color sensor
-    - optical distance sensor
-    - ultrasonic distance sensor
-    - normal servo
-    - touch sensor
-    - touch sensor multiplexer
+    - touch sensor, multiplexer
     - ultrasonic sensor
-    - voltage sensor
-    - webcam
+    - voltage sensor - dangerous
     - blinkin led driver
     - normal led driver
     - any interaction surface i find useful
+    - dead wheel
+    - mulipart stuff, like drivetrains
+    - encoder
 
 
 hardware

@@ -8,7 +8,7 @@ TODO: driving system:
     - road runner impl and wrappers
     - dead wheels
     - mech, swivel, tank, car, etc. support
-    - mapping environment via depth perception to determine available spots to move
+    - VSLAM
     - wrap everything in such a way that a coordinate and rotation can be given to the robot to drive it to a certain location, with the apex in the center of the field and a window of [ -100[.0], 100[.0] ] in both the x and y axes and the robot will drive to said location in the smoothest path possible, avoiding obstacles in its environment - base coords on /FtcRobotController.src.main.java.org.firstinspires.ftc.robotcontroller.external.samples.FTC_FieldCoordinateSystemDefintion.pdf
     - implement all of this into a tele op system as well
 TODO: misc motion planning:
@@ -20,10 +20,9 @@ TODO: servos:
 TODO: misc:
     - wrappers to control as much hardware as possible
     - refactors to misc classes
-    - refactors to opmode control and registration, remove scripts
     - refactors to autonomous control, queueing, easier impl of things, stuff like that
     - refactors to telemetry including adding acme dash
-    - refactors to gamepads maybe? probably just add ways to set functions on the fly or get specific gamepads, not functional ones (or maybe a psuedo gamepad which refers to all gamepads if multi-gamepad i/o is needed)
+    - refactors to gamepads maybe? probably just add ways to set functions on the fly or get specific gamepads, not functional ones (or maybe a psuedo gamepad which refers to all gamepads if multi-gamepad i/o is needed) -- DO THIS NEXT, INTRGRATE THIS INTO ENVIRONMENT VARIABLES
     - led control
     - refactor custom devices maybe
     - class jdocs have accurate author tags and all that good meta stuff
@@ -32,7 +31,7 @@ TODO: vision
     - make everything stupidly easy
     - add custom training data maybe if needed
 TODO: io
-    - basically, there will be a robot class thats instantiated on every opmode run. it will load the classes found in the config package, like the hardware name config, odometry tuning config, etc
+    - basically, there will be a robot class thats instantiated on every opmode run. it will load the classes found in the config package, like the hardware name config, odometry tuning config, etc -- it will save as an env var
     - make i/o stupidly easy, remove spaces & locations and use raw hardware wrappers
 TODO: testing
     - proprietary robot simulator

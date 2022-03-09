@@ -13,6 +13,7 @@ public class Environment {
     private static HardwareMap currentHardwareMap = null;
     private static Telemetry currentTelemetry = null;
     private static GamepadManager currentGM = null;
+    private static final String ROOT_PACKAGE_PATH = "org.firstinspires.ftc.teamcode";
     private static final String SETTER_TOKEN = "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg";
 
     /**
@@ -114,6 +115,14 @@ public class Environment {
      */
     public static GamepadManager getGamepadManagerDangerously() {
         return currentGM;
+    }
+
+    /**
+     * Finds the root package of this program, for example baz.bar.foo
+     * @return The root package of this program
+     */
+    public static String getRoot() {
+        return ROOT_PACKAGE_PATH;
     }
 
 }

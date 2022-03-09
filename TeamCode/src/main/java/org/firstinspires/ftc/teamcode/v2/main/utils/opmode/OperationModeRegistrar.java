@@ -1,16 +1,14 @@
 package org.firstinspires.ftc.teamcode.v2.main.utils.opmode;
 
-import static org.reflections.scanners.Scanners.SubTypes;
-
 import android.content.Context;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegistrar;
 
+import org.checkerframework.checker.units.qual.A;
 import org.firstinspires.ftc.robotcore.internal.opmode.OpModeMeta;
-import org.reflections.Reflections;
-import org.reflections.scanners.SubTypesScanner;
+import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,6 +16,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -30,7 +29,7 @@ import java.util.stream.Collectors;
  * <br>
  * <em>For advanced users:</em>
  * <br>
- * OpModes are a pain to create. Not because they're a lot of work or particulary hard, but because it's easy to forget to annotate them so the default registrar can find and register them. So, {@link OperationMode}s were created to solve this. They contain all the information needed to be registered without an annotation. To do this without annotations, we need to make our own registrar which finds OpModes differently. To do this, we create a static method annotated with {@link OpModeRegistrar} so the app can find the method. The method takes a manager, and that manager is what's used to actually register the OpModes. Via reflection, {@link OperationMode}s are found. They are then instantiated and their getters called which the values returned from are stored locally in the method. Finally, the metadata is used to register each OpMode via {@link OpModeManager#register(OpModeMeta, Class)}, assuming the OpMode is not disabled.
+ * OpModes are a pain to create. Not because they're a lot of work or particulary hard, but because it's easy to forget to annotate them so the default registrar can find and register them. So, {@link OperationMode}s were created to solve this. They contain all the information needed to be registered without an annotation. To do this without annotations, we need to make our own registrar which finds OpModes differently. To do this, we create a static method annotated with {@link OpModeRegistrar} so the app can find the method. The method takes a manager, and that manager is what's used to actually register the OpModes. Via reflection, {@link OperationMode}s are found. They are then instantiated and their getters called which the values returned from are stored locally in the method. Finally, the metadata received from the {@link OperationMode}s and their respective getters is used to register each OpMode via {@link OpModeManager#register(OpModeMeta, Class)}, assuming the OpMode is not disabled.
  */
 public class OperationModeRegistrar {
 
@@ -45,9 +44,35 @@ public class OperationModeRegistrar {
      */
     @OpModeRegistrar
     public static void registerOperationModes(OpModeManager manager) {
-        // using org.reflections, find all classes which are a subtype of OperationModes. Yes, I could've just used the builtin reflection API but that's hard lol
-        Reflections reflections = new Reflections("org.inspires.ftc.teamcode");
-        Set<Class<? extends OperationMode>> opmodes = reflections.getSubTypesOf(OperationMode.class);
+        // get an input stream of everything that the system classloader knows about, which should include our opmode classes
+        InputStream clappes = ClassLoader.getSystemClassLoader().getResourceAsStream(Environment.getRoot().replaceAll("[.]", File.pathSeparator));
+        // find all class files in this information, create class generic instances (not normal instances) with the classes found at each class file, and put them in a set for easy use
+        BufferedReader claxxes = new BufferedReader(new InputStreamReader(clappes));
+        Set<Class> clazzes = claxxes.lines().filter(line -> line.endsWith(".class")).map((line) -> {
+            // check if the class exists and return it if so, if not return just an instance of the object class
+            Class clazz;
+            try {
+                clazz = Class.forName(Environment.getRoot() + "." + line.substring(0, line.lastIndexOf(".")));
+            } catch(ClassNotFoundException e) {
+                clazz = Object.class;
+            }
+            return clazz;
+        }).collect(Collectors.toSet());
+        // create a place to store our opmode classes, and find and put every opmode we find from our set of classes into this spot
+        ArrayList<Class<? extends OperationMode>> classes = new ArrayList<>();
+        for(Class clazz : clazzes) {
+            if(OperationMode.class.isAssignableFrom(clazz)) {
+                classes.add(clazz);
+            }
+        }
+        // create a place to store concrete opmodes, and find and place every concrete opmode of the list of all opmodes inside of it
+        ArrayList<Class<? extends OperationMode>> opmodes = new ArrayList<>();
+        for(Class<? extends OperationMode> clazz : classes) {
+            if(!Modifier.isAbstract(clazz.getModifiers())) {
+                opmodes.add(clazz);
+            }
+        }
+        // go through all our opmodes and register them as needed
         for(Class<? extends OperationMode> opmode : opmodes) {
             // check if the opmode is disabled, and skip this opmode if so
             if(opmode.isAnnotationPresent(Disabled.class)) {
@@ -78,6 +103,7 @@ public class OperationModeRegistrar {
                         }
                     }
                 }catch(NoSuchMethodException | SecurityException | IllegalAccessException | InstantiationException | InvocationTargetException | ClassCastException ignored) {}
+                // set the next opmode to queue if one exists
                 if(nextName != null) {
                     opModeMetaBuilder.setTransitionTarget(nextName);
                 }

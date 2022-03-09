@@ -3,17 +3,17 @@ TODO: hardware
     - analog i/o - dangerous
     - digital i/o - dangerous
     - controllers/other i/o - dangerous
-    - color range, color, normalized
+    - color ✓
     - compass
     - continious servo, normal servo, smart servo
-    - dc motor
+    - dc motor ✓
     - distance sensor, optical, ultrasonic
     - gyro sensor
     - IMU
     - ir seeker
     - legacy - dangerous
     - light sensor
-    - touch sensor, multiplexer
+    - touch sensor ✓
     - ultrasonic sensor
     - voltage sensor - dangerous
     - blinkin led driver

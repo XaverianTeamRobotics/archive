@@ -25,6 +25,7 @@ TODO: misc:
     - led control
     - refactor custom devices maybe
     - class jdocs have accurate author tags and all that good meta stuff
+    - helpers to do countsperrev, gearreduction, etc. math to convert a unit of measurement into an encoder position
 TODO: vision
     - implement opencv, tensorflow, vuforia, etc. into one, easy to use wrapper
     - make everything stupidly easy

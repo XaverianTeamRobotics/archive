@@ -6,10 +6,8 @@ TODO: hardware
     - voltage sensor - dangerous
     - ----------------------------------------
     - acceleration sensor (ask mike about this)
-    - ultrasonic distance sensor (ask mike about this)
     - gyro sensor (ask mike about this)
     - IMU (ask mike about this)
-    - distance sensor, optical
     - any interaction surface i find useful
     - ----------------------------------------
     - ir seeker ✓
@@ -23,6 +21,8 @@ TODO: hardware
     - dead wheel ✓
     - encoder ✓
     - ultrasonic sensor ✓
+    - normal distance sensor ✓
+    - ultrasonic distance sensor ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

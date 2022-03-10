@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.v2.main.utils.hardware;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.exception.UnresettableEncoderException;
+import org.firstinspires.ftc.teamcode.v2.main.utils.exceptions.UnresettableEncoderException;
 
 /**
  * An {@link Encoder} represents an external encoder connected to a motor port's encoder section. It should <strong>not</strong> represent an internal encoder of a motor; if internal encoder functionality is needed it should be enabled in the third argument of {@link Motor}'s constructor.

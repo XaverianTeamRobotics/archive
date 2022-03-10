@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.gamepad.GamepadManager;
+import org.firstinspires.ftc.teamcode.v2.main.utils.gamepads.GamepadManager;
 
 import java.util.HashMap;
 

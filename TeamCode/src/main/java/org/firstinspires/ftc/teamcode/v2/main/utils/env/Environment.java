@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.v2.main.utils.env;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.teamcode.v2.main.utils.gamepad.GamepadManager;
+import org.firstinspires.ftc.teamcode.v2.main.utils.gamepads.GamepadManager;
 
 /**
  * This defines the persistent environment of the robot. It holds static values which are intended to be used as globals. It should not be instantiated.

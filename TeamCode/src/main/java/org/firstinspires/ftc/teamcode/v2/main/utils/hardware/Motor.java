@@ -4,9 +4,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.robotcontroller.external.samples.SensorColor;
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.exception.EncoderNotFoundException;
+import org.firstinspires.ftc.teamcode.v2.main.utils.exceptions.EncoderNotFoundException;
 
 /**
  * A {@link Motor} represents a normal, DC motor connected to the robot via one of the motor ports.

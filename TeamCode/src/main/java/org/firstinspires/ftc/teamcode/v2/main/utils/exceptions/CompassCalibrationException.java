@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.exception;
+package org.firstinspires.ftc.teamcode.v2.main.utils.exceptions;
 
 import org.firstinspires.ftc.teamcode.v2.main.utils.hardware.Compass;
 

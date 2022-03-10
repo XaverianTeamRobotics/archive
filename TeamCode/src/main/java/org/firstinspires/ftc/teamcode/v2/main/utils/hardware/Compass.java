@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.v2.main.utils.hardware;
 import com.qualcomm.robotcore.hardware.CompassSensor;
 
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.exception.CompassCalibrationException;
+import org.firstinspires.ftc.teamcode.v2.main.utils.exceptions.CompassCalibrationException;
 
 /**
  * A {@link Compass} can determine the robot's heading based on magnetic fields, like a real compass (it is one).

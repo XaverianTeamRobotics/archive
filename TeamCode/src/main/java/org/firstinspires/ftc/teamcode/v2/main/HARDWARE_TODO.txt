@@ -5,7 +5,7 @@ TODO: hardware
     - controllers/other i/o - dangerous
     - color ✓
     - compass ✓
-    - continious servo, normal servo, smart servo
+    - continious servo, normal servo ✓
     - dc motor ✓
     - distance sensor, optical, ultrasonic
     - gyro sensor

@@ -84,7 +84,7 @@ public class Motor extends Hardware {
 
     /**
      * Sets the speed of the motor. The motor will adjust its power level to stay at a consistent speed even with external forces applied.
-     * @param speed The speed
+     * @param speed The speed between -100 and 100
      * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
     public void setSpeed(double speed) throws EncoderNotFoundException {
@@ -99,12 +99,12 @@ public class Motor extends Hardware {
 
     /**
      * Sets the power of the motor. This usually equals the speed, although if the motor is experiencing a force against itself it will need more power to reach the same speed so the power will not equal the speed.
-     * @param power The power
+     * @param power The power between -100 and 100
      */
     public void setPower(double power) {
         power = Range.clip(power, -100, 100);
         changeMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        MOTOR.setPower(power);
+        MOTOR.setPower(power / 100);
     }
 
     /**

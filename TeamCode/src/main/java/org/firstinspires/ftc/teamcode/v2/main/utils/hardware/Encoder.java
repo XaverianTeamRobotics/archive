@@ -17,7 +17,7 @@ public class Encoder extends Hardware {
     /**
      * Creates a new {@link Encoder}. If a seperate motor is plugged into the motor section of this physical port, instantiate this instance BEFORE the {@link Motor}'s instance.
      * @param name The name of the encoder, as defined in the robot config under the motor section
-     * @param resettable Whether or not the encoder is resettable; it should be off if a motor is connected to the encoder unless highly needed
+     * @param resettable Whether or not the encoder is resettable; it should be off if a motor is connected to the motor section of this port unless desperately needed
      */
     public Encoder(String name, boolean resettable) {
         NAME = name;

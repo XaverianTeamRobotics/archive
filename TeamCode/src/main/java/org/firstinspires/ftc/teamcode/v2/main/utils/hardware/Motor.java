@@ -109,9 +109,14 @@ public class Motor extends Hardware {
 
     /**
      * Resets the motor's encoders to 0.
+     * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
-    public void reset() {
-        end();
+    public void reset() throws EncoderNotFoundException {
+        if(ENCODED) {
+            end();
+        }else{
+            throw new EncoderNotFoundException("The motor " + NAME + " does not have its encoder enabled. Did you instantiate it correctly?");
+        }
     }
 
     private void changeMode(DcMotor.RunMode mode) {

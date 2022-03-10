@@ -19,9 +19,9 @@ TODO: hardware
     - blinkin led driver
     - normal led driver
     - any interaction surface i find useful
-    - dead wheel
+    - dead wheel ✓
     - mulipart stuff, like drivetrains
-    - encoder
+    - encoder ✓
 
 
 hardware

@@ -21,7 +21,7 @@ public class Motor extends Hardware {
      * Creates a new {@link Motor}. If a seperate encoder is plugged into the encoder section of this physical port, instantiate this instance AFTER the {@link Encoder}'s instance.
      * @param name The name of the motor, as defined in the robot config
      * @param direction The direction of the motor
-     * @param encoded Whether or not the motor's internal encoder is plugged into the encoder section of the motor port, <strong>not</strong> a standalone encoder
+     * @param encoded Whether or not the motor's internal encoder is plugged into the encoder section of the motor port and should be enabled, <strong>not</strong> a standalone encoder
      */
     public Motor(String name, DcMotorSimple.Direction direction, boolean encoded) {
         ENCODED = encoded;
@@ -41,6 +41,7 @@ public class Motor extends Hardware {
      * @param speed The maximum speed the motor is allowed to run at during this movement
      * @see #getPosition()
      * @see #isDrivingToPosition()
+     * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
     public void setPosition(int position, double speed) throws EncoderNotFoundException {
         if(ENCODED) {
@@ -56,6 +57,7 @@ public class Motor extends Hardware {
     /**
      * @see #setPosition(int, double)
      * @see #isDrivingToPosition()
+     * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
     public int getPosition() throws EncoderNotFoundException {
         if(ENCODED) {
@@ -70,14 +72,20 @@ public class Motor extends Hardware {
      * @return True if the motor is attempting to drive, false otherwise
      * @see #setPosition(int, double)
      * @see #getPosition()
+     * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
-    public boolean isDrivingToPosition() {
-        return MOTOR.isBusy();
+    public boolean isDrivingToPosition() throws EncoderNotFoundException {
+        if(ENCODED) {
+            return MOTOR.isBusy();
+        }else{
+            throw new EncoderNotFoundException("The motor " + NAME + " does not have its encoder enabled. Did you instantiate it correctly?");
+        }
     }
 
     /**
      * Sets the speed of the motor. The motor will adjust its power level to stay at a consistent speed even with external forces applied.
      * @param speed The speed
+     * @throws EncoderNotFoundException The exception thrown when the motor's encoder is disabled
      */
     public void setSpeed(double speed) throws EncoderNotFoundException {
         if(ENCODED) {

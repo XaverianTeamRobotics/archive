@@ -23,6 +23,8 @@ TODO: hardware
     - mulipart stuff, like drivetrains
     - encoder ✓
 
+TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
+
 
 hardware
 $hardware - dangerous hardware (analog, digital controllers, etc.)

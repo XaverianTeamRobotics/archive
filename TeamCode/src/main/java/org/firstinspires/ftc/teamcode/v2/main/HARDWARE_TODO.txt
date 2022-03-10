@@ -1,22 +1,22 @@
 TODO: hardware
-    - acceleration sensor
     - analog i/o - dangerous
     - digital i/o - dangerous
     - controllers/other i/o - dangerous
-    - ----------------------------------------
-    - distance sensor, optical, ultrasonic
-    - gyro sensor
-    - IMU
-    - ir seeker
     - legacy - dangerous
-    - light sensor
-    - ultrasonic sensor
     - voltage sensor - dangerous
-    - blinkin led driver
-    - normal led driver
-    - any interaction surface i find useful
-    - mulipart stuff, like drivetrains
     - ----------------------------------------
+    - acceleration sensor (ask mike about this)
+    - ultrasonic distance sensor (ask mike about this)
+    - gyro sensor (ask mike about this)
+    - ultrasonic sensor (ask mike about this)
+    - IMU (ask mike about this)
+    - distance sensor, optical
+    - ir seeker
+    - blinkin led driver
+    - any interaction surface i find useful
+    - mulipart stuff, like drivetrains (name as multiplex -- maybe make a multiplexor subclass of hardware?)
+    - ----------------------------------------
+    - light sensor ✓
     - color ✓
     - compass ✓
     - continious servo, normal servo ✓

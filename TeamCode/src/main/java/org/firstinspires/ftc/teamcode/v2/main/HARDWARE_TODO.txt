@@ -3,24 +3,26 @@ TODO: hardware
     - analog i/o - dangerous
     - digital i/o - dangerous
     - controllers/other i/o - dangerous
-    - color ✓
-    - compass ✓
-    - continious servo, normal servo ✓
-    - dc motor ✓
+    - ----------------------------------------
     - distance sensor, optical, ultrasonic
     - gyro sensor
     - IMU
     - ir seeker
     - legacy - dangerous
     - light sensor
-    - touch sensor ✓
     - ultrasonic sensor
     - voltage sensor - dangerous
     - blinkin led driver
     - normal led driver
     - any interaction surface i find useful
-    - dead wheel ✓
     - mulipart stuff, like drivetrains
+    - ----------------------------------------
+    - color ✓
+    - compass ✓
+    - continious servo, normal servo ✓
+    - dc motor ✓
+    - touch sensor ✓
+    - dead wheel ✓
     - encoder ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS

@@ -1,0 +1,2 @@
+### Editing Gradle Files
+Normally, editing Gradle files is fine. Since the FTC SDK uses old versions of Android, however, we often cannot update to the newest versions of packages. If you decide to update a package, make sure to test this change and confirm the app compiles, installs, and runs.

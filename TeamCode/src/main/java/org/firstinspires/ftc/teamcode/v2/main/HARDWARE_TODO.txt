@@ -11,10 +11,10 @@ TODO: hardware
     - ultrasonic sensor (ask mike about this)
     - IMU (ask mike about this)
     - distance sensor, optical
-    - ir seeker
     - any interaction surface i find useful
     - mulipart stuff, like drivetrains  (name as multiplex -- maybe make a multiplexor subclass of hardware?)
     - ----------------------------------------
+    - ir seeker ✓
     - blinkin led driver ✓
     - light sensor ✓
     - color ✓

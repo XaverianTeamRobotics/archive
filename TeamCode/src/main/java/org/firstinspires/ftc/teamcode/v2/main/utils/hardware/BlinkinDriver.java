@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.hardware.dangerous;
+package org.firstinspires.ftc.teamcode.v2.main.utils.hardware;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;

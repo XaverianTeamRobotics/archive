@@ -12,10 +12,10 @@ TODO: hardware
     - IMU (ask mike about this)
     - distance sensor, optical
     - ir seeker
-    - blinkin led driver
     - any interaction surface i find useful
     - mulipart stuff, like drivetrains  (name as multiplex -- maybe make a multiplexor subclass of hardware?)
     - ----------------------------------------
+    - blinkin led driver ✓
     - light sensor ✓
     - color ✓
     - compass ✓
@@ -26,6 +26,7 @@ TODO: hardware
     - encoder ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
+TODO: determine which ids are for certain blinkin colors
 
 
 hardware

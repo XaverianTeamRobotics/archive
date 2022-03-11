@@ -3,7 +3,7 @@ TODO: hardware
     - digital i/o - dangerous
     - controllers/other i/o - dangerous
     - legacy - dangerous
-    - voltage sensor - dangerous
+    - voltage sensor - dangerous ✓
     - ----------------------------------------
     - acceleration sensor (ask mike about this)
     - gyro sensor (ask mike about this)

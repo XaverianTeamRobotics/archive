@@ -1,5 +1,5 @@
 TODO: hardware
-    - analog i/o - dangerous
+    - analog input (no output) - dangerous
     - voltage sensor - dangerous ✓
     - ----------------------------------------
     - acceleration sensor (ask mike about this)

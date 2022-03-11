@@ -1,7 +1,5 @@
 TODO: hardware
     - analog i/o - dangerous
-    - digital i/o - dangerous
-    - controllers/other i/o - dangerous
     - legacy - dangerous
     - voltage sensor - dangerous ✓
     - ----------------------------------------

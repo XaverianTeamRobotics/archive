@@ -1,6 +1,5 @@
 TODO: hardware
     - analog i/o - dangerous
-    - legacy - dangerous
     - voltage sensor - dangerous ✓
     - ----------------------------------------
     - acceleration sensor (ask mike about this)

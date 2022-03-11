@@ -1,12 +1,11 @@
 TODO: hardware
-    - analog input (no output) - dangerous
-    - voltage sensor - dangerous ✓
-    - ----------------------------------------
     - acceleration sensor (ask mike about this)
     - gyro sensor (ask mike about this)
     - IMU (ask mike about this)
     - any interaction surface i find useful
     - ----------------------------------------
+    - analog input (no output) - dangerous ✓
+    - voltage sensor - dangerous ✓
     - ir seeker ✓
     - blinkin led driver ✓
     - light sensor ✓

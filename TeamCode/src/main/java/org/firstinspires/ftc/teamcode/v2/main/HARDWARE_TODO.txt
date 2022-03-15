@@ -1,7 +1,7 @@
 TODO: hardware
-    - acceleration sensor (ask mike about this)
-    - gyro sensor (ask mike about this)
-    - IMU (ask mike about this)
+    - acceleration sensor
+    - gyro sensor ✓
+    - IMU
     - any interaction surface i find useful
     - ----------------------------------------
     - analog input (no output) - dangerous ✓

@@ -54,6 +54,10 @@ public class Gyro extends Hardware {
         SENSOR.resetZAxisIntegrator();
     }
 
+    public GyroSensor getInternalGyroSensor() {
+        return SENSOR;
+    }
+
     /**
      * Stops the gyro's operation.
      */

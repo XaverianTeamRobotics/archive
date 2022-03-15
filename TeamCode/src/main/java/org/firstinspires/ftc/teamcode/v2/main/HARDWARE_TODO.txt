@@ -1,5 +1,5 @@
 TODO: hardware
-    - acceleration sensor
+    - acceleration sensor ✓
     - gyro sensor ✓
     - IMU
     - any interaction surface i find useful

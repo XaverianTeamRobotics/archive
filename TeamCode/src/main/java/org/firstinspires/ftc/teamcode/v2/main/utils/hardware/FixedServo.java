@@ -47,7 +47,7 @@ public class FixedServo extends Hardware {
      * Gets the <strong>target</strong> position of the servo. This will only return the position the servo was commanded to go to, not the current position of the servo. This is because FTC legal servos have no way to transmit their current position to the robot, at least internally.
      * <br>
      * <br>
-     * If needed, you can use an external {@link Encoder} to track the servo's position using encoder steps. All you need to do is calibrate the servo/encoder pair beforehand to determine which step of the encoder equals which percentage of the servo's range of motion. This way, you can simply query the {@link Encoder} instance for the current position of the encoder, and then convert that to where the servo would be at that encoder position.
+     * If needed, there are a variety of methods to track servo position using encoders, potentiometors, limit switches, and other various sensors.
      * @return The target position of the servo
      */
     public double getTargetPosition() {

@@ -24,13 +24,3 @@ TODO: hardware
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors
-
-TODO: refactor motors and encoders, i want an unencoded motor, an encoded motor, and an encoder
-    - unencoded motor will only have voltage control - likely dc motor simple
-    - encoded motor will have all control - basically a dc motor with a wrapper
-    - encoder will have only encoder controls and our own reset - gives position, and when reset simply stores the current position and on all subsequent position queries subtract that value from the position
-
-
-hardware
-$hardware - dangerous hardware (analog, digital controllers, etc.)
-            $hardware

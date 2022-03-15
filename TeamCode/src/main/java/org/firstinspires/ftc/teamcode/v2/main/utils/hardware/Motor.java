@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
  */
 public class Motor extends Hardware {
 
-    private DcMotorSimple MOTOR;
+    private final DcMotorSimple MOTOR;
 
     /**
      * Creates a new {@link Motor}.

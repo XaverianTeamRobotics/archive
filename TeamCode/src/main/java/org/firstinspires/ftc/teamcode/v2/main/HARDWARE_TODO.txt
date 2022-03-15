@@ -19,8 +19,8 @@ TODO: hardware
     - normal distance sensor ✓
     - ultrasonic distance sensor ✓
     - encoded motor ✓
-    - motor (unencoded)
-    - encoder
+    - motor (unencoded) ✓
+    - encoder ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

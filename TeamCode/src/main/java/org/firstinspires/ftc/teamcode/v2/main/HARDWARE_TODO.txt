@@ -12,13 +12,15 @@ TODO: hardware
     - color ✓
     - compass ✓
     - continious servo, normal servo ✓
-    - dc motor ✓
     - touch sensor ✓
     - dead wheel ✓
     - encoder ✓
     - ultrasonic sensor ✓
     - normal distance sensor ✓
     - ultrasonic distance sensor ✓
+    - encoded motor ✓
+    - motor (unencoded)
+    - encoder
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

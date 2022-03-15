@@ -16,7 +16,7 @@ public class EncodedMotor extends Hardware {
 
     /**
      * Creates a new {@link EncodedMotor}.
-     * @param name The name of the motor.
+     * @param name The name of the motor as defined by the robot config.
      * @param direction The direction of the motor.
      * @param behavior The behavior of the motor when it is told to stop sending power to the motor.
      */

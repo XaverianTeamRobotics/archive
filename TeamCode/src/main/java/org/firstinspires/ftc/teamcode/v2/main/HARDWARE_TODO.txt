@@ -1,6 +1,4 @@
 TODO: hardware
-    - acceleration sensor ✓
-    - gyro sensor ✓
     - IMU
     - any interaction surface i find useful
     - ----------------------------------------
@@ -21,6 +19,8 @@ TODO: hardware
     - encoded motor ✓
     - motor (unencoded) ✓
     - encoder ✓
+    - acceleration sensor ✓
+    - gyro sensor ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

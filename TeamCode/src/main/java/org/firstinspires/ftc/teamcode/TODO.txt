@@ -15,8 +15,6 @@ TODO: misc motion planning:
     - implement odometry in a general fashion for controlling other motors, servos, etc.
     - implement feedforward for things like gravity, friction, etc.
     - implement proper encoding without using builtin encoders
-TODO: servos:
-    - make servos smarter so they know their position, likely with an encoder and pid loop
 TODO: misc:
     - refactors to misc classes
     - refactors to autonomous control, queueing, easier impl of things, stuff like that

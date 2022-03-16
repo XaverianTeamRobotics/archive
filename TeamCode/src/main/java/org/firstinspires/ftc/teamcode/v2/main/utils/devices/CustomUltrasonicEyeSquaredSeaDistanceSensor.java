@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.util.TypeConversion;
  * TODO: We need more documentation of this class. Someone who knows what's going on here, please do that.
  */
 @I2cDeviceType()
-@DeviceProperties(xmlTag = "TOFSENSOR", name = "Custom Distance Sensor", description = "Ultrasonic Distance Sensor")
+@DeviceProperties(xmlTag = "TOFSENSORC", name = "CustomUltrasonicDistanceSensor", description = "UltrasonicDistanceSensorButCustom")
 public class CustomUltrasonicEyeSquaredSeaDistanceSensor extends I2cDeviceSynchDevice<I2cDeviceSynch> {
 
     public CustomUltrasonicEyeSquaredSeaDistanceSensor(I2cDeviceSynch i2cDeviceSynch) {

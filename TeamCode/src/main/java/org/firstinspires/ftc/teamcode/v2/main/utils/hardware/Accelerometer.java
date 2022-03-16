@@ -18,6 +18,7 @@ public class Accelerometer extends Hardware {
      */
     public Accelerometer(String name) {
         SENSOR = Environment.getHardwareMap().get(AccelerationSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     /**

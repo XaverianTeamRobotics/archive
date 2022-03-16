@@ -18,6 +18,7 @@ public class AnalogDevice extends DangerousHardware {
      */
     public AnalogDevice(String name) {
         CONTROLLER = Environment.getHardwareMap().get(AnalogInput.class, name);
+        CONTROLLER.resetDeviceConfigurationForOpMode();
     }
 
     /**

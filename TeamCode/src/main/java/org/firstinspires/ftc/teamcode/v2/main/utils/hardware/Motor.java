@@ -19,6 +19,7 @@ public class Motor extends Hardware {
      */
     public Motor(String name, DcMotorSimple.Direction direction) {
         MOTOR = Environment.getHardwareMap().get(DcMotorSimple.class, name);
+        MOTOR.resetDeviceConfigurationForOpMode();
         MOTOR.setPower(0);
         MOTOR.setDirection(direction);
     }

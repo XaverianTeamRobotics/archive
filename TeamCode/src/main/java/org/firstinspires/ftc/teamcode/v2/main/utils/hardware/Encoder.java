@@ -18,6 +18,7 @@ public class Encoder extends Hardware {
      */
     public Encoder(String name) {
         ENCODER = Environment.getHardwareMap().get(DcMotor.class, name);
+        ENCODER.resetDeviceConfigurationForOpMode();
         offset = ENCODER.getCurrentPosition();
     }
 

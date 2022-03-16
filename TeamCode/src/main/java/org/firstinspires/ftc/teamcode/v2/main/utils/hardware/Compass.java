@@ -22,6 +22,7 @@ public class Compass extends Hardware {
     public Compass(String name, boolean calibrate) throws CompassCalibrationException {
         NAME = name;
         COMPASS = Environment.getHardwareMap().get(CompassSensor.class, name);
+        COMPASS.resetDeviceConfigurationForOpMode();
         COMPASS.setMode(CompassSensor.CompassMode.MEASUREMENT_MODE);
         if(calibrate) {
             // begin calibration, wait 5 seconds, then start checking the status. check for 5 seconds, and if the failure is false after all those seconds, the compass is calibrated and we can move on. otherwise, throw a checked exception about it

@@ -18,6 +18,7 @@ public class DigitalDistanceSensor extends Hardware {
      */
     public DigitalDistanceSensor(String name) {
         SENSOR = Environment.getHardwareMap().get(DistanceSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     public double getDistance(DistanceUnit unit) {

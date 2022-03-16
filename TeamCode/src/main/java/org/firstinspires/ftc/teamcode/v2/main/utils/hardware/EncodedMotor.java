@@ -22,6 +22,7 @@ public class EncodedMotor extends Hardware {
      */
     public EncodedMotor(String name, DcMotorSimple.Direction direction, DcMotor.ZeroPowerBehavior behavior) {
         MOTOR = Environment.getHardwareMap().get(DcMotor.class, name);
+        MOTOR.resetDeviceConfigurationForOpMode();
         MOTOR.setZeroPowerBehavior(behavior);
         MOTOR.setDirection(direction);
         MOTOR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);

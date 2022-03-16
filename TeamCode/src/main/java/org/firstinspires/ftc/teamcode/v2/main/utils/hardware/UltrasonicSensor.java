@@ -15,6 +15,7 @@ public class UltrasonicSensor extends Hardware {
      */
     public UltrasonicSensor(String name) {
         SENSOR = Environment.getHardwareMap().get(com.qualcomm.robotcore.hardware.UltrasonicSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     /**

@@ -19,6 +19,7 @@ public class UltrasonicDistanceSensor extends Hardware {
      */
     public UltrasonicDistanceSensor(String name) {
         SENSOR = Environment.getHardwareMap().get(CustomUltrasonicEyeSquaredSeaDistanceSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     /**

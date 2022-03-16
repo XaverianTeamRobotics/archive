@@ -18,6 +18,7 @@ public class InfraredSensor extends Hardware {
      */
     public InfraredSensor(String name, IrSeekerSensor.Mode mode) {
         SENSOR = Environment.getHardwareMap().get(IrSeekerSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
         SENSOR.setMode(mode);
     }
 

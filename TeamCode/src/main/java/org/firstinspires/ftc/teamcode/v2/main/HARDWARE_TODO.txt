@@ -22,5 +22,4 @@ TODO: hardware
     - gyro sensor ✓
     - IMU ✓
 
-TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

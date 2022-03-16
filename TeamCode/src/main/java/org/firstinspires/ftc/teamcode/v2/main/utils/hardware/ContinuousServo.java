@@ -24,6 +24,7 @@ public class ContinuousServo extends Hardware {
      */
     public ContinuousServo(String name, Servo.Direction direction) {
         SERVO = Environment.getHardwareMap().get(CRServo.class, name);
+        SERVO.resetDeviceConfigurationForOpMode();
         if(direction.equals(Servo.Direction.FORWARD)) {
             SERVO.setDirection(DcMotorSimple.Direction.FORWARD);
         }else{

@@ -19,6 +19,7 @@ public class FixedServo extends Hardware {
      */
     public FixedServo(String name, Servo.Direction direction) {
         SERVO = Environment.getHardwareMap().get(Servo.class, name);
+        SERVO.resetDeviceConfigurationForOpMode();
         SERVO.setDirection(direction);
     }
 

@@ -17,6 +17,7 @@ public class Gyro extends Hardware {
      */
     public Gyro(String name) {
         SENSOR = Environment.getHardwareMap().get(GyroSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
         try {
             SENSOR.calibrate();
             while(SENSOR.isCalibrating());

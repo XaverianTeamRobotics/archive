@@ -15,6 +15,7 @@ public class VoltageSensor extends DangerousHardware {
      */
     public VoltageSensor(String name) {
         SENSOR = Environment.getHardwareMap().get(com.qualcomm.robotcore.hardware.VoltageSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     public double getVoltage() {

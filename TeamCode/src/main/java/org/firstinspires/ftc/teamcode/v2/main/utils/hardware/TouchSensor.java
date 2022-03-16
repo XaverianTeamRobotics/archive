@@ -19,6 +19,7 @@ public class TouchSensor extends Hardware {
      */
     public TouchSensor(String name) {
         SENSOR = Environment.getHardwareMap().get(com.qualcomm.robotcore.hardware.TouchSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
     }
 
     /**

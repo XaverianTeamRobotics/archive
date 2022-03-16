@@ -16,6 +16,7 @@ public class LightSensor extends Hardware {
      */
     public LightSensor(String name, boolean enableOnboardLight) {
         SENSOR = Environment.getHardwareMap().get(com.qualcomm.robotcore.hardware.LightSensor.class, name);
+        SENSOR.resetDeviceConfigurationForOpMode();
         if(enableOnboardLight) {
             SENSOR.enableLed(true);
         }

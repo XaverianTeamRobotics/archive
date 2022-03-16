@@ -17,6 +17,7 @@ public class BlinkinDriver {
      */
     public BlinkinDriver(HardwareMap hardware, String name) {
         SERVO = hardware.get(Servo.class, name);
+        SERVO.resetDeviceConfigurationForOpMode();
     }
 
     /**

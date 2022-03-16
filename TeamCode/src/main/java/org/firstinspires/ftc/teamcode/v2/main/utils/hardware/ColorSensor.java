@@ -22,6 +22,7 @@ public class ColorSensor extends Hardware {
      */
     public ColorSensor(String name) {
         NORMALIZED_COLORS = Environment.getHardwareMap().get(NormalizedColorSensor.class, name);
+        NORMALIZED_COLORS.resetDeviceConfigurationForOpMode();
         NAME = name;
     }
 

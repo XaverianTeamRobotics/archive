@@ -53,3 +53,4 @@ TODO: docs
     - write docs in mkdown in origin/docs
     - workflows for docs
 TODO: anything else i think of
+TODO: find a good icon for opmode registration since we can choose them now

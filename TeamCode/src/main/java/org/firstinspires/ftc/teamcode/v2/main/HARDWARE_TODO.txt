@@ -1,5 +1,4 @@
 TODO: hardware
-    - IMU
     - any interaction surface i find useful
     - ----------------------------------------
     - analog input (no output) - dangerous ✓
@@ -21,6 +20,7 @@ TODO: hardware
     - encoder ✓
     - acceleration sensor ✓
     - gyro sensor ✓
+    - IMU ✓
 
 TODO: ADD resetConfigForOpMode() IN ALL CONSTRUCTORS
 TODO: determine which ids are for certain blinkin colors

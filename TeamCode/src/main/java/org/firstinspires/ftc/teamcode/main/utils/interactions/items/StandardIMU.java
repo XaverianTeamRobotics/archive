@@ -178,4 +178,5 @@ public class StandardIMU extends InteractionItem {
             return (float) this.get(VelocityDataPoint.Z);
         }
     }
+
 }

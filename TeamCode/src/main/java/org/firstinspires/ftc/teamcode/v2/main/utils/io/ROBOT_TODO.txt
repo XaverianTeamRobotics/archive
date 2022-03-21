@@ -1,0 +1,3 @@
+TODO: robot
+    - robot has all its hardware accessable
+    - robot should, ideally, edit the current hardware config (or switch out the config for a different one which it previously defined)

@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
 import org.firstinspires.ftc.teamcode.v2.main.utils.gamepads.GamepadManager;
+import org.firstinspires.ftc.teamcode.v2.main.utils.io.Robot;
 
 import java.util.HashMap;
 
@@ -25,17 +26,24 @@ public abstract class OperationMode extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+        // set environment variables
         GamepadManager gm = new GamepadManager(gamepad1, gamepad2);
         Environment.setGamepadManager(gm, "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg");
         Environment.setHardwareMap(hardwareMap, "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg");
         Environment.setTelemetry(telemetry, "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg");
+        Environment.setRobot(new Robot("Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg"), "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg");
+        // tell user-defined code of the opmode to construct itself
         construct();
+        // wait until the opmode is executed
         waitForStart();
         resetStartTime();
+        // run the opmode until it's over
         while(opModeIsActive() && !gm.isEscaping()) {
             run();
         }
+        // tell user-defined code of the opmode to destruct itself
         destruct();
+        // tell the app to stop this opmode
         requestOpModeStop();
     }
 

@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.v2.main.utils.gamepads.GamepadManager;
+import org.firstinspires.ftc.teamcode.v2.main.utils.io.Robot;
 
 /**
  * This defines the persistent environment of the robot. It holds static values which are intended to be used as globals. It should not be instantiated.
@@ -13,6 +14,7 @@ public class Environment {
     private static HardwareMap currentHardwareMap = null;
     private static Telemetry currentTelemetry = null;
     private static GamepadManager currentGM = null;
+    private static Robot currentRobot = null;
     private static final String ROOT_PACKAGE_PATH = "org.firstinspires.ftc.teamcode";
     private static final String SETTER_TOKEN = "Ymd1ZWd0MzEweTl1Z2oyNGJqdXZuODlyM3VyOHYyaWt0LnQuLXA0Lnk7cHJoajk4ZzNodGlxZWc$paJx2IRk4Qk5uRMXATkFEq6KIxdtLtRmeMQRlay9R8YuC+ajBnLWRrnqOn1fURwibMfMaKZYx6RZUYgwWqTiyg";
 
@@ -115,6 +117,38 @@ public class Environment {
      */
     public static GamepadManager getGamepadManagerDangerously() {
         return currentGM;
+    }
+
+    /**
+     * Sets the environment {@link #currentRobot} variable. This is called by OpModes automatically as they are ran. It requires a token which can be found in the Environment's source file. This helps prevent people from calling this by accident, as it basically ensures people know what they're doing before calling this.
+     * @param r The robot
+     * @param token The required token
+     * @throws IllegalArgumentException Thrown when the token is incorrect
+     */
+    public static void setRobot(Robot r, String token) throws IllegalArgumentException {
+        if(!token.equals(SETTER_TOKEN)) {
+            throw new IllegalArgumentException("The token is incorrect! Are you sure you know what you're doing? If you don't, please do not call this.");
+        }
+        currentRobot = r;
+    }
+
+    /**
+     * Gets the robot currenty stored in {@link #currentRobot}, with null safety. In this case, attempting to get the robot while it is null will throw an exception instead of creating a non-null object. This is because there is almost no reason whatsoever in which you would want to get a null robot from the environment, nor is there a reason justifying this method's creaton of a new object. If for some reason you do need to disable null safety, use {@link #getRobotDangerously()}.
+     * @return The current gamepad manager
+     * @throws NullPointerException Thrown when the manager is null
+     */
+    public static Robot getRobot() throws NullPointerException {
+        if(currentRobot == null) {
+            throw new NullPointerException("The robot to return is null, was it set to the OpMode's instantiated robot at the start of the OpMode?");
+        }
+        return currentRobot;
+    }
+
+    /**
+     * {@link #getRobot()} without null safety.
+     */
+    public static Robot getRobotDangerously() {
+        return currentRobot;
     }
 
     /**

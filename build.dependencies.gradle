@@ -8,6 +8,7 @@ repositories {
     maven { url = 'https://maven.brott.dev/' }
 }
 
+// I highly recommend *not* updating some of these repositories to their latest versions unless you know what you're doing. Make sure to either backup the project or commit your current changes before updating these.
 dependencies {
     implementation 'org.firstinspires.ftc:Inspection:7.1.0'
     implementation 'org.firstinspires.ftc:Blocks:7.1.0'
@@ -22,6 +23,7 @@ dependencies {
     implementation 'org.firstinspires.ftc:gameAssets-FreightFrenzy:1.0.0'
     implementation 'com.acmerobotics.dashboard:dashboard:0.4.4'
     implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'com.acmerobotics.dashboard:dashboard:0.4.4'
 
     testImplementation 'junit:junit:4.13.2'
 }

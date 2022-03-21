@@ -46,6 +46,7 @@ repositories {
     }
 }
 
+// I highly recommend *not* updating some of these repositories to their latest versions unless you know what you're doing. Make sure to either backup the project or commit your current changes before updating these.
 dependencies {
     doc 'org.firstinspires.ftc:Hardware:7.1.0'
     doc 'org.firstinspires.ftc:RobotCore:7.1.0'

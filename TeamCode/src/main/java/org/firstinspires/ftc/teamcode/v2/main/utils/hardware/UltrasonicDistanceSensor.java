@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.v2.main.utils.hardware;
 
-import org.firstinspires.ftc.teamcode.main.utils.devices.EyeSquaredSeaDistanceSensor;
 import org.firstinspires.ftc.teamcode.v2.main.utils.devices.CustomUltrasonicEyeSquaredSeaDistanceSensor;
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
 

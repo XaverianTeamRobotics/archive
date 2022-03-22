@@ -9,7 +9,6 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
-import org.firstinspires.ftc.teamcode.main.utils.interactions.items.StandardIMU;
 import org.firstinspires.ftc.teamcode.v2.main.utils.devices.IMUAccelerationIntegrator;
 import org.firstinspires.ftc.teamcode.v2.main.utils.env.Environment;
 
@@ -47,15 +46,15 @@ public class InertialMotionUnit extends Hardware {
      * Gets the compass data from the IMU.
      * @return The compass data.
      */
-    public StandardIMU.CompassReturnData<StandardIMU.HeadingDataPoint, Float> getCompassData() {
+    public InertialMotionUnit.CompassReturnData<InertialMotionUnit.HeadingDataPoint, Float> getCompassData() {
         Orientation angles = IMU.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
         float heading = -angles.firstAngle + headingOffset;
         float roll = angles.secondAngle + rollOffset;
         float pitch = angles.secondAngle + pitchOffset;
-        StandardIMU.CompassReturnData<StandardIMU.HeadingDataPoint, Float> toReturn = new StandardIMU.CompassReturnData<>();
-        toReturn.put(StandardIMU.HeadingDataPoint.HEADING, heading);
-        toReturn.put(StandardIMU.HeadingDataPoint.ROLL, roll);
-        toReturn.put(StandardIMU.HeadingDataPoint.PITCH, pitch);
+        InertialMotionUnit.CompassReturnData<InertialMotionUnit.HeadingDataPoint, Float> toReturn = new InertialMotionUnit.CompassReturnData<>();
+        toReturn.put(InertialMotionUnit.HeadingDataPoint.HEADING, heading);
+        toReturn.put(InertialMotionUnit.HeadingDataPoint.ROLL, roll);
+        toReturn.put(InertialMotionUnit.HeadingDataPoint.PITCH, pitch);
         return toReturn;
     }
 
@@ -63,12 +62,12 @@ public class InertialMotionUnit extends Hardware {
      * Gets the current velocity of the IMU.
      * @return The velocity.
      */
-    public StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> getVelocity() {
+    public InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> getVelocity() {
         Velocity velocity = IMU.getVelocity();
-        StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> velocityReturnData = new StandardIMU.VelocityReturnData<>();
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.X, (float) velocity.xVeloc);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Y, (float) velocity.yVeloc);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Z, (float) velocity.zVeloc);
+        InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> velocityReturnData = new InertialMotionUnit.VelocityReturnData<>();
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.X, (float) velocity.xVeloc);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Y, (float) velocity.yVeloc);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Z, (float) velocity.zVeloc);
         return velocityReturnData;
     }
 
@@ -76,12 +75,12 @@ public class InertialMotionUnit extends Hardware {
      * Gets the current acceleration of the IMU.
      * @return The acceleration.
      */
-    public StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> getAcceleration() {
+    public InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> getAcceleration() {
         Acceleration acceleration = IMU.getLinearAcceleration();
-        StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> velocityReturnData = new StandardIMU.VelocityReturnData<>();
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.X, (float) acceleration.xAccel);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Y, (float) acceleration.yAccel);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Z, (float) acceleration.zAccel);
+        InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> velocityReturnData = new InertialMotionUnit.VelocityReturnData<>();
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.X, (float) acceleration.xAccel);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Y, (float) acceleration.yAccel);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Z, (float) acceleration.zAccel);
         return velocityReturnData;
     }
 
@@ -89,12 +88,12 @@ public class InertialMotionUnit extends Hardware {
      * Gets the velocity of the IMU relative to a predefined angle.
      * @return The velocity relative to a predefined angle.
      */
-    public StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> getAngularVelocity() {
+    public InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> getAngularVelocity() {
         AngularVelocity velocity = IMU.getAngularVelocity();
-        StandardIMU.VelocityReturnData<StandardIMU.VelocityDataPoint, Float> velocityReturnData = new StandardIMU.VelocityReturnData<>();
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.X, (float) velocity.xRotationRate);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Y, (float) velocity.yRotationRate);
-        velocityReturnData.put(StandardIMU.VelocityDataPoint.Z, (float) velocity.zRotationRate);
+        InertialMotionUnit.VelocityReturnData<InertialMotionUnit.VelocityDataPoint, Float> velocityReturnData = new InertialMotionUnit.VelocityReturnData<>();
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.X, (float) velocity.xRotationRate);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Y, (float) velocity.yRotationRate);
+        velocityReturnData.put(InertialMotionUnit.VelocityDataPoint.Z, (float) velocity.zRotationRate);
         return velocityReturnData;
     }
 

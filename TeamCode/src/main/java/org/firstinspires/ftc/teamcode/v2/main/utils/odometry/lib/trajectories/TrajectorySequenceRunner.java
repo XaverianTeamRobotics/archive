@@ -16,10 +16,10 @@ import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.acmerobotics.roadrunner.trajectory.TrajectoryMarker;
 import com.acmerobotics.roadrunner.util.NanoClock;
 
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.sequences.SequenceSegment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.sequences.TrajectorySegment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.sequences.TurnSegment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.sequences.WaitSegment;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.segments.SequenceSegment;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.segments.TrajectorySegment;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.segments.TurnSegment;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.segments.WaitSegment;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerDashboardCanvasManager;
 
 import java.util.ArrayList;

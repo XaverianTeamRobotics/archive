@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.opmode;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.opmode;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.util.MovingStatistics;
 import com.qualcomm.robotcore.util.RobotLog;
 
 import org.firstinspires.ftc.robotcore.internal.system.Misc;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.RoadrunnerMecanumDrive;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.StandardTrackingWheelLocalizer;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.RoadrunnerMecanumDrive;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.StandardTrackingWheelLocalizer;
 
 /**
  * This routine determines the effective forward offset for the lateral tracking wheel.

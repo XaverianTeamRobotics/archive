@@ -1,10 +1,5 @@
 package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.wrapper;
 
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ACCEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ANG_VEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_VEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.TRACK_WIDTH;
-
 import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.roadrunner.control.PIDCoefficients;
 import com.acmerobotics.roadrunner.trajectory.constraints.AngularVelocityConstraint;

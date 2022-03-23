@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.opmode;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.opmode;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
@@ -10,16 +10,16 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.RobotLog;
 
 import org.firstinspires.ftc.robotcore.internal.system.Misc;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.RoadrunnerMecanumDrive;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.RoadrunnerMecanumDrive;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerLogfileManager;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RegressionUtil;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerRegressionLibrary;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_RPM;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.RUN_USING_ENCODER;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.rpmToVelocity;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_RPM;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.RUN_USING_ENCODER;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.rpmToVelocity;
 
 /*
  * Op mode for computing kV, kStatic, and kA from various drive routines. For the curious, here's an
@@ -125,7 +125,7 @@ public class AutomaticFeedforwardTuner extends LinearOpMode {
         }
         drive.setDrivePower(new Pose2d(0.0, 0.0, 0.0));
 
-        RegressionUtil.RampResult rampResult = RegressionUtil.fitRampData(
+        RoadrunnerRegressionLibrary.RampResult rampResult = RoadrunnerRegressionLibrary.fitRampData(
                 timeSamples, positionSamples, powerSamples, fitIntercept,
                 RoadrunnerLogfileManager.getLogFile(Misc.formatInvariant(
                         "DriveRampRegression-%d.csv", System.currentTimeMillis())));
@@ -201,7 +201,7 @@ public class AutomaticFeedforwardTuner extends LinearOpMode {
             }
             drive.setDrivePower(new Pose2d(0.0, 0.0, 0.0));
 
-            RegressionUtil.AccelResult accelResult = RegressionUtil.fitAccelData(
+            RoadrunnerRegressionLibrary.AccelResult accelResult = RoadrunnerRegressionLibrary.fitAccelData(
                     timeSamples, positionSamples, powerSamples, rampResult,
                     RoadrunnerLogfileManager.getLogFile(Misc.formatInvariant(
                             "DriveAccelRegression-%d.csv", System.currentTimeMillis())));

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.opmode;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.opmode;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
@@ -13,15 +13,15 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.RobotLog;
 
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.RoadrunnerMecanumDrive;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.RoadrunnerMecanumDrive;
 
 import java.util.List;
 
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ACCEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_VEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MOTOR_VELO_PID;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.RUN_USING_ENCODER;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.kV;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_ACCEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_VEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MOTOR_VELO_PID;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.RUN_USING_ENCODER;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.kV;
 
 /*
  * This routine is designed to tune the PID coefficients used by the REV Expansion Hubs for closed-

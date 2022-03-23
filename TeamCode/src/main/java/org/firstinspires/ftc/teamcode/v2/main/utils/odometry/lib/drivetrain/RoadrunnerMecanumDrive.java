@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain;
 
 import androidx.annotation.NonNull;
 
@@ -17,7 +17,6 @@ import com.acmerobotics.roadrunner.trajectory.constraints.MinVelocityConstraint;
 import com.acmerobotics.roadrunner.trajectory.constraints.ProfileAccelerationConstraint;
 import com.acmerobotics.roadrunner.trajectory.constraints.TrajectoryAccelerationConstraint;
 import com.acmerobotics.roadrunner.trajectory.constraints.TrajectoryVelocityConstraint;
-import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.lynx.LynxModule;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -35,17 +34,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ACCEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ANG_ACCEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_ANG_VEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MAX_VEL;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.MOTOR_VELO_PID;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.RUN_USING_ENCODER;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.TRACK_WIDTH;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.encoderTicksToInches;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.kA;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.kStatic;
-import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.DriveConstants.kV;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_ACCEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_ANG_ACCEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_ANG_VEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MAX_VEL;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.MOTOR_VELO_PID;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.RUN_USING_ENCODER;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.TRACK_WIDTH;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.encoderTicksToInches;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.kA;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.kStatic;
+import static org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivetrain.DriveConstants.kV;
 
 /*
  * Simple mecanum drive hardware implementation for REV hardware.
@@ -71,7 +70,6 @@ public class RoadrunnerMecanumDrive extends MecanumDrive {
     private DcMotorEx leftFront, leftRear, rightRear, rightFront;
     private List<DcMotorEx> motors;
 
-    private BNO055IMU imu;
     private VoltageSensor batteryVoltageSensor;
 
     public RoadrunnerMecanumDrive(HardwareMap hardwareMap) {
@@ -89,10 +87,6 @@ public class RoadrunnerMecanumDrive extends MecanumDrive {
         }
 
         // TODO: adjust the names of the following hardware devices to match your configuration
-        imu = hardwareMap.get(BNO055IMU.class, "imu");
-        BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
-        parameters.angleUnit = BNO055IMU.AngleUnit.RADIANS;
-        imu.initialize(parameters);
 
         // TODO: If the hub containing the IMU you are using is mounted so that the "REV" logo does
         // not face up, remap the IMU axes so that the z-axis points upward (normal to the floor.)
@@ -293,17 +287,12 @@ public class RoadrunnerMecanumDrive extends MecanumDrive {
 
     @Override
     public double getRawExternalHeading() {
-        return imu.getAngularOrientation().firstAngle;
+        return 0;
     }
 
     @Override
     public Double getExternalHeadingVelocity() {
-        // To work around an SDK bug, use -zRotationRate in place of xRotationRate
-        // and -xRotationRate in place of zRotationRate (yRotationRate behaves as 
-        // expected). This bug does NOT affect orientation. 
-        //
-        // See https://github.com/FIRST-Tech-Challenge/FtcRobotController/issues/251 for details.
-        return (double) -imu.getAngularVelocity().xRotationRate;
+        return 0.0;
     }
 
     public static TrajectoryVelocityConstraint getVelocityConstraint(double maxVel, double maxAngularVel, double trackWidth) {

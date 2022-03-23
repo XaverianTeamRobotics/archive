@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.util;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.util;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils;
 
 /**
  * IMU axes signs in the order XYZ (after remapping).

@@ -1,12 +1,12 @@
-package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drive.opmode;
+package org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.opmode;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drive.RoadrunnerMecanumDrive;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.TrajectorySequence;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drivers.RoadrunnerMecanumDrive;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectories.TrajectorySequence;
 
 /*
  * Op mode for preliminary tuning of the follower PID coefficients (located in the drive base

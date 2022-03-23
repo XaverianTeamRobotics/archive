@@ -7,7 +7,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 /**
  * Various utility functions for the BNO055 IMU.
  */
-public class BNO055IMUUtil {
+public class RoadrunnerIMU {
     /**
      * Error for attempting an illegal remapping (lhs or multiple same axes)
      */

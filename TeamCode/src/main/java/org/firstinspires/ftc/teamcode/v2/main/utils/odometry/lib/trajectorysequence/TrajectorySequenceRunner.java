@@ -20,7 +20,7 @@ import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectoryseque
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.sequencesegment.TrajectorySegment;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.sequencesegment.TurnSegment;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.sequencesegment.WaitSegment;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.DashboardUtil;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerDashboardCanvasManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -212,7 +212,7 @@ public class TrajectorySequenceRunner {
                     fieldOverlay.setStrokeWidth(1);
                     fieldOverlay.setStroke(COLOR_INACTIVE_TRAJECTORY);
 
-                    DashboardUtil.drawSampledPath(fieldOverlay, ((TrajectorySegment) segment).getTrajectory().getPath());
+                    RoadrunnerDashboardCanvasManager.drawSampledPath(fieldOverlay, ((TrajectorySegment) segment).getTrajectory().getPath());
                 } else if (segment instanceof TurnSegment) {
                     Pose2d pose = segment.getStartPose();
 
@@ -235,7 +235,7 @@ public class TrajectorySequenceRunner {
                 fieldOverlay.setStrokeWidth(1);
                 fieldOverlay.setStroke(COLOR_ACTIVE_TRAJECTORY);
 
-                DashboardUtil.drawSampledPath(fieldOverlay, currentTrajectory.getPath());
+                RoadrunnerDashboardCanvasManager.drawSampledPath(fieldOverlay, currentTrajectory.getPath());
             } else if (currentSegment instanceof TurnSegment) {
                 Pose2d pose = currentSegment.getStartPose();
 
@@ -253,14 +253,14 @@ public class TrajectorySequenceRunner {
         if (targetPose != null) {
             fieldOverlay.setStrokeWidth(1);
             fieldOverlay.setStroke("#4CAF50");
-            DashboardUtil.drawRobot(fieldOverlay, targetPose);
+            RoadrunnerDashboardCanvasManager.drawRobot(fieldOverlay, targetPose);
         }
 
         fieldOverlay.setStroke("#3F51B5");
-        DashboardUtil.drawPoseHistory(fieldOverlay, poseHistory);
+        RoadrunnerDashboardCanvasManager.drawPoseHistory(fieldOverlay, poseHistory);
 
         fieldOverlay.setStroke("#3F51B5");
-        DashboardUtil.drawRobot(fieldOverlay, poseEstimate);
+        RoadrunnerDashboardCanvasManager.drawRobot(fieldOverlay, poseEstimate);
     }
 
     public Pose2d getLastPoseError() {

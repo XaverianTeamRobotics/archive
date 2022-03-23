@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.util.RobotLog;
 
 import org.firstinspires.ftc.robotcore.internal.system.Misc;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.drive.RoadrunnerMecanumDrive;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.LoggingUtil;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerLogfileManager;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RegressionUtil;
 
 import java.util.ArrayList;
@@ -127,7 +127,7 @@ public class AutomaticFeedforwardTuner extends LinearOpMode {
 
         RegressionUtil.RampResult rampResult = RegressionUtil.fitRampData(
                 timeSamples, positionSamples, powerSamples, fitIntercept,
-                LoggingUtil.getLogFile(Misc.formatInvariant(
+                RoadrunnerLogfileManager.getLogFile(Misc.formatInvariant(
                         "DriveRampRegression-%d.csv", System.currentTimeMillis())));
 
         telemetry.clearAll();
@@ -203,7 +203,7 @@ public class AutomaticFeedforwardTuner extends LinearOpMode {
 
             RegressionUtil.AccelResult accelResult = RegressionUtil.fitAccelData(
                     timeSamples, positionSamples, powerSamples, rampResult,
-                    LoggingUtil.getLogFile(Misc.formatInvariant(
+                    RoadrunnerLogfileManager.getLogFile(Misc.formatInvariant(
                             "DriveAccelRegression-%d.csv", System.currentTimeMillis())));
 
             telemetry.clearAll();

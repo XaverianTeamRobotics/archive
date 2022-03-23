@@ -29,7 +29,7 @@ import com.qualcomm.robotcore.hardware.configuration.typecontainers.MotorConfigu
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.TrajectorySequence;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.TrajectorySequenceBuilder;
 import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.trajectorysequence.TrajectorySequenceRunner;
-import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.LynxModuleUtil;
+import org.firstinspires.ftc.teamcode.v2.main.utils.odometry.lib.utils.RoadrunnerLynxModuleUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,7 +80,7 @@ public class RoadrunnerMecanumDrive extends MecanumDrive {
         follower = new HolonomicPIDVAFollower(TRANSLATIONAL_PID, TRANSLATIONAL_PID, HEADING_PID,
                 new Pose2d(0.5, 0.5, Math.toRadians(5.0)), 0.5);
 
-        LynxModuleUtil.ensureMinimumFirmwareVersion(hardwareMap);
+        RoadrunnerLynxModuleUtil.ensureMinimumFirmwareVersion(hardwareMap);
 
         batteryVoltageSensor = hardwareMap.voltageSensor.iterator().next();
 

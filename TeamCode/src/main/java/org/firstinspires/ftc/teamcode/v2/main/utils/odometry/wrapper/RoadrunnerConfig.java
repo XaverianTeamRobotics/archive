@@ -17,7 +17,7 @@ import java.util.Arrays;
  * <br><br>
  * Distances are in inches.
  */
-@Config
+//@Config TODO: uncomment this
 public class RoadrunnerConfig {
 
     public static final double TICKS_PER_REV = 1;

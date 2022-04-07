@@ -1,5 +1,5 @@
 theme: "jekyll-theme-cayman"
 title: "Hawks Robotics Documentation"
-description: "Tutorials, guides, reports, and Javadocs for our repository."
+description: "Tutorials, guides, reports, and Javadocs for FTC team 19460."
 plugins:
   - "jekyll-octicons"

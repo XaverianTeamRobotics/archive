@@ -94,7 +94,7 @@ android {
             signingConfig signingConfigs.release
             // DO *NOT* REMOVE "arm64-v8a". DON'T YOU DARE TOUCH THAT. IT IS LITERALLY THE ONLY THING MAKING THIS APP WORK. I DON'T CARE WHAT ANY LIBRARY TELLS YOU, WE NEED IT. ok thats all kthxbai
             ndk {
-                abiFilters "armeabi-v7a", "arm64-v8a"
+                abiFilters "armeabi-v7a"
             }
         }
         debug {
@@ -103,7 +103,7 @@ android {
             renderscriptDebuggable true
             ndk {
                 // DO *NOT* REMOVE "arm64-v8a". DON'T YOU DARE TOUCH THAT. IT IS LITERALLY THE ONLY THING MAKING THIS APP WORK. I DON'T CARE WHAT ANY LIBRARY TELLS YOU, WE NEED IT. ok thats all kthxbai
-                abiFilters "armeabi-v7a", "arm64-v8a"
+                abiFilters "armeabi-v7a"
             }
         }
     }

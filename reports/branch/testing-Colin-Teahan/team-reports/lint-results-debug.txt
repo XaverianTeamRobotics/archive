@@ -44,6 +44,9 @@
 
    https://developer.android.com/reference/java/util/Locale.html#default_locale
 
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:29: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.3 is available: 2.1.4 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.7.0 [GradleDependency]
     implementation "androidx.core:core-ktx:1.5.0"
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,22 +73,22 @@
    dynamic version as the major version number is more problematic than using
    it in the minor version position.)
 
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:4: Warning: Did you mean "ld!" instead of "ld1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:4: Warning: Did you mean "ld!" instead of "ld1"? [Typos]
         <item>ld1</item>
               ^
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:8: Warning: Did you mean "rd!" instead of "rd1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:8: Warning: Did you mean "rd!" instead of "rd1"? [Typos]
         <item>rd1</item>
               ^
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:11: Warning: Did you mean "cd!" instead of "cd1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/array.xml:11: Warning: Did you mean "cd!" instead of "cd1"? [Typos]
         <item>cd1</item>
               ^
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "JD!" instead of "JD1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "JD!" instead of "JD1"? [Typos]
     <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
                                                                                                                                                                                                                                                                     ^
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "iGlT!" instead of "iGlT1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "iGlT!" instead of "iGlT1"? [Typos]
     <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
                                                                                                                                                                                                                                                                                                ^
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "prrE!" instead of "prrE1" ? [Typos]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/res/values/strings.xml:21: Warning: Did you mean "prrE!" instead of "prrE1"? [Typos]
     <string name="VUFORIA_KEY">AcQbfNb/////AAABmUoZxvy9bUCeksf5rYATLidV6rQS+xwgakOfD4C+LPj4FmsvqtRDFihtnTBZUUxxFbyM7CJMfiYTUEwcDMJERl938oY8iVD43E/SxeO64bOSBfLC0prrE1H4E5SS/IzsVcQCa9GsNaWrTEushMhdoXA3VSaW6R9KrrwvKYdNN/SbaN4TPslQkTqSUr63K60pkE5GqpeadAQuIm8V6LK63JD1TlF665EgpfsDZeVUBeAiJE86iGlT1/vNJ9kisAqKpBHsRyokaVClRnjlp28lmodjVRqeSk8cjCuYryn74tClfxfHQpkDDIsJO+7IYwJQCZQZZ+U9KJaMUeben4HOj0JTnQaEE6MZLaLQzY+C/6MS</string>
                                                                                                                                                                 ^
 
@@ -242,4 +245,4 @@
    them (usually for performance reasons), use
    lint.unused-resources.exclude-tests=true.
 
-1 errors, 60 warnings
+1 errors, 61 warnings

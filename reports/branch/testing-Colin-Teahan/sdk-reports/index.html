@@ -153,6 +153,9 @@ pre.errorlines {
    padding-top: 20px;
    padding-bottom: 5px;
 }
+.options {
+   padding-left: 16px;
+}
 </style>
 <script language="javascript" type="text/javascript">
 <!--
@@ -177,7 +180,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 39 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Thu May 19 15:37:39 UTC 2022      </nav>
+Check performed at Wed May 25 18:59:50 UTC 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -1174,8 +1177,7 @@ Accessor methods require a <code>get</code> prefix or for boolean-returning meth
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-To improve calling this code from Kotlin,<br/>
-parameter types eligible for SAM conversion should be last.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last">https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last</a>
+To improve calling this code from Kotlin, parameter types eligible for SAM conversion should be last.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last">https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last</a>
 </div>To suppress this error, use the issue id "LambdaLast" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
@@ -1268,14 +1270,14 @@ To suppress this error, use the issue id "NewerVersionAvailable" as explained in
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Do not use Kotlin&#8217;s hard keywords as the name of methods or fields.<br/>
-These require the use of backticks to escape when calling from Kotlin.<br/>
-Soft keywords, modifier keywords, and special identifiers are allowed.<br/>
+Do not use Kotlin&#8217;s hard keywords as the name of methods or fields. These require the use of backticks to escape when calling from Kotlin. Soft keywords, modifier keywords, and special identifiers are allowed.<br/>
 <br/>
-For example, Mockito&#8217;s <code>when</code> function requires backticks when used from Kotlin:<br/>
-<br/>
-    val callable = Mockito.mock(Callable::class.java)<br/>
-    Mockito.`when`(callable.call()).thenReturn(/* &#8230; */)<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#no-hard-keywords">https://android.github.io/kotlin-guides/interop.html#no-hard-keywords</a>
+For example, Mockito&#8217;s <code>when</code> function requires backticks when used from Kotlin:
+<pre>
+val callable = Mockito.mock(Callable::class.java)
+Mockito.\`when\`(callable.call()).thenReturn(/* &#8230; */)
+</pre>
+<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#no-hard-keywords">https://android.github.io/kotlin-guides/interop.html#no-hard-keywords</a>
 </div>To suppress this error, use the issue id "NoHardKeywords" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
@@ -1364,15 +1366,23 @@ To suppress this error, use the issue id "TypographyQuotes" as explained in the 
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-To improve referencing this code from Kotlin, consider adding<br/>
-explicit nullness information here with either <code>@NonNull</code> or <code>@Nullable</code>.<br/>
+To improve referencing this code from Kotlin, consider adding explicit nullness information here with either <code>@NonNull</code> or <code>@Nullable</code>.<br/><br/>
+This check can be configured via the following options:<br/><br/>
+<div class="options">
+<b>ignore-deprecated</b> (default is false):<br/>
+Whether to ignore classes and members that have been annotated with <code>@Deprecated</code>.<br/>
 <br/>
-You can set the environment variable
-<pre>
-    `ANDROID_LINT_NULLNESS_IGNORE_DEPRECATED=true`
+Normally this lint check will flag all unannotated elements, but by setting this option to <code>true</code> it will skip any deprecated elements.<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"UnknownNullness"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"ignore-deprecated"</span> <span class="attribute">value</span>=<span class="value">"false"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
 </pre>
-if you want lint to ignore classes and members that have been annotated with<br/>
-<code>@Deprecated</code>.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#nullability-annotations">https://android.github.io/kotlin-guides/interop.html#nullability-annotations</a>
+</div><div class="moreinfo">More info: <a href="https://developer.android.com/kotlin/interop#nullability_annotations">https://developer.android.com/kotlin/interop#nullability_annotations</a>
 </div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "UnknownNullness" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>

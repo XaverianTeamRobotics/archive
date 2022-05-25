@@ -4,16 +4,16 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import org.firstinspires.ftc.robotcore.external.JavaUtil;
 
 @TeleOp(name = "DriveIt")
 public class DriveIt extends LinearOpMode {
 
-    private DcMotor FrontRight;
-    private DcMotor BackRight;
-    private DcMotor FrontLeft;
-    private DcMotor BackLeft;
+    private DcMotor FrontRightMotor;
+    private DcMotor BackRightMotor;
+    private DcMotor FrontLeftMotor;
+    private DcMotor BackLeftMotor;
     private int driveDirection = 0;
+    float pivMod,vertMod,horMod;
 
     /**
      * This function is executed when this Op Mode is selected from the Driver Station.
@@ -24,31 +24,37 @@ public class DriveIt extends LinearOpMode {
         float horizontal;
         float pivot;
 
-        FrontRight = hardwareMap.get(DcMotor.class, "Front Right");
-        BackRight = hardwareMap.get(DcMotor.class, "Back Right");
-        FrontLeft = hardwareMap.get(DcMotor.class, "Front Left");
-        BackLeft = hardwareMap.get(DcMotor.class, "Back Left");
+        FrontRightMotor = hardwareMap.get(DcMotor.class, "Front Right");
+        BackRightMotor = hardwareMap.get(DcMotor.class, "Back Right");
+        FrontLeftMotor = hardwareMap.get(DcMotor.class, "Front Left");
+        BackLeftMotor = hardwareMap.get(DcMotor.class, "Back Left");
 
         // Put initialization blocks here.
-        FrontRight.setDirection(DcMotorSimple.Direction.REVERSE);
-        BackRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        FrontRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        BackRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        pivMod = 1;
+        vertMod = 1;
+        horMod = 1;
+
         waitForStart();
         if (opModeIsActive()) {
             // Put run blocks here.
-            resetDriveSwitch();
+            new Thread(switchDriveDirection).start();
             while (opModeIsActive()) {
                 // Put loop blocks here.
-                vertical = gamepad1.right_stick_y;
-                horizontal = -gamepad1.right_stick_x;
-                pivot = -gamepad1.left_stick_x;
-                FrontRight.setPower(-pivot + (vertical - horizontal));
-                BackRight.setPower(-pivot + vertical + horizontal);
-                FrontLeft.setPower(pivot + vertical + horizontal);
-                BackLeft.setPower(pivot + (vertical - horizontal));
+                vertical = vertMod * gamepad1.right_stick_y;
+                horizontal = horMod *  -gamepad1.right_stick_x;
+                pivot = pivMod * -gamepad1.left_stick_x;
+                FrontRightMotor.setPower(-pivot + (vertical - horizontal));
+                BackRightMotor.setPower(-pivot + vertical + horizontal);
+                FrontLeftMotor.setPower(pivot + vertical + horizontal);
+                BackLeftMotor.setPower(pivot + (vertical - horizontal));
                 telemetry.addData("Vert", vertical);
                 telemetry.addData("Horiz", horizontal);
                 telemetry.addData("Pivot", pivot);
                 telemetry.addData("Drive Direction", driveDirection);
+                telemetry.addData("RB", gamepad1.right_bumper);
                 telemetry.update();
             }
         }
@@ -58,19 +64,27 @@ public class DriveIt extends LinearOpMode {
         @Override
         public void run() {
             //
-            while (true) {
+            while (opModeIsActive()) {
                 if (gamepad1.right_bumper) {
-                    resetDriveSwitch();
+                    driveDirection = driveDirection + 1;
+                    if (driveDirection > 1) {
+                        driveDirection = 0;
+                    }
+
+                    if (driveDirection == 0) {
+                        pivMod = 1;
+                        vertMod = 1;
+                        horMod = 1;
+                    }
+                    else if (driveDirection == 1) {
+                        pivMod = 1;
+                        vertMod = -1;
+                        horMod = -1;
+                    }
+
                     while (gamepad1.right_bumper);
-                    break;
                 }
             }
         }
-
     };
-
-    private void resetDriveSwitch() {
-        sleep(500);
-        new Thread(switchDriveDirection).start();
-    }
 }

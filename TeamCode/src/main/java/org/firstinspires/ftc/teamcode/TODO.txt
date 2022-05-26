@@ -1,5 +1,5 @@
 TODO: c/c++ support
-TODO: take inspiration from mike
+TODO: take inspiration from muke
 TODO: unfork
 TODO: add notifs for state changes in upstream once unforked since we wont get them anymore
 TODO: remove the random guides folder in branch root, should be in gh-pages

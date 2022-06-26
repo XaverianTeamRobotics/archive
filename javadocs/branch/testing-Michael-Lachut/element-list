@@ -4,6 +4,10 @@ org.firstinspires.ftc.teamcode.main.opmodes.production.autonomous
 org.firstinspires.ftc.teamcode.main.opmodes.templates
 org.firstinspires.ftc.teamcode.main.opmodes.tests
 org.firstinspires.ftc.teamcode.main.scripts.autonomous
+org.firstinspires.ftc.teamcode.main.scripts.jlooping
+org.firstinspires.ftc.teamcode.main.scripts.jlooping.requests
+org.firstinspires.ftc.teamcode.main.scripts.jlooping.requests.imgproc
+org.firstinspires.ftc.teamcode.main.scripts.jlooping.scripts
 org.firstinspires.ftc.teamcode.main.scripts.teleop
 org.firstinspires.ftc.teamcode.main.utils.autonomous
 org.firstinspires.ftc.teamcode.main.utils.autonomous.image

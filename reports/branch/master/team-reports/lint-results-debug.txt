@@ -44,7 +44,7 @@
 
    https://developer.android.com/reference/java/util/Locale.html#default_locale
 
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.7.0 [GradleDependency]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.8.0 [GradleDependency]
     implementation "androidx.core:core-ktx:1.5.0"
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

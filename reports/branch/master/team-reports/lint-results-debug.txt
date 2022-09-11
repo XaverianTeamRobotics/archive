@@ -1,52 +1,9 @@
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:145: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/AllObjectInitialTest.java:148: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:145: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DetectionTest.java:148: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:143: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:144: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/DuckMarkerDetection.java:146: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/main/utils/autonomous/image/sample/WebcamExample.java:110: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
-            telemetry.addData("FPS", String.format("%.2f", webcam.getFps()));
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "DefaultLocale":
-   Calling String#toLowerCase() or #toUpperCase() without specifying an
-   explicit locale is a common source of bugs. The reason for that is that
-   those methods will use the current locale on the user's device, and even
-   though the code appears to work correctly when you are developing the app,
-   it will fail in some locales. For example, in the Turkish locale, the
-   uppercase replacement for i is not I.
-
-   If you want the methods to just perform ASCII replacement, for example to
-   convert an enum name, call String#toUpperCase(Locale.US) instead. If you
-   really want to use the current locale, call
-   String#toUpperCase(Locale.getDefault()) instead.
-
-   https://developer.android.com/reference/java/util/Locale.html#default_locale
-
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.8.0 [GradleDependency]
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.9.0 [GradleDependency]
     implementation "androidx.core:core-ktx:1.5.0"
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:37: Warning: A newer version of org.jetbrains.kotlin:kotlin-reflect than 1.6.21 is available: 1.7.10 [GradleDependency]
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.21"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -242,4 +199,4 @@
    them (usually for performance reasons), use
    lint.unused-resources.exclude-tests=true.
 
-1 errors, 60 warnings
+1 errors, 51 warnings

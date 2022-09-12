@@ -1,9 +1,6 @@
 /home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:31: Warning: A newer version of androidx.core:core-ktx than 1.5.0 is available: 1.9.0 [GradleDependency]
     implementation "androidx.core:core-ktx:1.5.0"
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/FtcRobotController/FtcRobotController/TeamCode/build.gradle:37: Warning: A newer version of org.jetbrains.kotlin:kotlin-reflect than 1.6.21 is available: 1.7.10 [GradleDependency]
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.21"
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -199,4 +196,4 @@
    them (usually for performance reasons), use
    lint.unused-resources.exclude-tests=true.
 
-1 errors, 51 warnings
+1 errors, 50 warnings

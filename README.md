@@ -1,3 +1,5 @@
+**This is an archive of the status of XaverianTeamRobotics/FtcRobotController as of the end of Freight Frenzy. All commits prior to Freight Frenzy will be on our current main repo.**
+
 # Welcome!
 
 This GitHub repository contains the source code that is used to build an Android app to control a *FIRST* Tech Challenge competition robot for Hawks Robotics: The Ryken Force.
